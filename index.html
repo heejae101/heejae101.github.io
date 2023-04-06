@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행하다</title>
+
+    <!-- 파비콘 설정 -->
+    <link rel="icon" href="image/favicon.ico">
+
+    <!-- 슬라이더를 위한 외부링크 bxslider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!-- 아이콘 -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+    
+    <!-- css 초기화 파일 -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+    <!-- 스크립트 부분 -->
+    <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        const optionMenu = document.querySelector(".select-menu"),
+            selectBtn = optionMenu.querySelector(".select-btn"),
+            options = optionMenu.querySelectorAll(".option"),
+            sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+        // select your option 누르면 클래스 명이 바뀜 
+
+        // selectBtn.addEventListener('click', () => optionMenu.classList.toggle("active"));
+
+        const selectBtns = document.querySelectorAll('.select-btn');
+        
+        selectBtns.forEach(selectBtn => {
+            selectBtn.addEventListener('click', () => {
+            selectBtn.parentElement.classList.toggle('active');
+            });
+        });
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                let selectedOption = option.querySelector(".option-text").innerText;
+                sBtn_text.innerText = selectedOption;
+                optionMenu.classList.remove("active");
+            })
+        })
+
+        const navBar = document.querySelector("nav"),
+            menuBtns = document.querySelectorAll(".menu-icon");
+            // overlay = document.querySelector(".overlay");
+
+        menuBtns.forEach((menuBtn) => {
+            menuBtn.addEventListener("click", () => {
+                navBar.classList.toggle("open");
+            });
+        });
+
+        // overlay.addEventListener("click", () => {
+        //     navBar.classList.remove("open");
+        // });
+
+        // // 네비게이션 바의 초기 위치
+        // const initialNavTop = 0;
+
+        // // 네비게이션 바의 높이
+        // const navHeight = 50;
+
+        // // 네비게이션 바 DOM 요소를 참조하는 변수
+        // const slide_Down_navBar = document.querySelector('.top_text_area');
+
+        // // 스크롤 이벤트 핸들러
+        // const handleScroll = () => {
+        //     // 현재 스크롤 위치 계산
+        //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        //     // 네비게이션 바의 새로운 위치 계산
+        //     const navTop = initialNavTop - scrollTop;
+
+        //     // 네비게이션 바의 위치가 음수가 되지 않도록 제한
+        //     const newNavTop = Math.max(navTop, -navHeight);
+
+        //     // 네비게이션 바의 위치 설정
+        //     slide_Down_navBar.style.top = `${newNavTop}px`;
+        // };
+
+        // // 스크롤 이벤트 리스너 등록
+        // window.addEventListener('scroll', handleScroll);
+
+        function scrollToTarget() {
+        // 스크롤 타겟 위치의 Y 좌표를 계산
+            const targetElement = document.querySelector('.target-section');
+            const targetOffsetTop = targetElement.offsetTop;
+
+            // 스크롤 애니메이션 적용
+            window.scrollTo({
+                top: targetOffsetTop,
+                behavior: 'smooth'
+            });
+        }
+    })
+    </script>
+
+</head>
+<body>
+    <nav>
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">여행하다</span>
+                <img src="./image/travel.png">
+            </div>
+    
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a href="./html/domestic_travel.html" class="nav-link">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="link">국내여행</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="./html/travel_recommend.html" class="nav-link">
+                            <i class="bx bx-bar-chart-alt-2 icon"></i>
+                            <span class="link">해외여행</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="https://www.youtube.com/watch?v=5Cof240DvuA" class="nav-link">
+                            <i class="bx bx-bell icon"></i>
+                            <span class="link">여행가이드</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class="bx bx-message-rounded icon"></i>
+                            <span class="link">예약 확인</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="./html/customer_service.html" class="nav-link">
+                            <i class="bx bx-heart icon"></i>
+                            <span class="link">고객센터</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="./html/user_page.html" class="nav-link">
+                            <i class="bx bx-folder-open icon"></i>
+                            <span class="link">나의 정보 확인</span>
+                        </a>
+                    </li>
+                </ul>
+    
+                <div class="bottom-cotent">
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class="bx bx-cog icon"></i>
+                            <span class="link">Settings</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class="bx bx-log-out icon"></i>
+                            <span class="link">Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <section class="overlay"></section> -->
+    <div id="wrap">
+        <!-------- top 부분--------------
+        |   기능 제목 | 구현 현황       |
+        |    카테고리 토글 :   x        |
+        |    문구 드롭다운 :   X        |
+        |    고객센터 번호 :   X        |
+        |    스크롤 다운   :   X        |
+        -------------------------------->
+
+        <div class="customer-service" style="box-shadow: 3px black; z-index: 999;">사이트 이용하실 때 어려우신사항 있으시면<br><br>아래의 번호를 통해 문의해주시기 바랍니다.<hr>고객센터 연락처: 000-0000-0000</div>
+        <section class="top_section">
+            <video src="./video/mixkit-clouds-and-blue-sky-background-2408.mp4" muted autoplay loop style="width: 100vw; height: 100%; object-fit: cover; backdrop-filter: blur(10px);"></video>
+            <!-- 카테고리 토글 -->
+                <div class="top_text_area">
+                    <div class="top_nav">
+                        <div class="top_nav_icon_area">
+                            <a href=""><span class="icon">여행하다</span></a>
+                            <img src="./image/travel.png">
+                        </div>
+                        <div class="top_nav_menu_area">
+                            <ul>
+                                <li><a href="./html/domestic_travel.html"><span class="font_white">국내 여행</span></a></li>
+                                <li><a href="./html/travel_recommend.html"><span class="font_white">해외 여행</span></a></li>
+                                <li><a href="https://www.youtube.com/watch?v=5Cof240DvuA"><span class="font_white">여행 가이드</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- login_nav 부분 -->
+                    <div class="login_nav">
+                        <ul>
+                            <li><a href=""><span class="font_white">예약 확인</span></a></li>
+                            <li><a href="./html/customer_service.html"><span class="font_white">고객센터</span></a></li>
+                            <li><a href="./html/user_page.html"><span class="font_white">나의 정보 확인</span></a></li>
+                            <li><a href="./html/1.login.html"><span class="font_white">로그인</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="list_nav menu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </div>
+                </div>
+            <!-- 문구 드롭다운 -->
+            <div class="center_drop">
+                <div class="text_area">
+                    <span>
+                        <em class="font_white">나는</em>
+                        <div class="select-menu">
+                            <div class="select-btn">
+                                <span class="sBtn-text border_text font_white">&#128587;&nbsp;나 홀로</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </div>
+                
+                            <ul class="options">
+                                <li class="option">
+                                    <span class="option-text">&#128587;&nbsp;나 홀로</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#128051;&nbsp;연인과 함께</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#128048;&nbsp;가족들과 함께</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#128054;&nbsp;친구들과 함께</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </span>
+                    <em class="font_white">여행을 떠나고 싶어요</em>
+                </div>
+                <div class="text_area2">
+                    <span class="front_span">
+                        <div class="select-menu">
+                            <div class="select-btn">
+                                <span class="sBtn-text border_text font_white">&#128051;&nbsp;국내</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </div>
+                
+                            <ul class="options">
+                                <li class="option">
+                                    <span class="option-text">&#128051;&nbsp;국내</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#127965;&nbsp;해외</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <em class="font_white">에서</em>
+                    </span>
+                    <span class="back_span">
+                        <div class="select-menu">
+                            <div class="select-btn">
+                                <span class="sBtn-text border_text font_white">&#128051;&nbsp;즉흥적인 여행</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </div>
+                
+                            <ul class="options">
+                                <li class="option">
+                                    <span class="option-text">&#128051;&nbsp;즉흥적인 여행</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#128051;&nbsp;계획적인 여행</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#128048;&nbsp;에어텔</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </span>
+                    <em class="font_white">여행을 떠나고 싶어요</em>
+                </div>
+                <div class="drop_down_btn">
+                    <button class="btn-type-round" onclick="window.location.href='./html/travel_recommend.html';">
+                        <span>내 취향 여행 보기</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 스크롤 다운 버튼 -->
+            <div class="down_btn">
+                <div class="down_btn_items" onclick="scrollToTarget()">
+                    <span class="font_white">더 많은 여행지를 보고싶으시다면</span>
+                    <div class="down_btn_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-chevron-double-down" viewBox="0 0 16 16" >
+                            <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                            <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="middle_section">
+            <div class="text_popular target-section">
+                <span class="text_1 border_text">가장 사랑받는 월간 <br class="pc_blind"> Best 여행지!</span>
+            </div>
+            <div class="slider_popular">
+                <ul class="bxslider">
+                    <li>
+                        <a href="./html/travel_recommend.html">
+                            <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_andong.jpg'); background-size : cover;">
+                                <div class="item_info">
+                                    <p class="tit">[관광] 안동 3일</p>
+                                </div>
+                                <!-- PC 화면 일때만 -->
+                                <!-- <div class="content">
+                                    <p class="pc_ver">설명</p>
+                                </div> -->
+                                <div class="cont">
+                                    <p class="aside">Korea</p>
+                                </div>
+                                <div class="rank">
+                                    <span>1위</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./html/travel_recommend.html">
+                            <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_boracay.jpg'); background-size : cover;">
+                                <div class="item_info">
+                                    <p class="tit">[휴양지/관광] 보라카이 5일</p>
+                                </div>
+                                <!-- PC 화면 일때만 -->
+                                <!-- <div class="content">
+                                    <p class="pc_ver">설명</p>
+                                </div> -->
+                                <div class="cont">
+                                    <p class="aside">Philippines</p>
+                                </div>
+                                <div class="rank">
+                                    <span>2위</span>
+                                </div>
+                            </div>
+                        </a>
+                    <li>
+                        <a href="./html/travel_recommend.html">
+                            <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_danyang.jpg'); background-size : cover;">
+                                <div class="item_info">
+                                    <p class="tit">[등산/관광] 단양 3일</p>
+                                </div>
+                                <!-- PC 화면 일때만 -->
+                                <!-- <div class="content">
+                                    <p class="pc_ver">설명</p>
+                                </div> -->
+                                <div class="cont">
+                                    <p class="aside">Korea</p>
+                                </div>
+                                <div class="rank">
+                                    <span>3위</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./html/travel_recommend.html">
+                            <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_jeju.jpg'); background-size : cover;">
+                                <div class="item_info">
+                                    <p class="tit">[골프] 제주 3일</p>
+                                </div>
+                                <!-- PC 화면 일때만 -->
+                                <!-- <div class="content">
+                                    <p class="pc_ver">설명</p>
+                                </div> -->
+                                <div class="cont">
+                                    <p class="aside">Korea</p>
+                                </div>
+                                <div class="rank">
+                                    <span>4위</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./html/travel_recommend.html">
+                            <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_paris.jpg'); background-size : cover;">
+                                <div class="item_info">
+                                    <p class="tit">[관광] 파리 7일</p>
+                                </div>
+                                <!-- PC 화면 일때만 -->
+                                <!-- <div class="content">
+                                    <p class="pc_ver">설명</p>
+                                </div> -->
+                                <div class="cont">
+                                    <p class="aside">France</p>
+                                </div>
+                                <div class="rank">
+                                    <span>5위</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./html/travel_recommend.html">
+                            <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_sizuoka.jpg'); background-size : cover;">
+                                <div class="item_info">
+                                    <p class="tit">[관광] 시즈오카 3일</p>
+                                </div>
+                                <!-- PC 화면 일때만 -->
+                                <!-- <div class="content">
+                                    <p class="pc_ver">설명</p>
+                                </div> -->
+                                <div class="cont">
+                                    <p class="aside">Japan</p>
+                                </div>
+                                <div class="rank">
+                                    <span>6위</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="slider_left">
+                    <img src="image/arrow-left.png" class="left_arrow_img">
+                </div>
+                <div class="slider_right">
+                    <img src="image/arrow-right.png" class="right_arrow_img">
+                </div>
+            </div>
+        </section>
+
+        <section class="guide_section">
+            <div class="guide_text">
+                <span class="guide_h1 border_text">다양한 여행지 <br class="pc_blind"> 영상 보기</span>
+            </div>
+            <div class="guide_youtube_video_area">
+                <div class="more_btn">
+                    <a href="https://www.naver.com/">
+                        <span>
+                            더 보기
+                        </span>
+                    </a>
+                </div>
+                <div class="slider5">
+                    <div class="slide">
+                        <a href="https://www.youtube.com/watch?v=5Cof240DvuA">
+                            <img src="./image/guide_img_list/guide_img_list_1.jpg">
+                        </a>
+                        <span>노년의 여행, 어떻게 시작해야할까?</span>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.youtube.com/watch?v=EhxfrVG8hy0"><img src="./image/guide_img_list/guide_img_list_2.jpg" decoding="async"></a>
+                        <span>우리나라 맞아?! 이국적인 국내 여행지 7</span>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.youtube.com/watch?v=2301iEVzZ6o"><img src="./image/guide_img_list/guide_img_list_3.jpg" decoding="async"></a>
+                        <span>부모님과 함께 하는 여행, 여기로 가세요~</span>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.youtube.com/watch?v=QAioYjzghJE"><img src="./image/guide_img_list/guide_img_list_4.jpg" decoding="async"></a>
+                        <span>비행기 탑승, 어렵지 않아요!</span>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.youtube.com/watch?v=53_skoilpQQ"><img src="./image/guide_img_list/guide_img_list_5.jpg" decoding="async"></a>
+                        <span>박물관, 조승연 작가님이 알려드립니다!</span>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.youtube.com/watch?v=6b22TCB33tA"><img src="./image/guide_img_list/guide_img_list_6.jpg" decoding="async"></a>
+                        <span>일본여행, 이 영상 하나만 보고 가세요!</span>
+                    </div>
+                </div>
+                <div class="left_arrow_area">
+                    <img src="image/arrow-left.png" class="left_arrow_img">
+                </div>
+                <div class="right_arrow_area">
+                    <img src="image/arrow-right.png" class="right_arrow_img">
+                </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer_top">
+				<span class="font_white">여행하다</span>
+                <img src="./image/travel.png">
+			</div>
+            <div class="footer_bottom">
+                <ul>
+                    <li><a href=""><span class="font_white">이용약관</span></a></li>
+                    <li><a href=""><span class="font_white">개인보호 정책</span></a></li>
+                    <li><a href=""><span class="font_white">제휴제안</span></a></li>
+                    <li><a href=""><span class="font_white">사이트맵</span></a></li>
+                    <li><a href=""><span class="font_white">오류신고</span></a></li>
+                </ul>
+            </div>
+            <div class="footer_sns">
+                <div class="icon_area">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi1 bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi1 bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi1 bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi1 bi-vimeo" viewBox="0 0 16 16">
+                        <path d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer_text_area">
+                <p class="font_white">&copy;copyright All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+
+<script>
+    $(function () {
+        var windowWidth = $(window).width();
+        var slider = $('.slider5').bxSlider({
+                    slideWidth: 800,
+                    minSlides: 3,
+                    maxSlides: 3,
+                    moveSlides: 3,
+                    slideMargin: 20,
+                    speed: 2000,
+                    controls: false,
+                    touchEnabled: false
+        });
+
+        var popular_slider = $('.bxslider').bxSlider({
+                    minSlides: 4,
+                    slideWidth: 800,
+                    maxSlides: 4,
+                    slideMargin: 30,
+                    moveSlides: 1,
+                    auto: true,
+                    speed: 1000,
+                    controls: false,
+                    touchEnabled: false
+        });
+
+        function updateSliderSettings() {
+            var windowWidth = $(window).width();
+            var slideWidth, minSlides, maxSlides, moveSlides, slideMargin, speed;
+        
+            if ((450 <= windowWidth && windowWidth <= 890)) {
+                // 화면 너비가 890px 이하일 때
+                slideWidth = 600;
+                minSlides = 2;
+                maxSlides = 2;
+                moveSlides = 2;
+                slideMargin = 20;
+                speed = 2000;
+            } else if ( windowWidth < 450){
+                slideWidth = 600;
+                minSlides = 1;
+                maxSlides = 1;
+                moveSlides = 1;
+                slideMargin = 20;
+                speed = 2000;
+            } else {
+                // 화면 너비가 890px보다 클 때
+                slideWidth = 800;
+                minSlides = 3;
+                maxSlides = 3;
+                moveSlides = 3;
+                slideMargin = 20;
+                speed = 2000;
+            }
+            
+            slider.reloadSlider({
+                slideWidth: slideWidth,
+                minSlides: minSlides,
+                maxSlides: maxSlides,
+                moveSlides: moveSlides,
+                slideMargin: slideMargin,
+                speed: speed,
+                controls: false,
+                touchEnabled: false
+            });
+
+            if ((450 <= windowWidth && windowWidth <= 890)) {
+                // 화면 너비가 890px 이하일 때
+                slideWidth = 600;
+                minSlides = 3;
+                maxSlides = 3;
+                moveSlides = 1;
+                slideMargin = 30;
+                speed = 1000;
+
+            } else if (windowWidth < 450){
+                slideWidth = 600;
+                minSlides = 2;
+                maxSlides = 2;
+                moveSlides = 1;
+                slideMargin = 30;
+                speed = 1000;
+
+            } else {
+                // 화면 너비가 890px보다 클 때
+                slideWidth = 800;
+                minSlides = 4;
+                maxSlides = 4;
+                moveSlides = 1;
+                slideMargin = 30;
+                speed = 1000;
+            }
+
+            popular_slider.reloadSlider({
+                slideWidth: slideWidth,
+                minSlides: minSlides,
+                maxSlides: maxSlides,
+                moveSlides: moveSlides,
+                slideMargin: slideMargin,
+                speed: speed,
+                auto: true,
+                controls: false,
+                touchEnabled: false
+            });
+        }
+
+        // 최초 페이지 로드시 슬라이더 설정 적용
+        updateSliderSettings();
+
+        // 윈도우 리사이즈 이벤트 시 슬라이더 설정 업데이트
+        $(window).resize(function () {
+        updateSliderSettings();
+        });
+
+        $('.left_arrow_area').click(function () {
+        slider.goToPrevSlide();
+        });
+
+        $('.right_arrow_area').click(function () {
+        slider.goToNextSlide();
+        });
+
+        $('.slider_left').click(function () {
+        popular_slider.goToPrevSlide();
+        });
+
+        $('.slider_right').click(function () {
+        popular_slider.goToNextSlide();
+        });
+    });
+</script>
+<script>
+    function scrollToTarget() {
+// 스크롤 타겟 위치의 Y 좌표를 계산
+    const targetElement = document.querySelector('.target-section');
+    const targetOffsetTop = targetElement.offsetTop;
+
+    // 스크롤 애니메이션 적용
+    window.scrollTo({
+        top: targetOffsetTop,
+        behavior: 'smooth'
+    });
+}
+</script>
+</body>
+</html>

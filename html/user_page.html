@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" href="../image/favicon.ico">
+    <!-- css -->
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/yun.css" rel="stylesheet">
+    <!-- user_page css 연결 -->
+    <link href="../css/user_page.css" rel="stylesheet" />
+    <title>여행하다</title>
+</head>
+
+<body>
+    <!-- 마이페이지 화면 -->
+
+    <!------ 기능 -------- 구현 ------
+    |     네비게이션 바  |   X       |
+    |          예약내역  |   X       |
+    |          문의내역  |   X       |
+    |   서비스 바로가기  |   X       |
+    |              버튼  |   X       |
+    --------------------------------->
+
+    <!-- nav -->
+    
+
+    <!-- 나의 정보 title -->
+    <div class="user_page_title title">나의정보</div>
+
+    <div class="wrap">
+
+
+        <!-- 마이페이지 화면 -->
+        <div class="user_page">
+
+
+
+
+            <!-- 예약내역 부분-->
+            <div class="user_reservation_details">
+                <!-- 예약내역 title부분 -->
+                <div class="user_reservation_title_area">
+                    <!-- 예약내역 title -->
+                    <div class="user_reservation_title title">예약내역</div>
+
+                    <!-- 예약내역 더보기버튼 -->
+                    <div class="user_reservation_more"><a href="#">더보기 ></a></div>
+                </div>
+
+                <!-- 예약내역 리스트 표시 -->
+                <div class="user_reservation_details_list">
+                    <!-- 예약내역 없을 시 -->
+                    <div class="no_reservation">예약내역이 없습니다.</div>
+                </div>
+            </div>
+        </div>
+
+        <br /><br />
+
+        <!-- 마이페이지 하단 부분 -->
+        <div class="user_page_bottom">
+
+            <!-- 문의내역 부분 -->
+            <div class="inquiry_details">
+
+                <!-- 문의내역 title부분 -->
+                <div class="inquiry_details_title_area">
+                    <!-- 문의내역 title -->
+                    <div class="inquiry_details_title title">문의내역</div>
+
+                    <!-- 문의내역 더보기 버튼 -->
+                    <div class="inquiry_details_more"><a href="#">더보기 ></a></div>
+                </div>
+
+                <!-- 문의내역 리스트 표시 -->
+                <div class="inquiry_details_list">
+                    <ul>
+                        <li><a href="#">2023-01-05&nbsp;&nbsp;문의합니다.</a></li>
+                        <li><a href="#">2023-01-20&nbsp;&nbsp;문의합니다.</a></li>
+                        <li><a href="#">2023-03-01&nbsp;&nbsp;문의합니다.</a></li>
+                        <li><a href="#">2023-03-25&nbsp;&nbsp;문의합니다.</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 서비스 바로가기 부분 -->
+            <div class="go_to_service">
+
+                <!-- 서비스 바로가기 title부분 -->
+                <div class="go_to_service_title_area">
+                    <div class="go_to_service_title title">서비스 바로가기</div>
+                </div>
+
+                <!-- 관심상품 / 포인트 / 할인쿠폰 / 회원정보수정 버튼-->
+                <div class="go_to_service_btn">
+
+                    <!-- <button id="fav_btn">관심상품</button> -->
+                    <button class="btn" onclick="location.href='customer_interest.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                        <br />관심상품
+                    </button>
+
+                    <button class="btn" onclick="location.href='customer_point.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                            <path
+                                d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
+                        </svg>
+                        <br />포인트
+                    </button>
+
+                    <button class="btn" onclick="location.href='customer_coupon.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-ticket-perforated-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6V4.5Zm4-1v1h1v-1H4Zm1 3v-1H4v1h1Zm7 0v-1h-1v1h1Zm-1-2h1v-1h-1v1Zm-6 3H4v1h1v-1Zm7 1v-1h-1v1h1Zm-7 1H4v1h1v-1Zm7 1v-1h-1v1h1Zm-8 1v1h1v-1H4Zm7 1h1v-1h-1v1Z" />
+                        </svg>
+                        <br />할인쿠폰
+                    </button>
+
+                    <button class="btn" onclick="location.href='customer_account.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        <br />회원정보수정
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- footer -->
+    
+</body>
+
+</html>

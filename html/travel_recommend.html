@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" href="../image/favicon.ico">
+    <!-- css -->
+    <link href="../css/reset.css" rel="stylesheet"/>
+    <link href="../css/yun.css" rel="stylesheet">
+    <!-- travel_recommend css 연결 -->
+    <link href="../css/travel_recommend.css" rel="stylesheet"/>
+    <title>여행하다</title>
+</head>
+<body>
+    <!-- 여행지 추천 화면 -->
+    
+    <!------ 기능 ------------ 디자인 구현 --기능구현--
+    |         문구 드롭다운  |      X      |    X     |
+    | 낮은가격순/높은가격순  |      X      |    X     |
+    |      여행지 목록 표시  |      X      |    X     |
+    |        일정 보기 버튼  |      X      |    X     |
+    ---------------------------------------------------->
+
+    
+    <script>
+        // 달력 스크립트 부분 
+        window.onload = function () { buildCalendar();}    // 웹 페이지가 로드되면 buildCalendar 실행
+
+        let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
+        let today = new Date();     // 페이지를 로드한 날짜를 저장
+        today.setHours(0, 0, 0, 0);    // 비교 편의를 위해 today의 시간을 초기화
+
+        // 달력 생성 : 해당 달에 맞춰 테이블을 만들고, 날짜를 채워 넣는다.
+        function buildCalendar() {
+
+            let firstDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1);     // 이번달 1일
+            let lastDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0);  // 이번달 마지막날
+
+            let tbody_Calendar = document.querySelector(".Calendar > tbody");
+            document.getElementById("calYear").innerText = nowMonth.getFullYear();             // 연도 숫자 갱신
+            document.getElementById("calMonth").innerText = leftPad(nowMonth.getMonth() + 1);  // 월 숫자 갱신
+
+            while (tbody_Calendar.rows.length > 0) {                        // 이전 출력결과가 남아있는 경우 초기화
+                tbody_Calendar.deleteRow(tbody_Calendar.rows.length - 1);
+            }
+
+            let nowRow = tbody_Calendar.insertRow();        // 첫번째 행 추가           
+
+            for (let j = 0; j < firstDate.getDay(); j++) {  // 이번달 1일의 요일만큼
+                let nowColumn = nowRow.insertCell();        // 열 추가
+            }
+
+            for (let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate() + 1)) {   // day는 날짜를 저장하는 변수, 이번달 마지막날까지 증가시키며 반복  
+
+                let nowColumn = nowRow.insertCell();        // 새 열을 추가하고
+
+
+                let newDIV = document.createElement("p");
+                newDIV.innerHTML = leftPad(nowDay.getDate());        // 추가한 열에 날짜 입력
+                nowColumn.appendChild(newDIV);
+
+                if (nowDay.getDay() == 6) {                 // 토요일인 경우
+                    nowRow = tbody_Calendar.insertRow();    // 새로운 행 추가
+                }
+
+                if (nowDay < today) {                       // 지난날인 경우
+                    newDIV.className = "pastDay";
+                }
+                else if (nowDay.getFullYear() == today.getFullYear() && nowDay.getMonth() == today.getMonth() && nowDay.getDate() == today.getDate()) { // 오늘인 경우           
+                    newDIV.className = "today";
+                    newDIV.onclick = function () { choiceDate(this); }
+                }
+                else {                                      // 미래인 경우
+                    newDIV.className = "futureDay";
+                    newDIV.onclick = function () { choiceDate(this); }
+                }
+            }
+        }
+
+        // 날짜 선택
+        function choiceDate(newDIV) {
+            if (document.getElementsByClassName("choiceDay")[0]) {                              // 기존에 선택한 날짜가 있으면
+                document.getElementsByClassName("choiceDay")[0].classList.remove("choiceDay");  // 해당 날짜의 "choiceDay" class 제거
+            }
+            newDIV.classList.add("choiceDay");           // 선택된 날짜에 "choiceDay" class 추가
+        }
+
+        // 이전달 버튼 클릭
+        function prevCalendar() {
+            nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() - 1, nowMonth.getDate());   // 현재 달을 1 감소
+            buildCalendar();    // 달력 다시 생성
+        }
+        // 다음달 버튼 클릭
+        function nextCalendar() {
+            nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, nowMonth.getDate());   // 현재 달을 1 증가
+            buildCalendar();    // 달력 다시 생성
+        }
+
+        // input값이 한자리 숫자인 경우 앞에 '0' 붙혀주는 함수
+        function leftPad(value) {
+            if (value < 10) {
+                value = "0" + value;
+                return value;
+            }
+            return value;
+        }
+
+    </script>
+    <div class="wrap">
+        <!-- 네비게이션 따로 연결 -->
+        <nav></nav>
+
+        <div class="travel_recommend">
+
+            <!-- 문구 드롭다운 -->
+            <div class="center_drop">
+
+            </div>
+
+            <br/><br/>
+
+            <!-- 낮은가격순 / 높은가격순 -->
+            <ul class="filtering">
+                <li class="low_price"><a href="#">낮은가격순</a></li>
+                <li class="high_price"><a href="#">높은가격순</a></li>
+            </ul>
+            
+            <!-- 목록(세로로)으로 추천 여행지 표시1 -->
+            <div class="travel_section">
+                <!-- 목록 이미지 영역 -->
+                <div class="travel_section_img" style="background-image: url(../image/yun/img_box_1.jpg);">
+                    <!-- <img src="../image/yun/img_box_1.jpg"> -->
+                </div>
+                
+
+                <!-- 목록 설명 영역 -->
+                <div class="travel_section_info">
+                    <!-- 목록 설명 영역_제목 -->
+                    <div class="travel_section_info_title">
+                        [제주 3일] 한라산 등반
+                    </div>
+                    
+                    <!-- 목록 설명 영역_상세설명 -->
+                    <div class="travel_section_info_content">
+                        # 성판악/관음사 # 1100고지<br/>
+                        # 백록담 # 산방산온천<br/><br/>
+                        - 항공편 : 진에어 <br/>
+                        - 여행기간 : 2박3일 
+                    </div>
+
+                    <!-- 목록 설명 영역_가격 -->
+                    <div class="travel_section_info_price">
+                        가격 : 266,000 ~
+                    </div>
+
+                    <!-- 일정보기 버튼 -->
+                    <div class="calendar_btn_area">
+                        <button class="calendar_btn">일정보기</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- 일정보기 버튼 클릭 시 캘린더 표시 영역 -->
+            <div class="calendar_area">
+
+                <!-- calendar -->
+                <div class="calendar">
+                    <table class="Calendar">
+                        <thead>
+                            <tr>
+                                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                                <td colspan="5">
+                                    <span id="calYear"></span>년
+                                    <span id="calMonth"></span>월
+                                </td>
+                                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                            </tr>
+                
+                            <tr>
+                                <td>일</td>
+                                <td>월</td>
+                                <td>화</td>
+                                <td>수</td>
+                                <td>목</td>
+                                <td>금</td>
+                                <td>토</td>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                        </tbody>
+                
+                    </table>
+                </div>
+
+
+                <div class="calendar_bottom">
+                    <!-- 캘린더 설명 -->
+                    <div class="calendar_help">
+                        <h3 class="highlight">* 달력에 표시된 색상 설명</h3>
+                        <div class="calender_help_info">
+                            - 회색 : 지난 날짜<br/>
+                            - 노란색 : 현재 날짜<br/>
+                            - 파란색 : 선택한 날짜<br/>
+                        </div>
+                    </div>
+
+                    <!-- 캘린더 상세 일정 표시 -->
+                    <div class="schedule">
+                        <h3 class="highlight">* 상세일정</h3>
+                        <div class="schedule_calendar">05-16(화) 20:00 ~ 05-18(목) 19:00 2박3일</div>
+                    </div>
+
+                    <div class="reservation_btn_area">
+                        <button class="reservation_btn" onclick="location.href='reservation1.html'">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 목록(세로로)으로 추천 여행지 표시2 -->
+            <div class="travel_section">
+                <!-- 목록 이미지 영역 -->
+                <div class="travel_section_img" style="background-image: url(../image/yun/img_box_2.jpg);">
+                </div>
+                
+
+                <!-- 목록 설명 영역 -->
+                <div class="travel_section_info">
+                    <!-- 목록 설명 영역_제목 -->
+                    <div class="travel_section_info_title">
+                        [제주 3일] 식도락 여행
+                        
+                    </div>
+                    
+                    <!-- 목록 설명 영역_상세설명 -->
+                    <div class="travel_section_info_content">
+                        # 생선회/해산물<br/>
+                        # 흑돼지/말고기 코스요리<br/>
+                        # 감귤따기 체험<br/><br/>
+
+                        - 항공편 : 진에어<br/>
+                        - 여행기간 : 2박3일
+                    </div>
+
+                    <!-- 목록 설명 영역_가격 -->
+                    <div class="travel_section_info_price">
+                        가격 : 314,000 ~
+                    </div>
+
+                    <!-- 일정보기 버튼 -->
+                    <div class="calendar_btn_area">
+                        <button class="calendar_btn">일정보기</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- 일정보기 버튼 클릭 시 캘린더 표시 영역2 -->
+            <div class="calendar_area">
+                
+                <!-- calendar -->
+                <div class="calendar">
+                    <table class="Calendar">
+                        <thead>
+                            <tr>
+                                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                                <td colspan="5">
+                                    <span id="calYear"></span>년
+                                    <span id="calMonth"></span>월
+                                </td>
+                                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                            </tr>
+                
+                            <tr>
+                                <td>일</td>
+                                <td>월</td>
+                                <td>화</td>
+                                <td>수</td>
+                                <td>목</td>
+                                <td>금</td>
+                                <td>토</td>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                        </tbody>
+                
+                    </table>
+                </div>
+
+                <!-- 캘린더 상세 일정 표시 -->
+                <div class="schedule_calendar">05-16(화) 20:00 ~ 05-21(일) 19:00 4박6일</div>
+
+                <div class="reservation_btn_area">
+                    <button class="reservation_btn" onclick="location.href='reservation1.html'">자세히 보기</button>
+                </div>
+            </div>
+
+
+
+
+            
+            <!-- 목록(세로로)으로 추천 여행지 표시3 -->
+            <div class="travel_section">
+                <!-- 목록 이미지 영역 -->
+                <div class="travel_section_img" style="background-image: url(../image/yun/img_box_3.jpg);">
+                </div>
+                
+
+                <!-- 목록 설명 영역 -->
+                <div class="travel_section_info">
+                    <!-- 목록 설명 영역_제목 -->
+                    <div class="travel_section_info_title">
+                        [제주 3일] 골프 투어
+                    </div>
+                    
+                    <!-- 목록 설명 영역_상세설명 -->
+                    <div class="travel_section_info_content">
+                        #부영CC<br/>
+                        #스프링데일CC<br/>
+                        #세인트포CC<br/><br/>
+
+                        - 항공편 : 대한항공<br/>
+                        - 여행기간 : 2박3일
+                    </div>
+
+                    <!-- 목록 설명 영역_가격 -->
+                    <div class="travel_section_info_price">
+                        가격 : 1,580,000 ~
+                    </div>
+
+                    <!-- 일정보기 버튼 -->
+                    <div class="calendar_btn_area">
+                        <button class="calendar_btn">일정보기</button>
+                    </div>
+
+                    
+                </div>
+
+                
+            </div>
+
+            <!-- 일정보기 버튼 클릭 시 캘린더 표시 영역3 -->
+            <div class="calendar_area">
+                <div class="calendar">
+                    <table class="Calendar">
+                        <thead>
+                            <tr>
+                                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                                <td colspan="5">
+                                    <span id="calYear"></span>년
+                                    <span id="calMonth"></span>월
+                                </td>
+                                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                            </tr>
+                
+                            <tr>
+                                <td>일</td>
+                                <td>월</td>
+                                <td>화</td>
+                                <td>수</td>
+                                <td>목</td>
+                                <td>금</td>
+                                <td>토</td>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                        </tbody>
+                
+                    </table>
+                </div>
+
+                <!-- 캘린더 상세 일정 표시 -->
+                <div class="schedule_calendar">05-16(화) 20:00 ~ 05-21(일) 19:00 4박6일</div>
+
+                <div class="reservation_btn_area">
+                    <button class="reservation_btn" onclick="location.href='reservation1.html'">자세히 보기</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+            var btn = document.querySelector('.calendar_btn');
+            var target = document.querySelector('.calendar_area');
+
+            btn.addEventListener('click', event =>{
+                if (target.style.display === "none") {
+                    target.style.display = "block";
+                } else {
+                    target.style.display = "none";
+                }
+            });
+    </script>
+</body>
+</html>

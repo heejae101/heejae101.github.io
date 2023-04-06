@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-cBd.ttf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-eHv.ttf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-dEb.ttf');
+    font-weight: 500;
+}
+
+/* 전체적으로 가운데 90% 설정 */
+.wrap{
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'nanum';
+    /* background-color: antiquewhite; */
+}
+
+button{
+    font-family: 'nanum';
+    cursor: pointer;
+}
+
+/* 낮은 가격순 / 높은 가격순 */
+.filtering{
+    text-align: right;
+    width: 87%;
+    margin-bottom: 20px;
+}
+.filtering>li{
+    font-size: 20px;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.filtering>li:hover{
+    font-weight: 700;
+}
+
+/* == 목록(세로로)으로 추천 여행지 표시 == */
+.travel_section{
+    width: 90%;
+    margin: 10px auto;
+    /* height: 500px; */
+    display: flex;
+    padding: 15px 2%;
+    border-radius: 10px;
+    border: 1px solid rgb(78, 78, 78);
+    
+    /* background-color: rgb(216, 195, 0); */
+}
+
+.travel_section:hover{
+    box-shadow: 5px 5px 5px 5px rgb(167, 167, 167);
+}
+
+/* 여행지 목록(왼쪽) 사진부분 */
+.travel_section_img{
+    /* background-image: url(../image/yun/img_box_1.jpg); */
+    background-size: cover;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    width: 70%;
+    margin: 10px;
+    height: 350px;
+    /* flex-wrap: wrap; */
+}
+
+/* .travel_section_img>img{
+    width: 100%;
+    height: 95%;
+    margin: 10px;
+    
+} */
+
+/* -- 여행지 목록(오른쪽) 상세설명 부분 -- */
+.travel_section_info{
+    /* position: relative; */
+    width: 50%;
+    /* flex-wrap: wrap; */
+    /* background-color: rgb(255, 195, 255); */
+    
+    padding: 20px;
+}
+
+/* 목록 설명 영역_제목 */
+.travel_section_info_title{
+    
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* 목록 설명 영역_상세설명 */
+.travel_section_info_content{
+    /* position: absolute; */
+    line-height: 25px;
+    font-size: 18px;
+    color: rgb(65, 65, 65);
+    margin-bottom: 30px;
+}
+
+/* 목록 설명 영역_가격 */
+.travel_section_info_price{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+/* 일정보기 버튼 영역 */
+.calendar_btn_area{
+    bottom: 30px;
+    right: 30px;
+}
+
+/* 일정보기 버튼 */
+.calendar_btn{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* 캘린더 표시 영역 */
+.calendar_area{
+    /* text-align: center; */
+    background-color: rgb(244, 244, 244);
+    width: 90%;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    font-size: 22px;
+    font-weight: 500;
+    display: none;
+}
+
+/* -------- 캘린더 부분 시작 -------- */
+
+.calendar{
+    width: 100%;
+    /* height: 300px; */
+    /* background-color: rgb(208, 208, 255); */
+    margin: 20px auto;
+    padding-top: 40px;
+}
+
+/* 캘린더 */
+td {
+    width: 50px;
+    height: 50px;
+}
+
+.Calendar {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Calendar>thead>tr:first-child>td {
+    font-weight: bold;
+    font-family: 'nanum';
+}
+
+.Calendar>thead>tr:last-child>td {
+    /* background-color: gray; */
+    /* border-bottom: 1px solid black; */
+    color: black;
+}
+
+.pastDay {
+    background-color: lightgray;
+}
+
+.today {
+    background-color: #FFCA64;
+    cursor: pointer;
+}
+
+.futureDay {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.futureDay.choiceDay,
+.today.choiceDay {
+    background-color: #3E85EF;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* -------- 캘린더 부분 끝 -------- */
+
+.calendar_bottom{
+    display: flex;
+    flex-direction: column;
+}
+/* 캘린더 설명 */
+
+.highlight{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    line-height: 40px;
+    color: red;
+}
+
+.calendar_help>.calender_help_info{
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+/* 캘린더 상세 일정 표시 */
+
+
+.schedule_calendar{
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* 예약하기 버튼 */
+.reservation_btn_area{
+    text-align: center;
+    margin-right: 10px;
+}
+.reservation_btn{
+    width: 40%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    background-color: black;
+}
+
+.reservation_btn:hover{
+    box-shadow: 4px 4px 8px #888;
+}
+
+
+/* =========== media query (max-width: 450px), ~450 =========== */
+@media(max-width: 450px){
+    
+}
+
+
+/* =========== media query (max-width: 890px), ~890px =========== */
+@media(max-width: 890px){
+    .reservation_btn{
+        width: 90%;
+    }
+
+    .travel_section{
+        flex-direction: column;
+    }
+    .travel_section_img{
+        height: 300px;
+        width: 95%;
+    }
+
+    .travel_section_info{
+        width: 90%;
+        text-align: center;
+    }
+    
+}

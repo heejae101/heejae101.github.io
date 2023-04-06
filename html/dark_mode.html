@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Webpage</title>
+    <style>
+      body {
+        background-color: #fff; /* set light mode background color */
+        color: #000; /* set light mode text color */
+      }
+      body.dark-mode {
+        background-color: #333; /* set dark mode background color */
+        color: #fff; /* set dark mode text color */
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my webpage</h1>
+    <p>This is some text on my webpage.</p>
+    <label class="switch">
+      <input type="checkbox" onchange="toggleDarkMode()" id="dark-mode-switch">
+      <span class="slider"></span>
+    </label>
+    <script>
+      function toggleDarkMode() {
+        const body = document.body;
+        const darkModeSwitch = document.getElementById('dark-mode-switch');
+        body.classList.toggle('dark-mode');
+        darkModeSwitch.checked ? localStorage.setItem('dark-mode', true) : localStorage.removeItem('dark-mode');
+      }
+      if (localStorage.getItem('dark-mode')) {
+        document.body.classList.add('dark-mode');
+        document.getElementById('dark-mode-switch').checked = true;
+      }
+    </script>
+  </body>
+</html>

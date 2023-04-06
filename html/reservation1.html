@@ -1,0 +1,253 @@
+<!-- 참고페이지: https://www.kyowontour.com/goods/goodsEventDetail?tourCode=JHP007230531LJ01&menuCode=M010702 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" href="../image/favicon.ico">
+    <!-- css -->
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/reservation1.css" rel="stylesheet">
+    <link href="../css/yun.css" rel="stylesheet">
+    <title>여행하다</title>
+</head>
+
+<body>
+    <!-- 여행지 예약화면 페이지 -->
+    <!-- nav -->
+
+
+
+
+    <div class="wrap">
+        <div class="wrap_l">
+            <!-- 여행지 상품 제목(이름) -->
+            <div class="title_reservation1">
+                [북해도 4일]
+            </div>
+
+            <hr />
+
+            <!-- 여행지 상품 상단 -->
+            <div class="reservation1_top">
+
+                <!-- 여행지 상품 상단_왼쪽 -->
+                <div class="reservation1_top_l">
+
+                    <!-- 여행지 상품 대표이미지 -->
+                    <div class="title_img" style="background-image: url(../image/yun/img_box_hottkaido.jpg);">
+                    </div>
+
+                    <!-- <div class="reservation1_img">
+                        <img src="../image/yun/img_box_kyoto.jpg" class="title_img"/>
+                    </div> -->
+
+                    <!-- 여행지 상품 가격 상세설명 [테이블] -->
+
+                    <table class="detail_price_table">
+                        <tr>
+                            <th>구분</th>
+                            <th>성인</th>
+                            <th>아동</th>
+                            <th>유아</th>
+                        </tr>
+
+                        <tr>
+                            <th>상품가격</th>
+                            <td>899,000</td>
+                            <td>899,000</td>
+                            <td>무료</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="reservation1_bottom_area">
+
+                <!-- 여행지 상품 하단 -->
+                <div class="reservation1_bottom_area">
+                    <div class="reservation1_bottom">
+                        <ul>
+                            <li><a href="#">상품</a></li>
+                            <li><a href="#">여행일정</a></li>
+                            <li><a href="#">예약안내사항</a></li>
+                            <li><a href="#">상품문의</a></li>
+                            <li><a href="#">약관정보</a></li>
+                            <li><a href="#">해외안전정보</a></li>
+                            <li><a href="#">기타</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 여행지 상품 상세정보 -->
+                    <div class="reservation1_bottom_info">
+                        <!-- 여행 일정표 -->
+
+                        <!-- 여행지 title -->
+                        <div class="title_reservation1">여행일정</div>
+
+                        <h1>* 1일차 - 도야호수</h1>
+                        <!-- 여행지 사진 -->
+                        <div class="reservation1_bottom_img" style="background-image: url(../image/yun/doya.jpg);">
+                        </div>
+
+
+                        <h1>* 오타루</h1>
+                        <div class="reservation1_bottom_img" style="background-image: url(../image/yun/otaru.jpg);">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="wrap_r">
+
+            <!-- 여행지 상품 상단 오른쪽 고정 nav -->
+            <!-- 여행지 상품 상단_오른쪽, 상품가격 표시 -->
+            <div class="reservation1_top_r">
+
+                <!-- 코드, 일정 표시 -->
+                <div class="code_plan">
+                    <span>코드 : GFGS235D</span><br /><br />
+                    <span>일정 : 2박 3일</span>
+                </div>
+
+
+                <!-- 인원수 설정 -->
+                <div class="age">성인</div>
+                <div class="members">
+
+                    <div class="age_price">899000원</div>
+                    <!-- 인원수 +/- 버튼 -->
+                    <!-- adult -->
+                    <div class="plus_min_btn">
+                        <span class="minus" onclick="changeValue(this, 'adult', -1, -899000)">-</span>
+                        <span class="adult">0</span>
+                        <span class="plus" onclick="changeValue(this, 'adult', +1, 899000)">+</span>
+                    </div>
+                </div>
+
+
+
+                <div class="age">아동</div>
+                <div class="members">
+                    <div class="age_price">899000원</div>
+                    <!-- 인원수 +/- 버튼 -->
+                    <!-- child -->
+                    <div class="plus_min_btn">
+                        <span class="minus" onclick="changeValue(this, 'child', -1, -899000)">-</span>
+                        <span class="child">0</span>
+                        <span class="plus" onclick="changeValue(this, 'child', +1, 899000)">+</span>
+                    </div>
+
+                </div>
+
+
+                <div class="age toddler_a">유아</div>
+                <div class="age_year toddler_a">(2021.05.12~2023.05.11)</div>
+                <div class="members">
+
+                    <!-- toddler 나이 표시 영역 -->
+                    <div class="toddler_area">
+                        <div class="toddler_year_area">
+
+
+                        </div>
+                        <div class="age_price">무료</div>
+                    </div>
+                    <!-- 인원수 +/- 버튼 -->
+                    <!-- toddler -->
+                    <div class="plus_min_btn">
+                        <span class="minus" onclick="changeValue(this, 'toddler', -1, 0)">-</span>
+                        <span class="toddler">0</span>
+                        <span class="plus" onclick="changeValue(this, 'toddler', +1, 0)">+</span>
+                    </div>
+                </div>
+                <hr />
+
+                <!-- 최종 합계 금액 -->
+                <div class="total_price">
+                    <div class="total_price_text">최종합계금액</div>
+                    <div class="total_price_number">0</div>
+                </div>
+
+                <!-- 예약하기 버튼 -->
+                <div class="reservation_btn_area">
+                    <button class="reservation_btn" onclick="location.href='reservation2.html'">예약하기</button>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+
+
+
+
+    <!-- 모바일 예약하기 버튼 -->
+    <button class="reservation_btn_m" onclick="location.href='reservation2.html'">예약하기</button>
+
+
+    <!-- footer -->
+
+
+
+    <script>
+        // function changeValue(btn, target, value, won){
+        //     const total_price = document.querySelector('.total_price_number');
+        //     let current_total_price = parseInt(total_price.innerText);
+
+        //     const num = document.querySelector(`.${target}`);
+        //     let currentValue = parseInt(num.innerText);
+        //     currentValue += value;
+        //     total_price += won;
+        //     if (currentValue < 0){
+        //         currentValue = 0;
+        //     };
+        //     num.innerText = currentValue;
+        //     total_price.innerText = currentValue;
+        // }
+
+        function changeValue(btn, target, value, won) {
+            // 총 가격을 표시하는 엘리먼트를 가져온다
+            const total_price = document.querySelector('.total_price_number');
+            // 현재 총 가격을 정수로 파싱한다
+            let current_total_price = parseInt(total_price.innerText);
+
+            // 수량을 표시하는 엘리먼트를 가져온다
+            const num = document.querySelector(`.${target}`);
+            // console.log(`.${target}`);
+            // 현재 수량을 정수로 파싱한다
+            let currentValue = parseInt(num.innerText);
+
+            if (currentValue === 0 && value < 0) {
+                btn.disabled = true;
+            } else {
+                currentValue += value;
+                // 지정된 가격을 총 가격에 더한다
+                current_total_price += won;
+
+                // 만약 새로운 수량이 0보다 작으면 0으로 설정한다
+                if (currentValue < 0) {
+                    currentValue = 0;
+                };
+            }
+
+            // 수량 엘리먼트의 텍스트 콘텐츠를 새 값으로 업데이트한다
+            num.innerText = currentValue;
+            // 총 가격 엘리먼트의 텍스트 콘텐츠를 새 값으로 업데이트한다
+            total_price.innerText = current_total_price;
+        }
+
+    </script>
+</body>
+
+</html>

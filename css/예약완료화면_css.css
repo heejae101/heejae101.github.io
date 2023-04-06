@@ -1,0 +1,28 @@
+div.success_sign_in_logo{
+  display:flex;
+  justify-content:center;
+}
+
+div.success_sign_in_logo img{
+  width:200px;
+  height:200px;
+}
+
+div.success_sign_in_message1{
+  margin:50px;
+  text-align:center;
+}
+
+div.success_sign_in_message1 span.success_sign_in_message1_text{
+  display:block;
+  font-size:1.5rem;
+}
+
+div.success_sign_in_message2{
+  font-size:1.8rem;
+  text-align:center;
+}
+
+span#success_sign_in_count .success_sign_in_message2_text{
+  font-weight:800;
+}

@@ -1,0 +1,660 @@
+@font-face {
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-cBd.ttf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-eHv.ttf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-dEb.ttf');
+    font-weight: 500;
+}
+
+/* ========================== top_nav ============================ */
+em,span,a{
+    font-family: 'nanum';
+    font-weight: 400;
+}
+
+.font_black{
+    color:black;
+}
+
+.font_white{
+    color: white;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+}
+/* 아이콘, nav 지역 설정 */
+.top_text_area{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: relative;
+    z-index: 999;
+    border-bottom: 1px solid black;
+}
+
+/* 아이콘 크기 설정 */
+.bi-list, .bi-arrow-right-short{
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+/* 아이콘 위치 설정 */
+.top_nav_icon_area{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.icon{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.top_nav_icon_area>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+
+/* top nav 가로 배치 설정 */
+div.top_nav{
+    display: inline-block;
+}
+
+/* 국내 여행, 해외 여행, 여행 가이드 부분 */
+div.top_nav_menu_area{
+    position: absolute;
+    top: 20px;
+    left: 180px;
+}
+
+div.top_nav_menu_area>ul{
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.top_nav_menu_area li{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+/* login_nav 부분 설정  */
+div.login_nav{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+div.login_nav>ul{
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.login_nav li{
+    display: inline-block;
+    text-align: center;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+
+/* ========================== top_nav 끝 ============================ */
+
+
+.wrap{
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'nanum';
+    /* background-color: antiquewhite; */
+}
+
+.wrap>h1{
+    font-size: 40px;
+    text-align: center;
+    margin: 50px 0 100px 0;
+}
+
+
+/* 상품예약 영역 */
+.reservation2{
+    margin: 0 auto;
+}
+
+/* 상품안내 title */
+.reservation2>h2{
+    font-size: 32px;
+    margin: 0 0 50px 60px;
+}
+
+/* 상품안내 */
+.kiosk_reservation2{
+    display: flex;
+    width: 90%;
+    /* height: 200px; */
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* background-color: blue; */
+}
+
+/* .kiosk_reservation2_img{
+    background-size: cover;
+    width: 100%;
+    margin: 10px;
+    height: 600px;
+
+} */
+
+.kiosk_reservation2_img{
+    width: 300px;
+    height: 300px;
+}
+
+/* 상품 상세설명 */
+.kiosk_reservation2_info{
+    /* position: absolute; */
+    width: 70%;
+    margin-left: 10px;
+    padding: 20px;
+    /* background-color: rgb(255, 197, 197); */
+}
+
+/* 상품 상세설명-> 상품코드 */
+/* .reservation2 .kiosk_reservation2_info>.code{
+    margin-bottom: 30px;
+} */
+
+/* 상품 상세설명 텍스트 */
+.info_text{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+
+/* 약관동의 부분 */
+
+.terms_reservation2>h2{
+    font-size: 32px;
+    margin: 120px 60px 50px 60px ;
+}
+
+.terms_reservation2{
+    margin-bottom: 30px;
+}
+.terms_reservation2_check{
+    user-select: none;
+    font-size: 23px;
+    padding-top: 25px;
+    padding-left: 10px;
+}
+
+.terms_reservation2_check>input{
+    margin-bottom: 20px;
+}
+
+.terms_reservation2_check span{
+    font-weight: 500;
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* .terms_reservation2_check>hr{
+    height: 1px;
+    background-color: #888;
+} */
+/* ----- 체크박스 부분 ------ */
+input.check_list_terms{
+    font-size:20px;
+  }
+  
+  /* input.check_list_entitle{
+    width:18px;
+    height:18px;
+  } */
+  
+  .check_list_terms, .check_list_entitle{
+    margin-right: 7px;
+  }
+
+
+  span.check_list_entitle_txt{
+    font-size:23px;
+    margin-left:2px;
+  }
+  
+  div.check_list li{
+    display:block;
+  }
+  
+  div.check_list li>span.essential_red{
+    color:red;
+  }
+  
+  div.check_list span.check_list_text{
+    font-size:0.8rem;
+    font-weight:600;
+  }
+
+.terms_reservation2_check{
+    width: 90%;
+    /* height: 300px; */
+    /* background-color: rgb(224, 254, 255); */
+    margin: 0 auto;
+    padding-bottom: 40px;
+
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+}
+
+
+/* 전체동의 체크박스 부분 */
+.selectAll{
+    font-weight: 500;
+}
+
+
+
+/* 예약정보 부분 */
+.info1_reservation2>h2{
+    font-size: 30px;
+    margin: 120px 60px 50px 60px ;
+}
+
+.info1_reservation2{
+    margin-bottom: 30px;
+}
+.info1_reservation2_detail{
+    margin: 0 auto;
+    width: 90%;
+    /* background-color: rgb(243, 255, 226); */
+}
+
+
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 20px;
+    line-height: 25px;
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    /* background-color: #e7e7e7; */
+}
+
+th,td{
+    padding: 10px;
+    border-bottom: 1px solid #b4b4b4;
+    /* border-bottom: 1px solid #b4b4b4; */
+}
+
+th{
+    font-weight: 500;
+    border-right: 1px solid #b4b4b4;
+}
+
+/* 강조 글자 */
+.redc{
+    color: red;
+}
+
+
+
+
+/* 예약자정보 부분 */
+/* .info2_reservation2{
+
+} */
+
+/* 예약자정보 title */
+.info2_reservation2>h2{
+    font-size: 30px;
+    margin: 120px 60px 50px 60px ;
+}
+
+.info2_reservation2_detail{
+    margin: 0 auto;
+    width: 90%;
+    /* height: 300px; */
+    /* background-color: rgb(213, 255, 245); */
+}
+
+
+.info2_reservation2_detail table td:first-child{
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 40px;
+    /* align-items: center; */
+}
+
+input{
+    height: 30px;
+    font-size: 20px;
+}
+
+.radio_area{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+/* 여행자 정보 부분 */
+.traveler_information>h2{
+    font-size: 30px;
+    margin: 120px 60px 50px 60px ;
+}
+
+.traveler_information_info{
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    font-size: 20px;
+    width: 85%;
+    /* height: 150px; */
+    margin: 0 auto;
+    padding: 40px 0 50px 0;
+    /* background-color: rgb(255, 255, 0); */
+}
+
+.traveler_information_info>ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+
+.traveler_information_info li>span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.age{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+/* 최종합계 금액 */
+/* .total_price_text{
+    display: block;
+} */
+
+ul>li{
+    padding-top: 20px;
+    /* border-right: 1px solid black; */
+}
+
+/* 인원수 +/- 버튼 */
+.plus_min_btn{
+    height: 40px;
+    width: 130px;
+    font-size: 20px;
+    border: 2px solid rgba(145, 145, 145, 0.2);
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.plus_min_btn>span{
+    width: 100%;
+    text-align: center;
+}
+
+.age_price{
+    font-weight: 500;
+}
+
+
+.total_price{
+    margin-top: 30px;
+}
+
+.total_price_text{
+    margin-bottom: 20px;
+}
+
+.total_price_number{
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 기타 요청사항 부분 */
+/* .etc_reservation2{
+} */
+.etc_reservation2>h2{
+    font-size: 30px;
+    margin: 120px 60px 50px 60px ;
+}
+
+textarea{
+    width: 90%;
+    height: 150px;
+    margin-left: 60px;
+    font-family: 'nanum';
+    font-weight: 400;
+    font-size: 20px;
+}
+/* .etc_reservation2_input{
+    width: 90%;
+    height: 300px;
+    margin-left: 50px;
+} */
+
+
+/* 예약하기/취소하기 버튼 */
+.btn_area{
+    width: 100%;
+    
+    margin: 50px auto;
+}
+
+.btn_reservation2{
+    width: 49%;
+    height: 60px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+
+.btn_cancle{
+    width: 49%;
+    height: 60px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+}
+
+
+button{
+    font-family: 'nanum';
+    cursor: pointer;
+}
+
+button:hover{
+    box-shadow: 4px 4px 8px #888;
+}
+
+
+
+/* ======================== footer ========================= */
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+.footer_top{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.footer_top>span{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.footer_top>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+.footer_bottom {
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_bottom ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_bottom li{
+    display: inline-block;
+    justify-content: center;
+    padding: 20px;
+}
+
+.footer_top {
+    padding: 20px 0 20px 0;
+    width: 100%;
+    height: 50px;
+}
+
+.footer_sns{
+    padding-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_sns>.icon_area{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_text_area{
+    margin-top: 10px;
+    text-align: center;
+}
+/* ======================== footer end ========================= */
+
+
+/* =========== media query (max-width: 450px), ~450 =========== */
+@media(max-width: 450px){
+
+    .traveler_information_info>ul>li{
+        margin-left: 0;
+
+    }
+
+
+}
+
+
+/* =========== media query (max-width: 890px), ~890px =========== */
+@media(max-width: 890px){
+    .kiosk_reservation2{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .kiosk_reservation2_img{
+        margin: 0 auto;
+        width: 90%;
+        height: 350px;
+    }
+
+    .kiosk_reservation2_info>.info_text,.code{
+        margin-left: 20px;
+    }
+
+    /* 이메일 input 크기 반응형에 맞추기 */
+    #email_first{
+        width: 40%;
+    }
+
+    #email_second{
+        width: 40%;
+    }
+
+    .age{
+        font-size: 25px;
+    }
+
+    .traveler_information_info>ul{
+        display: flex;
+        flex-direction: column;
+        
+        /* margin-left: 50px; */
+        
+
+    }
+
+    .traveler_information_info>ul>li{
+        margin: auto;
+        margin-bottom: 40px;
+        font-size: 25px;
+        width: 50%;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgb(203, 203, 203);
+    }
+
+    .traveler_information_info>ul>li:last-child{
+        border-bottom: 0;
+    }
+
+    textarea{
+        margin-left: 20px;
+    }
+    /* 예약하기/취소하기 버튼 */
+    .btn_reservation2,.btn_cancle{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    
+}

@@ -1,0 +1,35 @@
+/*----------------------------mediaquery : mobile(max-width:720px)---------------------------------*/
+  @media all and (max-width:870px){
+    
+    div.sign_in_logo h1{
+      font-size:2rem;
+    }
+
+    div.progress ul{
+      display:block;
+    }
+    
+    div.progress li{
+      display:inline-block;
+      font-size:1.5rem;
+      font-weight:800;
+      margin:0 2.29885%;
+    }
+
+    div.success_sign_in_logo img{
+      width:22.988506%;
+      height:22.988506%;
+    }
+
+    div.success_sign_in_message1{
+      margin:5.747126%;
+    }
+
+    div.success_sign_in_message1 span.success_sign_in_message1_text{
+      font-size:1rem;
+    }
+
+    div.success_sign_in_message2{
+      font-size:1.2rem;
+    }
+  }

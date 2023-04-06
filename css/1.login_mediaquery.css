@@ -1,0 +1,47 @@
+@media all and (max-width:870px){
+
+  div.login_home_icon{ 
+    font-size:2rem;  
+  } 
+
+  div.login_input{
+    margin:0 1.149425%;  
+  }
+
+  div.login_input label{
+    margin-left:20px;
+  }
+
+  div.login_input input.login{
+    width:400px;
+    margin-left:20px;
+  }
+
+  div.login_input input.login_id_check_box{
+    margin:10px 0px 10px 20px;
+  }
+
+  button.login_btn1{
+    width:400px;
+  }
+
+  button.login_oauth_btn_naver, .login_oauth_btn_naver{
+    padding:10px 38px;
+  }
+
+  div.login_border{
+    display:flex;
+    justify-content:center;
+  }
+
+  div.login_border::before{ 
+    flex-grow:0.4;
+    margin:0 10px;
+  }
+  
+  div.login_border::after{
+    flex-grow:0.4;
+    margin:0 10px;
+  }
+  
+}

@@ -1,0 +1,39 @@
+@media all and (max-width:870px){
+    
+  div.sign_in_logo h1{
+    font-size:2rem;
+  }
+
+  div.progress ul{
+    display:block;
+  }
+  
+  div.progress li{
+    display:inline-block;
+    font-size:1.5rem;
+    font-weight:800;
+    margin:0 2.29885%;
+  }
+
+  div.help_text{
+    text-align:center;
+  }
+  
+  div.help_text span{
+    font-size:1rem;
+  }
+
+  div.check_list{
+    width:82.758621%;
+    margin-left:90px;
+  }
+
+  div.check_list_container{
+    width:82.758621%;
+  }
+
+  div.check_list span.check_list_text{
+    display:block;
+  }
+
+}

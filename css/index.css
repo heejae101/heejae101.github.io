@@ -1,0 +1,994 @@
+@font-face{
+    font-family: 'nanum';
+    src: url(../font/NanumSquareNeo-cBd.ttf);
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url(../font/NanumSquareNeo-eHv.ttf);
+    font-weight: 700;
+}
+
+em,span,a{
+    font-family: 'nanum';
+    font-weight: 400;
+}
+
+.border_text{
+    font-family: 'nanum';
+    font-weight: 700;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+}
+
+.open{
+    z-index: 9999;
+}
+
+.customer-service {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.blurEffect {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+/* 폰트 화이트 */
+.font_white {
+    color: white;
+}
+/* 
+video::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+  } */
+.bi-arrow-right-short{
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+/* ======================== slider ====================== */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* background: #fff; */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+  nav .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+    margin-right: 0;
+  }
+  
+  .logo .menu-icon {
+    color: #333;
+    font-size: 24px;
+    margin-left: 14px;
+    cursor: pointer;
+  }
+  .logo .logo-name {
+    color: skyblue;
+    font-size: 22px;
+    font-weight: 700;
+    padding-left: 10px;
+  }
+
+  .logo>img{
+    width: 30px;
+    height: 30px;
+  }
+
+  nav .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 9999;
+  }
+
+  nav.open .sidebar {
+    right: 0;
+  }
+
+  .sidebar .sidebar-content {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+  }
+  .sidebar-content .list {
+    list-style: none;
+  }
+  .list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .lists .nav-link:hover {
+    background-color: #4070f4;
+  }
+  .nav-link .icon {
+    margin-right: 14px;
+    font-size: 20px;
+    color: #707070;
+  }
+  .nav-link .link {
+    font-size: 16px;
+    color: #707070;
+    font-weight: 400;
+  }
+  .lists .nav-link:hover .icon,
+  .lists .nav-link:hover .link {
+    color: #fff;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  nav.open ~ .overlay {
+    opacity: 1;
+    right: 260px;
+    pointer-events: auto;
+  }
+/* ======================== slider end ====================== */
+
+/* ========================== top ========================== */
+/* top section 설정
+   배경 설정
+*/
+.top_section{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* background-image: url('/image/main_banner/first_banner.jpg');
+    background-repeat : no-repeat;
+    background-size : cover;
+    max-width: 100%; */
+}
+
+.top_section>video{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 아이콘, nav 지역 설정 */
+.top_text_area{
+    width: 100%;
+    height: 100px;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    /* border-bottom: 1px solid ; */
+}
+
+.top_nav_icon_area, .top_nav_menu_area{
+    display: inline-block;
+}
+
+/* 아이콘 크기 설정 */
+.bi-list{
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.icon{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.top_nav_icon_area>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+
+/* top nav 가로 배치 설정 */
+div.top_nav{
+    display: inline-block;
+    /* width: 460px; */
+}
+
+div.top_nav_menu_area>ul{
+    width: 285px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.top_nav_menu_area li{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+div.login_nav>ul{
+    width: 380px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.login_nav li{
+    display: inline-block;
+    text-align: center;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+
+.list_nav{
+    display: none;
+}
+
+/* 고객센터부분 */
+div.customer_service{
+    width: 500px;
+    height: 65;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* 스크롤 다운 버튼 */
+.down_btn{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.down_btn_items {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.down_btn_items>span{
+    font-size: 27px;
+}
+
+.down_btn_icon>.bi-chevron-double-down{
+    animation: motion 1s /* 속도 */
+    linear 1s   /* 처음부터 끝까지 일정 속도로 진행 */
+    infinite alternate; /* 무한 반복 */
+}
+
+@keyframes motion {
+	0% {margin-top: 0px;} /* 처음 위치 */
+	100% {margin-top: 20px;} /* 마지막 위치 */
+}
+
+div.down_btn hr{
+    width: 300px;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 12px;
+    bottom: 0;
+}
+
+
+/* ======================= center_drop ================== */
+.center_drop{
+    padding-top: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+}
+
+em,.sBtn-text{
+    font-size: 27px;
+}
+
+.text_area{
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.text_area>span, .select-menu{
+    display: inline-block;
+}
+
+.text_area>span{
+    display: flex;
+    width:300px;
+}
+
+.text_area>em{
+    padding-top: 15px;
+}
+
+.text_area>span>em{
+    padding-top: 15px;
+}
+
+.select-menu{
+    width: 220px;
+    height: 50px;
+}
+
+.select-menu .select-btn{
+    display: flex;
+    width: 240px;
+    height: 50px;
+    font-size: 18px;
+    /* border-radius: 8px; */
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+    /* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
+}
+
+.select-btn svg{
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.active .select-btn svg{
+    transform: rotate(-180deg);
+}
+
+.options{
+    z-index: 1;
+}
+
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.select-menu.active .options{
+    display: block;
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.options .option:hover{
+    background: #f2f2f2;            
+}
+
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.options .option:hover{
+    font-weight: 600;
+    background: #f2f2f2;
+}
+
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+
+.text_area2{
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.drop_down_btn{
+    /* padding-top: 30px; */
+    width: 100%;
+    height: 75px;
+}
+.btn-type-round{
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 1.2;
+    text-decoration: none;
+    min-height: 50px;
+    background: black;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.front_span{
+    display: flex;
+    width: 300px;
+}
+
+.front_span em{
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.back_span{
+    display: flex;
+    width: 250px;
+}
+
+.text_area2>em{
+    padding-top: 15px;
+}
+/* ======================== center_drop end ======================== */
+
+/* ========================== top end ========================== */
+
+
+
+
+/* ========================== middle ========================== */
+
+/* middle section 크기 설정 */
+.middle_section{
+    /* margin-top: 100px; */
+    width: 100%;
+    height: 900px;
+    background-color: #f2f2f2;
+}
+
+.text_popular{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 100px 0px 100px 0px;
+}
+
+.text_1{
+    letter-spacing: -3px;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 50px;
+    font-weight: 700px;
+}
+
+.pc_blind{
+    display: none;
+}
+
+.slider_popular{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.slider_left{
+    position: absolute;
+    top:50%;
+    left: 20px;
+
+}
+
+.slider_right{
+    position: absolute;
+    top:50%;
+    right: 20px;
+}
+
+.bxslider>li{
+    width: 350px;
+    height: 480px;
+}
+
+.slider_popular a,.img_item{
+    width: 100%;
+    height: 100%;
+}
+
+.slider_popular .img_item{
+    position: relative;
+    border-radius: 12px;
+}
+
+.slider_popular .item_info{
+    font-size: 22px;
+    line-height: 1.4em;
+    max-height: 2.8em;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.slider_popular .content{
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+.slider_popular .cont{
+    font-size: 42px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'nanum';
+    font-weight: 700;
+}
+
+.slider_popular .rank{
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    z-index: 99;
+}
+
+.rank>span{
+    font-size: 20px;
+    letter-spacing:1px;
+}
+
+/* ========================== middle end ========================== */
+
+
+
+
+/* ========================== guide section ========================== */
+
+.guide_section{
+    width: 100%;
+    height: 700px;
+    text-align: center;
+}
+
+.guide_text{
+    width: 100%;
+    height: 50px;
+    padding-top: 100px;
+}
+
+.guide_h1{
+    font-size: 50px;
+    letter-spacing: -3px;
+}
+
+.btn_more{
+    width: 75px;
+    height: 25px;
+    position: absolute;
+}
+
+
+.guide_youtube_video_area{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    
+}
+
+.guide_youtube_video_area>.more_btn{
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.more_btn>a{
+    padding-bottom: 20px;
+    color: black;
+}
+
+/* .more_btn::after{
+    content: '';
+    display: inline-block;
+    width: 37px;
+    height: 20px;
+    background: url(../images/icon/ico_next_02.png) no-repeat;
+    vertical-align: -2px;
+    margin-left: 20px;
+} */
+
+.slider5{
+    box-shadow: none;
+}
+
+div.slide img{
+    border-radius: 12px;
+}
+
+div.slide span{
+    padding-top: 10px;
+    font-size: 22px;
+    height: 25px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.bx-wrapper{
+    margin-left: 30px;
+    margin-right: 30px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+
+.left_arrow_img,.right_arrow_img{
+    width: 40px;
+    height: 40px;
+    fill:black;
+}
+
+.left_arrow_img:hover,.right_arrow_img:hover{
+    cursor: pointer;
+}
+
+.left_arrow_area{
+    width: 40px;
+    height: 40px;
+    z-index: 200;
+    position: absolute;
+    left: 0;
+    top: 45%;
+}
+
+.right_arrow_area{
+    width: 40px;
+    height: 40px;
+    z-index: 200;
+    position: absolute;
+    right: 0;
+    top: 45%;
+}
+
+/* ========================== guide section end ========================== */
+
+
+
+
+/* ========================== footer ========================== */
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+.footer_top{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.footer_top>span{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.footer_top>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+.footer_bottom {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer_bottom ul{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.footer_bottom li{
+    display: inline-block;
+    padding: 20px;
+}
+
+.footer_top {
+    padding: 20px 0 20px 0;
+    width: 100%;
+    height: 50px;
+}
+
+.footer_sns{
+    padding-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_sns>.icon_area{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_text_area{
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ========================== footer end ========================== */
+
+
+@media (max-width: 450px){
+
+    .top_nav_icon_area span{
+        font-size: 1.5rem;
+    }
+
+    .center_drop{
+        margin-top: 100px;
+        height: 500px;
+        padding-top: 0px;
+        align-items: center;
+    }
+
+    .text_area{
+        height: 100px;
+    }
+
+    .text_area2{
+        height: 150px;
+    }
+
+    .btn-type-round{
+        margin-top: 70px;
+    }
+    
+}
+
+
+@media (max-width: 890px){
+    
+    .top_text_area{
+        width: 90%;
+        /* background-color: #f2f2f2;
+        padding: 20px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        transition: top 0.3s ease-in-out; */
+    }
+    /* 탑 아이콘 부분  */
+    .top_nav_icon_area span{
+        font-size: 1.5rem;
+    }
+
+    .top_nav_icon_area img{
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 도움말 출력 */
+    .customer-service{
+        display: none;
+    }
+    
+    /* 네비  */
+    .top_nav_menu_area,.login_nav{
+        display: none;
+    }
+
+    .list_nav{
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+
+    .list_nav svg{
+        width: 30px;
+        height: 30px;
+    }
+    /* ================= top_nav end ================= */
+
+    /* ================= center_drop =================  */
+
+    .text_area em{
+        font-size: 1.5rem;
+    }
+
+    .select-menu>.select-btn{
+        width: 100%;
+    }
+
+    .select-btn>span{
+        font-size: 1.5rem;
+    }
+
+    .text_area2 em{
+        font-size: 1.5rem;
+    }
+    .btn-type-round{
+        width: 100%;
+        height: 40px;
+        margin-top: 20px;
+    }
+    
+    .back_span{
+        width: 220px;
+    }
+
+    /* ================= center_drop end=================  */
+
+    /* customer-service */
+    .customer-service{
+        display: none;
+    }
+
+    .down_btn{
+        /* margin-top: 100px; */
+    }
+
+    .down_btn span{
+        font-size: 1.5rem;
+    }
+
+    .middle_section{
+        height: 600px;
+    }
+
+    .guide_section{
+        height: 500px;
+    }
+
+    .text_popular{
+        text-align: left;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 20px;
+    }
+
+    .text_popular>span{
+        font-size: 2.5rem;
+    }
+
+    .pc_blind{
+        display: block;
+    }
+
+    .slider_popular{
+        width: 100%;
+        height: 300px;
+    }
+    
+    .bxslider li {
+        width: 200px;
+        height: 320px;
+      }
+
+    .bx-viewport{
+        height: 100%;
+    }
+
+    .item_info>.tit{
+        font-size: 1rem;
+        z-index: 999;
+    }
+
+    .cont>.aside{
+        font-size: 2rem;
+    }
+
+    .guide_text{
+        width: 100%;
+        height: 100px;
+        text-align: left;
+        padding-top: 50px;
+        padding-left: 20px;
+    }
+
+    .guide_text>span{
+        font-size: 2.5rem;
+    }
+
+    .guide_youtube_video_area{
+        height: 300px;
+    }
+
+    /* ==============footer============== */
+    .footer_top span{
+        font-size: 1.5rem;
+    }
+
+    .footer_top img{
+        width: 30px;
+        height: 30px;
+    }
+
+}

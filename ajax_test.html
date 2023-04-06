@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+
+    <!-- 아이콘 -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+
+    <!-- 리셋 시트 -->
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+
+    <!-- 스타일 시트 -->
+    <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header data-include="./html/top_nav.html"></header>
+    <h1>TEST</h1>
+    <footer data-include="./html/footer.html"></footer>
+
+    <script>
+      function includeHTML(callback){
+        let z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("data-include");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("data-include");
+                includeHTML(callback);
+              }//if
+            }//onreadystatechange
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            if (this.readyState != 4) return;
+          }//if - file
+        }//for
+        if (callback) callback();
+      }//includeHTML
+
+      function findMenuBtns() {
+        const navBar = document.querySelector("nav");
+        const menuBtns = document.querySelectorAll(".menu-icon");
+        menuBtns.forEach((menuBtn) => {
+          menuBtn.addEventListener("click", () => {
+            console.log('click');
+            navBar.classList.toggle("open");
+          });
+        });
+      }
+
+      /* ✨ 실행 */
+      document.addEventListener('DOMContentLoaded',()=>{
+        includeHTML(findMenuBtns);
+      });
+    </script>
+  </body>
+</html>

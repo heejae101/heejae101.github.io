@@ -1,0 +1,52 @@
+/*------------------------------adjust font-------------------------------------*/  
+  @font-face {
+    font-family:'nanum';
+    src: url('../font/NanumSquareNeo-cBd.ttf');
+    font-weight: 400;
+  }
+
+  @font-face{
+    font-family:'nanum';
+    src: url('../font/NanumSquareNeo-eHv.ttf');
+    font-weight: 700;
+  }
+/*-------------------------login default css-----------------------------------*/
+  ul{
+    padding-left:0;   /* remove default margin */
+  }
+
+  li{
+    list-style: none;  
+  }
+
+  a{
+    color:#000000;
+    text-decoration:none;
+  }
+
+  a:hover{
+    cursor:pointer;
+  }
+
+  button{
+    border:none;
+    cursor:pointer;
+  }
+
+  button:hover{
+    box-shadow:2px 2px 5px #ABA9A9;
+  }
+
+  img:hover{
+    box-shadow:2px 2px 5px #ABA9A9;
+    border-radius:5px;
+  }
+
+/*-------------------------------entitle container------------------------*/
+  div#wrap{
+    display:flex;
+    flex-flow:row wrap;
+    width:100%;
+    margin:0 auto;
+    font-family:"nanum";
+  }

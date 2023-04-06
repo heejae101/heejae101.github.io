@@ -1,0 +1,48 @@
+@media all and (max-width:870px){
+
+    div.sign_in_logo h1{
+      font-size:2rem;
+    }
+
+    div.progress ul{
+      display:block;
+    }
+
+    div.progress li{
+      display:inline-block;
+      font-size:1.5rem;
+      font-weight:800;
+      margin:0 2.29885%;
+    }
+
+    div.help_text{
+      margin:20px 3.448276%;
+      text-align:left;
+    }
+
+    div.help_text span{
+      display:block;
+      font-size:1.3rem;
+    }
+
+    div.help_text span.help_text2{
+      margin-left:2.5%;
+    }
+
+    div.phone_verification button.phone_verification_btn{
+      width:57.471264%;
+      padding:10px 2.777778%;
+    }
+
+    div.phone_verification_btn img{
+      width:2.298851%;
+      margin-right:1.149425%;
+    }
+
+    div.phone_verification_text{
+      margin:20px 3.448276%;
+    }
+    div.phone_verification_text span{
+     display:block;
+    }
+  }

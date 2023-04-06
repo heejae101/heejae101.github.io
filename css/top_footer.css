@@ -1,0 +1,332 @@
+.open{
+    z-index: 9999;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* background: #fff; */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+  nav .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+    margin-right: 0;
+  }
+  
+  .logo .menu-icon {
+    color: #333;
+    font-size: 24px;
+    margin-left: 14px;
+    cursor: pointer;
+  }
+  .logo .logo-name {
+    color: skyblue;
+    font-size: 22px;
+    font-weight: 700;
+    padding-left: 10px;
+  }
+
+  .logo>img{
+    width: 30px;
+    height: 30px;
+  }
+
+  nav .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 9999;
+  }
+
+  nav.open .sidebar {
+    right: 0;
+  }
+
+  .sidebar .sidebar-content {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+  }
+  .sidebar-content .list {
+    list-style: none;
+  }
+  .list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .lists .nav-link:hover {
+    background-color: #4070f4;
+  }
+  .nav-link .icon {
+    margin-right: 14px;
+    font-size: 20px;
+    color: #707070;
+  }
+  .nav-link .link {
+    font-size: 16px;
+    color: #707070;
+    font-weight: 400;
+  }
+  .lists .nav-link:hover .icon,
+  .lists .nav-link:hover .link {
+    color: #fff;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  nav.open ~ .overlay {
+    opacity: 1;
+    right: 260px;
+    pointer-events: auto;
+  }
+/* ======================== slider end ====================== */
+
+.font_black{
+    color:black;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+}
+.top_text_area{
+    width: 100%;
+    height: 50px;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid ;
+}
+
+.top_nav_icon_area, .top_nav_menu_area{
+    display: inline-block;
+}
+
+/* 아이콘 크기 설정 */
+.bi-list{
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.icon{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.top_nav_icon_area>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+
+/* top nav 가로 배치 설정 */
+div.top_nav{
+    display: inline-block;
+    /* width: 460px; */
+}
+
+div.top_nav_menu_area>ul{
+    width: 285px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.top_nav_menu_area li{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+div.login_nav>ul{
+    width: 380px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.login_nav li{
+    display: inline-block;
+    text-align: center;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+
+.list_nav{
+    display: none;
+}
+
+/* ================================top nav end============================= */
+
+
+
+/* ======================== footer ========================= */
+
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+.footer_top{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.footer_top>span{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.footer_top>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+.footer_bottom {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer_bottom ul{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.footer_bottom li{
+    display: inline-block;
+    padding: 20px;
+}
+
+.footer_top {
+    padding: 20px 0 20px 0;
+    width: 100%;
+    height: 50px;
+}
+
+.footer_sns{
+    padding-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_sns>.icon_area{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_text_area{
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ======================== footer end ========================= */
+
+@media (max-width: 890px){
+
+    .nav{
+        display: flex;
+    }
+
+    .top_text_area{
+        width: 90%;
+        /* background-color: #f2f2f2;
+        padding: 20px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        transition: top 0.3s ease-in-out; */
+    }
+
+    .bi-list{
+        fill: black;
+    }
+
+    /* 탑 아이콘 부분  */
+    .top_nav_icon_area span{
+        font-size: 1.5rem;
+    }
+
+    .top_nav_icon_area img{
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 도움말 출력 */
+    .customer-service{
+        display: none;
+    }
+    
+    /* 네비  */
+    .top_nav_menu_area,.login_nav{
+        display: none;
+    }
+
+    .list_nav{
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+
+    .list_nav svg{
+        width: 30px;
+        height: 30px;
+    }
+
+    /* ============================================== */
+
+    .footer_top span{
+        font-size: 1.5rem;
+    }
+
+    .footer_top img{
+        width: 30px;
+        height: 30px;
+    }
+}

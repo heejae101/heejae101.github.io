@@ -1,0 +1,57 @@
+@media all and (max-width:870px){
+ 
+  div.sign_in_logo h1{
+    font-size:2rem;
+  }
+  div.progress ul{
+    display:block;
+  }
+  div.progress li{
+    display:inline-block;
+    font-size:1.5rem;
+    font-weight:800;
+    margin:0 2.29885%;
+  }
+
+  div.help_text{
+    margin:20px 3.448276%;
+  }
+
+  div.help_text span{
+    display:inline-block;
+    font-size:1.1rem;
+  }
+
+  div.help_text span.help_text2{
+    margin-left:10px;
+  }
+
+  div.input_user_information{
+    padding-left:9.195402%;
+  }
+
+  div.input_user_information_input{
+    margin-left:1.149425%;
+  }
+
+  div.input_user_information_input span.input_explanation{
+    margin:5px 0.694444%;
+    font-size:0.9rem;
+  }
+
+  /* div.input_user_information input{
+    width:36.781609%;
+  } */
+
+  div.input_user_information span.input_explanation_email{
+    margin-left:3.448276%;
+  }
+
+  div.input_user_information_btn{
+    display:block;
+  }
+
+  div.input_user_information_btn button.btn_btn{
+    margin-top:10px;
+  }
+}

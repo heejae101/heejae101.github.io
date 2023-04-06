@@ -1,0 +1,169 @@
+/* ========================== top_nav ============================ */
+
+em,span,a{
+    font-family: 'nanum';
+    font-weight: 400;
+}
+
+.font_black{
+    color:black;
+}
+
+.font_white{
+    color: white;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+}
+/* 아이콘, nav 지역 설정 */
+.top_text_area{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: relative;
+    z-index: 999;
+    border-bottom: 1px solid black;
+}
+
+/* 아이콘 크기 설정 */
+.bi-list, .bi-arrow-right-short{
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+/* 아이콘 위치 설정 */
+.top_nav_icon_area{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.icon{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.top_nav_icon_area>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+
+/* top nav 가로 배치 설정 */
+div.top_nav{
+    display: inline-block;
+}
+
+/* 국내 여행, 해외 여행, 여행 가이드 부분 */
+div.top_nav_menu_area{
+    position: absolute;
+    top: 20px;
+    left: 180px;
+}
+
+div.top_nav_menu_area>ul{
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.top_nav_menu_area li{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+/* login_nav 부분 설정  */
+div.login_nav{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+div.login_nav>ul{
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.login_nav li{
+    display: inline-block;
+    text-align: center;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+
+/* ================================top nav end============================= */
+
+/* ======================== footer ========================= */
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+.footer_top{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.footer_top>span{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.footer_top>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+.footer_bottom {
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_bottom ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_bottom li{
+    display: inline-block;
+    padding: 20px;
+}
+
+.footer_top {
+    padding: 20px 0 20px 0;
+    width: 100%;
+    height: 50px;
+}
+
+.footer_sns{
+    padding-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_sns>.icon_area{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_text_area{
+    margin-top: 10px;
+    text-align: center;
+}
+/* ======================== footer end ========================= */

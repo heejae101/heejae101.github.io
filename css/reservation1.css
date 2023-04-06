@@ -1,0 +1,553 @@
+@font-face {
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-cBd.ttf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-eHv.ttf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'nanum';
+    src: url('../font/NanumSquareNeo-dEb.ttf');
+    font-weight: 500;
+}
+
+/* 전체적으로 가운데 90% 설정 */
+.wrap{
+    width: 100%;
+    margin-left: 3%;
+    font-family: 'nanum';
+    display: flex;
+    /* background-color: antiquewhite; */
+}
+
+.wrap_l{
+    width: 75%;
+}
+
+.wrap_r{
+
+}
+
+/* ========================== top_nav ============================ */
+
+em,span,a{
+    font-family: 'nanum';
+    font-weight: 400;
+}
+
+.font_black{
+    color:black;
+}
+
+.font_white{
+    color: white;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+}
+/* 아이콘, nav 지역 설정 */
+.top_text_area{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: relative;
+    z-index: 999;
+    border-bottom: 1px solid black;
+}
+
+/* 아이콘 크기 설정 */
+.bi-list, .bi-arrow-right-short{
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+/* 아이콘 위치 설정 */
+.top_nav_icon_area{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.icon{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.top_nav_icon_area>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+
+/* top nav 가로 배치 설정 */
+div.top_nav{
+    display: inline-block;
+}
+
+/* 국내 여행, 해외 여행, 여행 가이드 부분 */
+div.top_nav_menu_area{
+    position: absolute;
+    top: 20px;
+    left: 180px;
+}
+
+div.top_nav_menu_area>ul{
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.top_nav_menu_area li{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+/* login_nav 부분 설정  */
+div.login_nav{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+div.login_nav>ul{
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+}
+
+div.login_nav li{
+    display: inline-block;
+    text-align: center;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+
+/* ================================top nav end============================= */
+
+
+/* 여행지 상품 제목(이름) */
+.title_reservation1{
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 20px;
+    line-height: 50px;
+    width: 90%;
+    /* margin-bottom: 15px; */
+}
+
+button{
+    font-family: 'nanum';
+    cursor: pointer;
+}
+
+/* 상단 / 하단 hr */
+hr{
+    margin: 20px 0;
+    width: 90%;
+    border: 1px solid black;
+}
+/* == 여행지 상품 상단 == */
+.reservation1_top{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* == 여행지 상품 상단_왼쪽 == */
+.reservation1_top_l{
+    width: 90%;
+    /* background-color: rgb(211, 255, 211); */
+    /* height: 500px; */
+}
+
+/* 여행지 상품 대표 이미지 부분 */
+.title_img{
+    background-size: cover;
+    width: 100%;
+    margin: 10px;
+    height: 600px;
+}
+
+
+
+
+/* 여행지 상품 가격 상세설명 [테이블] */
+.detail_price_table{
+    border-collapse: collapse;
+    width: 100%;
+    height: 100px;
+    margin: 40px 0;
+
+    font-size: 20px;
+    /* margin-top: 30px; */
+    /* width: 100%; */
+    /* background-color: rgb(219, 219, 219); */
+}
+
+
+th,td{
+    padding: 20px;
+    border: 1px solid #b4b4b4;
+    /* border-bottom: 1px solid #b4b4b4; */
+}
+td{
+    text-align: center;
+}
+
+tr>th:nth-child(1){
+    border-right: 1px solid #b4b4b4;
+}
+
+
+/* == 여행지 상품 상단_오른쪽 == */
+.reservation1_top_r{
+    background-color: white;
+    width: 300px;
+    position: sticky;
+    /* position: fixed; */
+    z-index: 1;
+    top: 140px;
+    right: 0px;
+    font-size: 20px;
+}
+
+/* 테스트 */
+.toddler_a{
+    display: inline-block;
+}
+
+/* 코드, 일정 표시*/
+.code_plan{
+    /* background-color: rosybrown; */
+    margin-bottom: 40px;
+}
+
+/* 인원 수 설정 */
+.members{
+    /* background-color: violet; */
+    margin-bottom: 20px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.members>.age{
+    margin-bottom: 10px;
+}
+
+
+
+
+/* 인원수 +/- 버튼 */
+.plus_min_btn{
+    height: 40px;
+    width: 130px;
+    /* background-color: rgb(229, 229, 229); */
+    border: 2px solid rgba(145, 145, 145, 0.2);
+    /* box-shadow: 0 3px 5px rgba(0,0,0,0.2); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 10px; */
+
+    right: 40px;
+    bottom: 15px;
+
+    /* 여러번 클릭 시 드래그 방지 */
+    user-select: none;
+    cursor: pointer;
+}
+
+.plus_min_btn>span{
+    width: 100%;
+    text-align: center;
+    /* font-weight: 500; */
+
+}
+
+.plus_min_btn>span.adult,.child,.toddler{
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+}
+
+/* 나이표시 부분, 가격 부분 간격  */
+.age_price{
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+/* 유아 부분 상세 정렬 */
+.toddler_area{
+    display: flex;
+    flex-direction: column;
+}
+
+.toddler_year_area{
+    display: flex;
+}
+
+/* 최종합계 가격 */
+.total_price{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    /* background-color: rgb(255, 182, 255); */
+}
+
+.total_price_text{
+    margin-bottom: 10px;
+}
+
+
+
+
+/* 예약하기 버튼 */
+.reservation_btn_area{
+    text-align: center;
+}
+.reservation_btn{
+    margin-top: 20px;
+    width: 95%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    background-color: black;
+}
+
+.reservation_btn:hover{
+    box-shadow: 4px 4px 8px #888;
+}
+
+
+
+
+
+
+
+
+/* == 여행지 상품 하단 == */
+.reservation1_bottom{
+    margin-bottom: 50px;
+    width: 90%;
+    font-size: 30px;
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    /* display: flex; */
+    
+    
+}
+
+.reservation1_bottom ul{
+    /* flex-wrap: wrap;
+    justify-content: center; */
+}
+/* 여행지 상품 하단 하나하나 영역 */
+.reservation1_bottom li{
+    font-size: 25px;
+    display: inline-block;
+    /* border: 1px solid gray; */
+    
+    padding: 20px;
+    
+}
+
+.reservation1_bottom li>a:hover{
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* 일정보기 버튼 클릭 시 캘린더 표시 영역 */
+/* .calendar_area{
+    
+} */
+
+
+/* mobile 예약하기 버튼 */
+.reservation_btn_m{
+    position: fixed;
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    background-color: black;
+
+    display: none;
+
+}
+
+
+/* 여행지 상품 상세정보 */
+.title_reservation1{
+    margin-bottom: 40px;
+}
+.reservation1_bottom_info>h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.reservation1_bottom_img{
+    background-size: cover;
+    width: 90%;
+    margin-bottom: 70px;
+    height: 500px;
+}
+
+/* ======================== footer ========================= */
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+.footer_top{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.footer_top>span{
+    font-family: 'nanum';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: skyblue;
+}
+
+.footer_top>img{
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+}
+.footer_bottom {
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_bottom ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_bottom li{
+    display: inline-block;
+    padding: 20px;
+}
+
+.footer_top {
+    padding: 20px 0 20px 0;
+    width: 100%;
+    height: 50px;
+}
+
+.footer_sns{
+    padding-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer_sns>.icon_area{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_text_area{
+    margin-top: 10px;
+    text-align: center;
+}
+/* ======================== footer end ========================= */
+
+
+
+/* =========== media query (max-width: 450px), ~450 =========== */
+@media(max-width: 450px){
+
+    .title_img{
+        background-size: auto 100%;
+        width: 30%;
+    }
+    
+
+    .wrap{
+        width: 100px;
+    }
+
+    .detail_price_table{
+        width: 50px;
+        height: 100px;
+        font-size: 0.8rem;
+        margin-left: 0;
+        /* overflow-x: auto; */
+        /* table-layout: fixed; */
+    }
+
+    .reservation1_bottom_img{
+        
+        height: 250px;
+    }
+}
+
+/* =========== media query (max-width: 870px), ~870px =========== */
+@media (max-width: 890px){
+    .reservation1_top_r{
+        display: none;
+    }
+
+    hr,.title_reservation1,.detail_price_table,.reservation1_bottom{
+        width: 117%;
+    }
+
+    .reservation1_bottom_img{
+        width: 117%;
+        height: 400px;
+    }
+
+    .reservation1_top_l{
+        width: 117%;
+    }
+
+    .wrap{
+        width: 100%;
+    }
+
+    .title_img{
+        width: 115%;
+        height: 50vh;
+        margin: 10px auto;
+    }
+
+    .detail_price_table{
+        margin-top: 40px;
+        
+    }
+    
+
+    .reservation_btn_m{
+        display: block;
+    }
+}
