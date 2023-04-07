@@ -1,0 +1,101 @@
+div.progress h2.progress_text_third{
+  background-color:rgb(253, 166, 4);
+}
+
+div.help_text{
+  margin:50px 0;
+  text-align:center;
+}
+
+div.help_text span{
+  font-size:28px;
+  font-weight:700; 
+}    /* page1,page2,page3 공통 */
+
+/*---------------------------------------------------------------------------*/
+div.input_user_information{
+  display:flex;
+  justify-content:center;
+  font-family:"Noto Sans KR", sans-serif;
+  /* background-color:yellow; */
+}
+
+div.input_user_information_input{
+  display:flex;
+  justify-content:center;
+  padding:0 50px;
+  /* background-color:pink */
+}
+
+div.input_user_information_input li{
+  display:block;
+  margin-top:30px;
+}
+
+div.input_user_information_input label{
+  font-size:21px;
+  font-weight:700;
+  font-family:"nanum"
+}
+
+div.input_user_information_input span.input_explanation{
+  display:block;
+  margin:5px 5px;
+  font-size:1.3rem;
+  font-weight:700;
+}
+
+div.input_user_information label{
+  font-weight:800;
+}
+
+div.input_user_information span.essential_red{
+  font:21px;
+  font-weight:800;
+  color:red;
+}
+
+div.input_user_information input{
+  width:350px;
+  height:35px;
+  margin-top:5px;
+  border-radius:2px;
+}
+
+div.input_user_information label#check_email_text{
+  font-size:22px;
+}
+
+div.input_user_information input#check_email{
+  width:20px;
+  height:20px;
+}
+
+/*----------------------------login button-------------------------------*/
+div.input_user_information_btn{
+  text-align:center;
+  margin:20px 0px 80px 0px;
+}
+
+div.input_user_information_btn button.btn_btn{
+  width:390px;
+  height:50px;
+  font-size:1.5rem;
+  font-weight:700;
+  border-radius:5px;
+  cursor:pointer;
+  font-family:"nanum";
+}
+
+div.input_user_information_btn button.btn_sign_in{
+  background-color:black;
+  color:white;
+}
+
+div.input_user_information_btn button.btn_back{
+  background-color:white;
+  border:2px solid rgb(191, 186, 186);
+  color:black;
+}
+
+

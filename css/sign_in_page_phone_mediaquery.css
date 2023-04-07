@@ -1,0 +1,46 @@
+/* =========== media query (max-width: 450px), ~450 =========== */
+@media(max-width: 450px){
+
+}
+
+/* =========== media query (max-width: 890px), ~890px =========== */
+@media all and (max-width:890px){
+
+    div.sign_in_logo{
+      margin:50px 0px;
+    }
+
+    div.progress ul{
+      display:block;
+    }
+
+    div.progress li{
+      display:inline-block;
+      font-size:1.8rem;
+      font-weight:800;
+      margin:0 2.247191%;
+    }    /* 여기까지가 sign in 공통부분 */
+
+    div.help_text{
+      margin:50px 0px;
+      text-align:center;
+    }
+
+    div.help_text span{
+      display:inline-block;
+      font-size:1.5rem;
+    } /* page 1 2 3 */
+
+    div.phone_verification button.phone_verification_btn{
+      width:78.651685%;
+      padding:10px 2.247191%;
+    } 
+
+    div.phone_verification_text{
+      margin:20px 0px 80px 0px;
+      font-size:15px;
+    }
+    div.phone_verification_text span{
+     display:inline-block;
+    }
+  }

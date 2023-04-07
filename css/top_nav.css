@@ -10,12 +10,6 @@
     font-weight: 700;
 }
 
-body {
-  background-color: skyblue;
-  text-align: center;
-  font-family: 'nanum';
-}
-
 .open{
     z-index: 9999;
 }
@@ -228,7 +222,7 @@ div.login_nav li{
   }
 
   .top_text_area{
-      width: 95%;
+      width: 90%;
       height: 25px;
       /* background-color: #f2f2f2;
       padding: 20px;

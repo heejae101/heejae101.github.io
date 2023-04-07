@@ -1,0 +1,64 @@
+/*----------------------------------------css : sign in page 4-----------------------------------------*/
+  div.progress h2.progress_text_forth{
+    background-color:rgb(253, 166, 4);
+  }
+
+  div.success_sign_in_logo{
+    display:flex;
+    justify-content:left;
+    margin:50px 0;
+  }
+
+  div.success_sign_in_logo img{
+    width:200px;
+    height:200px;
+  }
+
+  div.success_sign_in_message1{
+    margin:50px 0px 50px 0px;
+    text-align:center;
+    font-size:1.6rem;
+  }
+
+  div.success_sign_in_message1 span.success_sign_in_message1_text{
+    display:block;
+    font-weight:800;
+  }
+
+  div.success_sign_in_message2{
+    margin-bottom:100px;
+    text-align:center;
+    font-size:1.9rem;
+  }
+
+  div.success_sign_in_message2 span#success_sign_in_count{
+    font-weight:800;
+    color:red;
+  }
+
+  div.success_sign_in_message2 span.success_sign_in_message2_text{
+    font-weight:800;
+  }
+
+/*------------------------------keyframe : auto moving svg image---------------------------------*/
+  div.success_sign_in_logo img{
+    animation:moveto 5s infinite alternate ease-in-out; /* 속도 */
+  }
+
+  @keyframes moveto {
+   25% {
+    transform:translate(0,0);
+   }
+
+   50% {
+    transform:translate(0,0);
+   }
+
+   75% {
+    transform:translate(320%,0);
+   }
+
+   100% {
+    transform:translate(320%,0);
+   }
+  }

@@ -25,12 +25,24 @@ a{
     color: white;
 }
 
+body, html {
+    height: 100%;
+}
+
+#wrap{
+    position: relative;
+    min-height: 100%;
+}
+
 .open{
-    z-index: 9999;
+    z-index: 999;
 }
 
 .customer-service {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -38,7 +50,59 @@ a{
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: 'nanum';
+    font-weight: 400;
+}
+
+.customer-service>svg{
+    padding-right: 20px;
+}
+
+
+.mobile_nav{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    display: none; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white; 
+    z-index: 9999;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, .05);
+    -webkit-transform: translateZ(0);
+}
+
+.mobile_nav ul{
+    height: 60px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.mobile_nav li{
+    height: 100%;
+}
+
+.mobile_nav a{
+    color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile_nav li a:hover svg path {
+    fill: rgb(218, 5, 97); /* 호버시 path 색상 변경 */
+    transition: fill 1s;
+  }
+
+
+.mobile_nav span{
+    font-size: 10px;
 }
 
 .blurEffect {
@@ -280,6 +344,7 @@ div.customer_service{
 
 /* 스크롤 다운 버튼 */
 .down_btn{
+    margin-top: 5vh;
     width: 100%;
     height: 90px;
     display: flex;
@@ -320,12 +385,12 @@ div.down_btn hr{
 
 /* ======================= center_drop ================== */
 .center_drop{
-    padding-top: 200px;
+    padding-top: 20vh;
     text-align: center;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 400px;
+    height: 48vh;
 }
 
 em,.sBtn-text{
@@ -579,6 +644,11 @@ em,.sBtn-text{
     left: 20px;
 }
 
+.slider_popular .item_info>.tit{
+    position: relative;
+    z-index: 99;
+}
+
 .slider_popular .content{
     position: absolute;
     top: 100px;
@@ -603,7 +673,7 @@ em,.sBtn-text{
     align-items: center;
     position: absolute;
     right: 10px;
-    z-index: 99;
+    z-index: 9;
 }
 
 .rank>span{
@@ -658,7 +728,7 @@ em,.sBtn-text{
 }
 
 .more_btn>a{
-    padding-bottom: 20px;
+    padding-right: 30px;
     color: black;
 }
 
@@ -806,13 +876,26 @@ div.slide span{
 
 @media (max-width: 450px){
 
+    .top_text_area{
+        width: 90%;
+        height: 15%;
+        /* background-color: #f2f2f2;
+        padding: 20px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        transition: top 0.3s ease-in-out; */
+    }
+
     .top_nav_icon_area span{
         font-size: 1.5rem;
     }
 
     .center_drop{
-        margin-top: 100px;
-        height: 500px;
+        margin-top: 9%;
+        height: 55%;
         padding-top: 0px;
         align-items: center;
     }
@@ -833,9 +916,14 @@ div.slide span{
 
 
 @media (max-width: 890px){
-    
+
+    .mobile_nav{
+        display: block;
+    }
+
     .top_text_area{
         width: 90%;
+
         /* background-color: #f2f2f2;
         padding: 20px;
         display: none;
@@ -911,10 +999,6 @@ div.slide span{
         display: none;
     }
 
-    .down_btn{
-        /* margin-top: 100px; */
-    }
-
     .down_btn span{
         font-size: 1.5rem;
     }
@@ -928,6 +1012,7 @@ div.slide span{
     }
 
     .text_popular{
+        width: 90%;
         text-align: left;
         padding-top: 50px;
         padding-bottom: 50px;
@@ -966,7 +1051,7 @@ div.slide span{
     }
 
     .guide_text{
-        width: 100%;
+        width: 90%;
         height: 100px;
         text-align: left;
         padding-top: 50px;
@@ -982,6 +1067,10 @@ div.slide span{
     }
 
     /* ==============footer============== */
+    .footer_bottom{
+
+    }
+
     .footer_top span{
         font-size: 1.5rem;
     }
@@ -989,6 +1078,19 @@ div.slide span{
     .footer_top img{
         width: 30px;
         height: 30px;
+    }
+
+    .footer_bottom span{
+        font-size: 0.8rem;
+    }
+
+    .footer_sns svg{
+        width: 10%;
+        height: 10%;
+    }
+    
+    .footer_text_area{
+        font-size: 0.8rem;
     }
 
 }

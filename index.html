@@ -60,37 +60,6 @@
             });
         });
 
-        // overlay.addEventListener("click", () => {
-        //     navBar.classList.remove("open");
-        // });
-
-        // // 네비게이션 바의 초기 위치
-        // const initialNavTop = 0;
-
-        // // 네비게이션 바의 높이
-        // const navHeight = 50;
-
-        // // 네비게이션 바 DOM 요소를 참조하는 변수
-        // const slide_Down_navBar = document.querySelector('.top_text_area');
-
-        // // 스크롤 이벤트 핸들러
-        // const handleScroll = () => {
-        //     // 현재 스크롤 위치 계산
-        //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        //     // 네비게이션 바의 새로운 위치 계산
-        //     const navTop = initialNavTop - scrollTop;
-
-        //     // 네비게이션 바의 위치가 음수가 되지 않도록 제한
-        //     const newNavTop = Math.max(navTop, -navHeight);
-
-        //     // 네비게이션 바의 위치 설정
-        //     slide_Down_navBar.style.top = `${newNavTop}px`;
-        // };
-
-        // // 스크롤 이벤트 리스너 등록
-        // window.addEventListener('scroll', handleScroll);
-
         function scrollToTarget() {
         // 스크롤 타겟 위치의 Y 좌표를 계산
             const targetElement = document.querySelector('.target-section');
@@ -102,7 +71,7 @@
                 behavior: 'smooth'
             });
         }
-    })
+        })
     </script>
 
 </head>
@@ -159,13 +128,13 @@
                     <li class="list">
                         <a href="#" class="nav-link">
                             <i class="bx bx-cog icon"></i>
-                            <span class="link">Settings</span>
+                            <span class="link">설정</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="#" class="nav-link">
                             <i class="bx bx-log-out icon"></i>
-                            <span class="link">Logout</span>
+                            <span class="link">로그아웃</span>
                         </a>
                     </li>
                 </div>
@@ -182,7 +151,49 @@
         |    스크롤 다운   :   X        |
         -------------------------------->
 
-        <div class="customer-service" style="box-shadow: 3px black; z-index: 999;">사이트 이용하실 때 어려우신사항 있으시면<br><br>아래의 번호를 통해 문의해주시기 바랍니다.<hr>고객센터 연락처: 000-0000-0000</div>
+        <div class="customer-service" style="box-shadow: 3px black; z-index: 999;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            <span>손주들이 도와드려요! <br><br> 고객센터 연락처: 010-1577-1577</span>
+        </div>
+        <div class="mobile_nav">
+            <ul>
+                <li>
+                    <a href="./html/customer_service.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                            <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+                        </svg>
+                        <span>고객센터</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                            <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                          </svg>
+                        <span>최근본상품</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                        <span>관심상품</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="./html/user_page.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                          </svg>
+                        <span>나의정보확인</span>
+                    </a> 
+                </li>
+            </ul>
+        </div>
         <section class="top_section">
             <video src="./video/mixkit-clouds-and-blue-sky-background-2408.mp4" muted autoplay loop style="width: 100vw; height: 100%; object-fit: cover; backdrop-filter: blur(10px);"></video>
             <!-- 카테고리 토글 -->
@@ -206,7 +217,7 @@
                             <li><a href=""><span class="font_white">예약 확인</span></a></li>
                             <li><a href="./html/customer_service.html"><span class="font_white">고객센터</span></a></li>
                             <li><a href="./html/user_page.html"><span class="font_white">나의 정보 확인</span></a></li>
-                            <li><a href="./html/1.login.html"><span class="font_white">로그인</span></a></li>
+                            <li><a href="./html/login.html"><span class="font_white">로그인</span></a></li>
                         </ul>
                     </div>
                     <div class="list_nav menu-icon">
@@ -224,7 +235,7 @@
                         <em class="font_white">나는</em>
                         <div class="select-menu">
                             <div class="select-btn">
-                                <span class="sBtn-text border_text font_white">&#128587;&nbsp;나 홀로</span>
+                                <span class="sBtn-text border_text font_white"><img src="./image/icon/grandfather.png" style="width: 30px; height: 25px;">&nbsp;나 홀로</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                                     class="bi bi-chevron-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -234,10 +245,10 @@
                 
                             <ul class="options">
                                 <li class="option">
-                                    <span class="option-text">&#128587;&nbsp;나 홀로</span>
+                                    <span class="option-text"><img src="./image/icon/grandfather.png" style="width: 35px; height: 30px;">&nbsp;나 홀로</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;연인과 함께</span>
+                                    <span class="option-text">&#128051;&nbsp;배우자와 함께</span>
                                 </li>
                                 <li class="option">
                                     <span class="option-text">&#128048;&nbsp;가족들과 함께</span>
@@ -276,7 +287,7 @@
                     <span class="back_span">
                         <div class="select-menu">
                             <div class="select-btn">
-                                <span class="sBtn-text border_text font_white">&#128051;&nbsp;즉흥적인 여행</span>
+                                <span class="sBtn-text border_text font_white">&#128051;&nbsp;추억 여행</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                                     class="bi bi-chevron-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -286,18 +297,21 @@
                 
                             <ul class="options">
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;즉흥적인 여행</span>
+                                    <span class="option-text">&#128051;&nbsp;추억 여행</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;계획적인 여행</span>
+                                    <span class="option-text">&#128051;&nbsp;팔도유람 여행</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128048;&nbsp;에어텔</span>
+                                    <span class="option-text">&#128048;&nbsp;맛있는 여행</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">&#128048;&nbsp;문화유산 탐방</span>
                                 </li>
                             </ul>
                         </div>
                     </span>
-                    <em class="font_white">여행을 떠나고 싶어요</em>
+                    <em class="font_white">을 떠나고 싶어요</em>
                 </div>
                 <div class="drop_down_btn">
                     <button class="btn-type-round" onclick="window.location.href='./html/travel_recommend.html';">
@@ -348,7 +362,7 @@
                         <a href="./html/travel_recommend.html">
                             <div class="img_item" style="background-image: url('./image/slider_popular/first_slider_popular_boracay.jpg'); background-size : cover;">
                                 <div class="item_info">
-                                    <p class="tit">[휴양지/관광] 보라카이 5일</p>
+                                    <p class="tit">[휴양지] 보라카이 5일</p>
                                 </div>
                                 <!-- PC 화면 일때만 -->
                                 <!-- <div class="content">
@@ -458,6 +472,9 @@
                         <span>
                             더 보기
                         </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
                     </a>
                 </div>
                 <div class="slider5">

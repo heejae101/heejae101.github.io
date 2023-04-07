@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "KakaoBold"; /* make font-family */
+  src: url("../font/KakaoOTFBold.otf") format("opentype"); /* import font file */
+}
+/*-------------------------------container for elements----------------------*/
+div.container{ 
+  width:450px;
+  align-items:center;
+  margin:40px 0;
+  /* background-color:cyan; */
+}
+/*--------------------------------input elemets------------------------------*/
+div.main_logo{
+  margin:50px 0;
+  text-align:center;
+}
+
+div.main_logo h1{
+  font-family:"nanum";
+  font-weight:700;
+  font-size:40px;
+  letter-spacing:0px;
+}
+
+div.login_input{
+  margin:0 10px;
+  font-family:"Noto Sans KR", sans-serif; 
+}
+
+div.login_input label{
+  font-size:23px;
+  font-weight:800;
+  font-family:"nanum";
+}
+
+div.login_input input.login{
+  width:425px;
+  height:40px;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid black;
+  box-shadow:none;
+  margin-top:10px;
+  font-size:20px;
+}
+
+div.login_input li.login_input_line1{
+  margin-bottom:30px;
+}
+
+div.login_input input.login_id_check_box{
+  width:22px;
+  height:22px;
+  margin-top:15px;
+}
+
+div.login_input span.login_id_check_box_text{
+  font-size:23px; 
+  font-weight:800;
+}
+
+div.login_btn{
+  text-align:center;
+  margin:10px 0;
+}
+
+div.login_border{
+  display:flex;
+  flex-basis:100%;
+  align-items:center;
+  margin:20px 0px;
+}
+
+div.login_border::before{
+  content:"";
+  flex-grow:1;
+  margin:0 10px;
+  background:black;
+  height:1px;
+  font-size:0px;
+  line-height:0px;
+}
+
+div.login_border::after{
+  content:"";
+  flex-grow:1;
+  margin:0 10px;
+  background:black;
+  height:1px;
+  font-size:0px;
+  line-height:0px;
+}
+
+span.login_border_text{
+  font-size:1.5rem;
+  font-weight:800;
+}
+
+button.login_btn1{
+  width:430px;
+  height:50px;
+  border:2px solid black;
+  border-radius:5px;
+  background-color:black;
+  font-family:"nanum";
+  font-weight:700;
+  font-size:1.5rem;
+  color:white;
+}
+
+div.login_oauth{
+  display:flex;
+  justify-content:center;
+  text-align:center;
+}
+
+div.login_oauth button.login_oauth_btn{
+  height:50px;
+}
+
+/* naver login */
+button.login_oauth_btn_naver{
+  background-color:#2DB400;
+  color:#fff;
+  border:none;
+  padding:10px 52px;
+  border-radius:4px;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:"Nanum Gothic", sans-serif;
+  font-weight:800;
+  font-size:0.8rem;
+  margin-right:5px; 
+}
+
+button.login_oauth_btn_naver img{
+  width:20px;
+  margin-right:10px;
+}
+
+/* kakao login */
+button.login_oauth_btn_kakao{
+  background-color:#FFCD00;
+  color:#000;
+  border:none;
+  padding:10px 52px;
+  border-radius:4px;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:"KakaoBold";
+  font-weight:800;
+  font-size:0.8rem;
+  margin-left:5px;
+}
+
+button.login_oauth_btn_kakao img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+button.signup_btn{
+  background-color:#fff;
+  color: #000;
+}
+
+
+

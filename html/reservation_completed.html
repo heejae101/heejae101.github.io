@@ -11,6 +11,16 @@
     <!-- header & footer css -->
     <link href="../css/nav_footer.css" rel="stylesheet" />
 
+    <!-- 아이콘 -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+
+    <!-- 리셋 시트 -->
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+
+    <!-- 스타일 시트 -->
+    <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
+
     <style>
          /* 폰트 */
          @font-face{ /* 일반크기 */
@@ -32,10 +42,10 @@
         /* 예약완료 페이지 전체영역 */
         div.reservation_completed{
             width: 100%;
-
+            position: relative;
         }
 
-        /* 최상단의 예약 완료! */
+        /* 최상단의 예약 완료! text */
         div.reservation_completed .title{
             text-align: center;
             font-family: 'nanum';
@@ -51,9 +61,9 @@
             font-size: 20px;     
             /* display: inline-block; */
             /* display: flex; */
-            justify-content: center;     
+            /* justify-content: center;      */
             /* align-items: center; */
-            background-color: aqua; /* 추후 색 변경 필요 */
+            /*background-color: aqua; /* 추후 색 변경 필요 */
         }
         div.res_inform{
             display: inline-block;
@@ -70,8 +80,14 @@
         div.button{
             display: flex;
             width: 100%;
+            height: 50px;
             /* text-align: center; */
             justify-content: center;
+            position: absolute;           
+            left: 50%;
+            transform: translateX(-50%);
+            top:10px;
+            
         }
         #btn_togo_home{
             /* display: inline-block; */            
@@ -80,6 +96,10 @@
             font-family: 'nanum';
             font-size: 30px;
             font-weight: bold;
+            /* position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top:10px; */
         }
         /* 마우스포인터 손가락모양과 hover*/
         #btn_togo_home{ 
@@ -89,6 +109,26 @@
             box-shadow: 4px 4px 8px #888;
         }
 
+        div.button{
+                display: none;
+            }
+
+
+        /* 모바일 화면에서 보일 설정 */
+        @media all and (max-width:890px){
+            div.reservation_completed{
+                position: relative;
+            }
+            div.button{
+                display: none;
+            }
+            div.button-1{
+                position: absolute;
+                left: 50%;
+            transform: translateX(-50%);
+            }
+        }
+
     </style>
 
 
@@ -96,85 +136,95 @@
 </head>
 <body>
     <!-- header 시작 -->
-    <div class="top_text_area">
-        <div class="top_nav">
-            <div class="top_nav_icon_area">
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                </svg> -->
-                <a href="../index.html"><span class="icon">여행하다</span></a>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
-                    <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>
-                </svg> -->
-                <img src="../image/travel.png">
-            </div>
-            <div class="top_nav_menu_area">
-                <ul>
-                    <li><a href=""><span class="font_black">국내 여행</span></a></li>
-                    <li><a href=""><span class="font_black">해외 여행</span></a></li>
-                    <li><a href=""><span class="font_black">여행 가이드</span></a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- login_nav 부분 -->
-        <div class="login_nav">
-            <ul>
-                <li><a href=""><span class="font_black">예약 확인</span></a></li>
-                <li><a href=""><span class="font_black">고객센터</span></a></li>
-                <li><a href=""><span class="font_black">나의 정보 확인</span></a></li>
-                <li><a href=""><span class="font_black">로그인</span></a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- header 끝 -->
+    <header data-include="./top_nav.html"></header>
+    <!-- header -->
+    
     <!-- 예약완료 페이지 전체영역 -->    
     <div class="reservation_completed">
         <h1 class="title">예약 완료!</h1>
-          <div class="success_sign_in_logo">
-            <img src="../image/cwh/carrier.JPG" alt="logo plane">
-          </div>
-
-          <div class="success_sign_in_message1">
-            <span class="success_sign_in_message1_text">여행하다 상품을 예약해주셔서 감사합니다.</span>
-            <span class="success_sign_in_message1_text">담당자 확인 후 예약 및 결제 확정여부를 알려드립니다.</span>
-            <span class="success_sign_in_message1_text">확정불가시, 결제는 진행되지 않습니다.</span>
-          </div>
-
-          <!-- 예약 상세내역 -->
-          <div class="res_inform">          
-            <ul>
-                <li>예약내역</li><br/>
-                <li>-예약일: 04월 07일 (금)</li>
-                <li>-예약번호(코드) : GFGS235D</li>
-                <li>-여행기간 : 2023년 05월 24일 (수) ~ 05월 27일 (토)</li>
-                <li>-출발인원 : 2인(성인)</li>
-                <li>-상품금액 : 1798000원</li>
-                <li>-결제상태 : 추후 담당자가 연락드릴 예정입니다.</li><br/>
-            </ul>
-            <ul>
-                <li>여행자 정보</li><br/>
-                <li>-이름 : OOO</li>
-                <li>-인원수 : 2인(성인)</li>
-                <li>-상품가격 : 1798000</li>
-            </ul>
-
-          </div>
-          
-          <!-- 여행자 정보 -->
-          <div>
-
-
-          </div>
-
-          <!-- 처음으로 가기 버튼 -->
-          <div class="button">
+        <div class="success_sign_in_logo">
+          <img src="../image/cwh/carrier.JPG" alt="logo plane">
+        </div>
+        <div class="success_sign_in_message1">
+          <span class="success_sign_in_message1_text">여행하다 상품을 예약해주셔서 감사합니다.</span>
+          <span class="success_sign_in_message1_text">담당자 확인 후 예약 및 결제 확정여부를 알려드립니다.</span>
+          <span class="success_sign_in_message1_text">확정불가시, 결제는 진행되지 않습니다.</span>
+        </div>
+        <!-- 예약 상세내역 -->
+        <div class="res_inform">          
+          <ul>
+              <li>예약내역</li><br/>
+              <li>-예약일: 04월 07일 (금)</li>
+              <li>-예약번호(코드) : GFGS235D</li>
+              <li>-여행기간 : 2023년 05월 24일 (수) ~ 05월 27일 (토)</li>
+              <li>-출발인원 : 2인(성인)</li>
+              <li>-상품금액 : 1798000원</li>
+              <li>-결제상태 : 추후 담당자가 연락드릴 예정입니다.</li><br/>
+          </ul>
+          <ul>
+              <li>여행자 정보</li><br/>
+              <li>-이름 : OOO</li>
+              <li>-인원수 : 2인(성인)</li>
+              <li>-상품가격 : 1798000</li>
+          </ul>
+        </div>
+                  
+        <!-- 처음으로 가기 버튼 -->
+        <div class="button">
+          <button type="button" id="btn_togo_home" name="btn_togo_home">처음으로 가기</button>
+        </div>
+        <!-- 모바일에서 보일 버튼과 위치 설정 -->
+        <!-- <div class="button-1">
             <button type="button" id="btn_togo_home" name="btn_togo_home">처음으로 가기</button>
-          </div>
-
-          <!-- <div class="success_sign_in_message2">
-            <span id="success_sign_in_count">5</span>
-            <span class="success_sign_in_message2_text">초 뒤에 메인페이지로 이동합니다.</span>
           </div> -->
     </div>
+
+    <!-- footer -->
+    <footer data-include="./footer.html"></footer>
+    <!-- footer -->
+
+    <script>
+        function includeHTML(callback){
+          let z, elmnt, file, xhttp;
+          z = document.getElementsByTagName("*");
+          for (let i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("data-include");
+            if (file) {
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("data-include");
+                  includeHTML(callback);
+                }//if
+              }//onreadystatechange
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              return;
+              if (this.readyState != 4) return;
+            }//if - file
+          }//for
+          if (callback) callback();
+        }//includeHTML
+  
+        function findMenuBtns() {
+          const navBar = document.querySelector("nav");
+          const menuBtns = document.querySelectorAll(".menu-icon");
+          menuBtns.forEach((menuBtn) => {
+            menuBtn.addEventListener("click", () => {
+              console.log('click');
+              navBar.classList.toggle("open");
+            });
+          });
+        }
+  
+        /* ✨ 실행 */
+        document.addEventListener('DOMContentLoaded',()=>{
+          includeHTML(findMenuBtns);
+        });
+      </script>
 </body>
 </html>

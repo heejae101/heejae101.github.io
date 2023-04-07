@@ -1,0 +1,49 @@
+/* =========== media query (max-width: 450px), ~450 =========== */
+@media(max-width: 450px){
+
+}
+
+/* =========== media query (max-width: 890px), ~890px =========== */
+@media all and (max-width:890px){
+
+  div.login_input{
+    margin:0 35px;  
+  }
+
+  div.login_input label{
+    margin-left:20px;
+  }
+
+  div.login_input input.login{
+    width:340px;
+    margin-left:20px;
+  }
+
+  div.login_input input.login_id_check_box{
+    margin:10px 0px 10px 20px;
+  }
+
+  button.login_btn1{
+    width:340px;
+  }
+
+  button.login_oauth_btn_naver, button.login_oauth_btn_kakao{
+    padding:10px 30px;
+  }
+
+  div.login_border{
+    display:flex;
+    justify-content:center;
+  }
+
+  div.login_border::before{ 
+    flex-grow:0.28;
+    margin:0 10px;
+  }
+  
+  div.login_border::after{
+    flex-grow:0.28;
+    margin:0 10px;
+  }
+  
+}

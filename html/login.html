@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행하다</title>
+
+  <!-- favicon image-->
+  <link href="../image/favicon.ico" rel="icon" />
+  
+  <!-- 리셋 시트 -->
+  <link href="../css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- adjust css -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" type="text/css"/>    <!-- 아이콘 -->
+  <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>  <!-- header-->
+  <link href="../css/login_default.css" rel="stylesheet" />
+  <link href="../css/login.css" rel="stylesheet" />
+  <link href="../css/login_mediaquery.css" rel="stylesheet" />
+  <link href="../css/footer.css" rel="stylesheet" type="text/css"/>   <!-- footer -->
+</head>
+
+
+<body>
+
+  <!----  header----->
+  <header data-include="./top_nav.html"></header>
+  <!------------------------------------------------------------------------->
+    <div id="wrap">  <!-- entitle container -->
+
+      <form>  <!-- trouble-shooting : form action="" method="post" name="login" -->
+
+        <div class="container">  <!-- container for login elements -->
+        
+          <!-- 1. website main logo -->
+          <div class="main_logo">
+            <h1>로그인</h1>
+          </div>
+
+          <!-- 2. login elements -->
+          <div class="login_input">   
+            <ul>
+              <li class="login_input_line1">
+                <label for="id" name="id">전화번호</label><br/>
+                <input class="login" id="id_input" type="text" name="login_tel" placeholder="휴대폰번호를 -없이 입력하세요." 
+                 onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="11" />
+              </li>
+
+              <li class="login_input_line2">
+                <label for="pwd" name="pwd">비밀번호</label><br/>
+                <input class="login" id="pwd_input" type="password" name="pwd_input">
+              </li>
+            </ul>
+
+            <input class="login_id_check_box" type="checkbox" name="check">
+            <span class="login_id_check_box_text">계정저장</span>
+          </div>
+
+          <div class="login_btn">
+            <button type="button" class="login_btn1 login_btn_basic" name="btn" onclick="login()">로그인</button>
+          </div>
+
+          <!-- 3. seperating border -->
+          <div class="login_border">
+            <span class="login_border_text">다른 계정으로 로그인</span>
+          </div>
+
+          <!-- 4.login btn-->
+          <div class="login_btn_container">
+
+            <div class="login_btn">
+              <button type="button" class="login_btn1 login_find_password_btn" name="btn" onclick="location.href='customer_account.html'">비밀번호 찾기</button>
+            </div>
+
+            <!-- 5. login_oauth elements -->  
+            <div class="login_oauth">
+              <button type="button" class="login_oauth_btn login_oauth_btn_naver" onclick="location.href='https://www.naver.com/'">
+                <img src="../image/login/logo_img_naver.png" alt="Naver logo" />네이버 로그인
+              </button>
+            
+              <button type="button" class="login_oauth_btn login_oauth_btn_kakao" onclick="location.href='https://www.kakaocorp.com/page/'">
+                <img src="../image/login/logo_img_kakao11.png" alt="Kakao logo" >카카오 로그인
+              </button>
+            </div>
+
+          <!-- 6. find account, sign up --> 
+            <div class="login_btn">
+              <button type="button" class="login_btn1 signup_btn" name="btn" onclick="location.href='sign_in_page_terms.html'">회원가입</button>
+            </div>
+
+          </div>
+
+        </div>   <!-- for container_login-->
+     
+      </form>
+
+    </div> <!-- for wrap -->
+
+<!----  footer----->
+  <footer data-include="./footer.html"></footer>
+
+</body>
+
+
+<script>
+  // Define an array to store login credentials
+  let users = [
+    {login_tel:"01015771577", login_pwd:"A1352468"},    // name으로 따온다.
+    {login_tel:"01016005222", login_pwd:"2710630bB"}
+  ];
+
+  function login() {
+    // Get the username and password entered by the user
+    let tel = document.getElementById("id_input").value;
+    let pwd = document.getElementById("pwd_input").value;
+
+    // Check if the login credentials match any user in the array
+    let match=false;
+      for (let i = 0; i < users.length; i++) {
+        if (tel === users[i].login_tel && pwd === users[i].login_pwd) {
+          match = true;
+          break;
+        }
+      }
+
+    // If the login credentials match, redirect to another HTML page
+      if (match) {
+        window.location.href = "../index.html";
+      } else {
+        alert("유효하지 않은 계정입니다.\n확인 후, 다시 입력해주세요.");
+      }
+    }
+    
+    
+/*-------------------------- footer -----------------------*/
+    function includeHTML(callback){
+        let z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("data-include");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("data-include");
+                includeHTML(callback);
+              }//if
+            }//onreadystatechange
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            if (this.readyState != 4) return;
+          }//if - file
+        }//for
+        if (callback) callback();
+      }//includeHTML
+
+      function findMenuBtns() {
+        const navBar = document.querySelector("nav");
+        const menuBtns = document.querySelectorAll(".menu-icon");
+        menuBtns.forEach((menuBtn) => {
+          menuBtn.addEventListener("click", () => {
+            console.log('click');
+            navBar.classList.toggle("open");
+          });
+        });
+      }
+
+      /* ✨ 실행 */
+      document.addEventListener('DOMContentLoaded',()=>{
+        includeHTML(findMenuBtns);
+      }); 
+</script>
+
+</html>
+
+
+

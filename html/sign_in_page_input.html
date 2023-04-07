@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행하다</title>
+
+  <!-- favicon image-->
+  <link href="../image/favicon.ico" rel="icon" />
+
+  <!-- 리셋 시트 -->
+  <link href="../css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- adjust css -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" type="text/css"/>    <!-- 아이콘 -->
+  <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>  <!-- header-->
+  <link href="../css/sign_in_page_default.css" rel="stylesheet" type="text/css"/>  <!-- sign in page default   -->
+  <link href="../css/sign_in_page_input.css" rel="stylesheet" type="text/css"/> <!-- sign in page3  -->
+  <link href="../css/sign_in_page_input_mediaquery.css" rel="stylesheet" type="text/css"/>  <!-- sign in page 3 mediaquery -->
+  <link href="../css/footer.css" rel="stylesheet" type="text/css"/>   <!-- footer -->  
+</head>
+
+
+<body>
+<!----  header----->
+  <header data-include="./top_nav.html"></header>
+
+<!------------------ main section -------------------->
+
+  <div id="wrap">
+
+      <form>
+      
+        <div class="sign_in_logo">
+          <h1>회원가입</h1>
+        </div>
+
+        <div class="progress">
+          <ul>
+            <li><h2 class="progress_text">1.약관동의</h2></li>
+            <li><h2 class="progress_text">2.본인인증</h2></li>
+          </ul>
+          <ul>
+            <li><h2 class="progress_text progress_text_third">3.정보입력</h2></li>
+            <li><h2 class="progress_text">4.가입완료</h2></li>    
+          </ul>
+        </div>
+
+        <div class="help_text">
+          <span class="help_text_1">* 고객분들이 서비스를 이용하기 위해 </span>
+          <span class="help_text_2">사이트에서 필요한 정보를 입력하는
+          <span class="help_text_3">페이지입니다.</span> 
+        </div>
+
+        <div class="input_user_information">
+
+          <div class="input_user_information_input">
+            
+            <ul>
+              <li>
+                <label for="id">
+                  * 전화번호<span class="essential_red">(필수)</span>
+                </label><br/>
+                <input type="text" name="tel" placeholder="휴대폰번호를 -없이 입력하세요." onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" /><br/>
+              </li>
+
+              <li>
+                <label for="pwd">
+                  * 비밀번호<span class="essential_red">(필수)</span>
+                </label><br/>
+                <input type="password" name="pwd" /><br/>
+                <span class="input_explanation">1.비밀번호는 8자 이상, 최대 20자까지 입력해주세요.</span>
+                <span class="input_explanation">2.연속된 숫자는 사용 불가능합니다.</span>
+                <span class="input_explanation">3.대문자 1글자 이상 필수로 입력하세요.</span>
+              </li>
+
+              <li>
+                <label for="pwd_check">
+                  * 비밀번호 확인<span class="essential_red">(필수)</span>
+                </label><br/>
+                <input type="password" name="pwd_check" /><br/>
+              </li>
+
+              <li>
+                <label for="birth">
+                  * 생년월일<span class="essential_red">(필수)</span>
+                </label><br/>
+                <input type="text" name="birth" placeholder="숫자 8자리만 입력하세요." onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/><br/>
+                <span class="input_explanation">※ 생년월일은 숫자 8자리로 입력하세요.</span>
+                <span class="input_explanation">(예시 : 1960년05월08일 ☞ 19600508)</span>
+              </li>
+
+              <li>
+                <label for="email">
+                  * 이메일<span class="essential_red">(필수)</span>
+                </label><br/>
+                <input type="text" name="email_1" /> @ <input type="text" name="email_2" reqired/><br/>
+
+                <input type="checkbox" id="check_email" name="check_email"/>
+                <label id="check_email_text" for="check_email" name="check_email">이메일 정보 수신동의</label><br/>
+                <span class="input_explanation input_explanation_email_1">1. 여행상품과 관련정보(특가상품/신상품/할인쿠폰/뉴스레터 등)의 안내에 활용합니다.</span>
+                <span class="input_explanation input_explanation_email_2">2. 제휴 이벤트 등 제3자와의 마케팅 활용 시 별도의 동의를 받고 진행합니다.</span>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="input_user_information_btn">
+          <button type="button" class="btn_btn btn_sign_in" onclick="joinCheck(); return false;">회원가입</button>
+          <button type="button" class="btn_btn btn_back" onclick="location.href='sign_in_page_phone.html'">뒤로가기</button>
+        </div>
+
+      </form>
+    
+    </div>
+    
+ <!----  footer----->
+ <footer data-include="./footer.html"></footer>
+
+</body>
+
+<script>
+  /*-----sign in condition-----*/
+  function joinCheck(){
+    let tel=document.member.tel.value;
+    let pwd=document.member.pwd.value;
+    let pwd_check=document.member.pwd_check.value;
+    let birth=document.member.birth.value;
+    let email_1=document.member.email_1.value;
+    let email_2=document.member.email_2.value; 
+  
+
+    if(tel==null||tel==""){
+	  	alert('전화번호 입력은 필수사항입니다.');
+	  	document.member.tel.focus();
+	  	return;
+	  }
+
+    if(pwd==null||pwd==""){
+	  	alert('비밀번호 입력은 필수사항입니다.');
+	  	document.member.pwd.focus();
+	  	return;
+	  }
+
+    if(pwd_check==null||pwd_check==""){
+	  	alert('비밀번호가 일치하지 않습니다.');
+	  	document.member.pwd_check.focus();
+	  	return;
+	  }
+
+    if(birth==null||birth==""){
+	  	alert('생년월일 입력은 필수사항입니다.');
+	  	document.member.birth.focus();
+	  	return;
+	  }
+
+    if(email_1==null||email_1==""){
+	  	alert('이메일 주소를 입력해주세요.');
+	  	document.member.email_1.focus();
+	  	return;
+	  }
+
+    if(email_2==null||email_2==""){
+	  	alert("이메일 주소를 전부 입력하셔야 합니다. \n 예>naver.com");
+	  	document.member.email_2.focus();
+	  	return;
+	  }
+
+  document.member.submit();
+}
+
+/*--- ---*/
+function includeHTML(callback){
+        let z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("data-include");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("data-include");
+                includeHTML(callback);
+              }//if
+            }//onreadystatechange
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            if (this.readyState != 4) return;
+          }//if - file
+        }//for
+        if (callback) callback();
+      }//includeHTML
+
+      function findMenuBtns() {
+        const navBar = document.querySelector("nav");
+        const menuBtns = document.querySelectorAll(".menu-icon");
+        menuBtns.forEach((menuBtn) => {
+          menuBtn.addEventListener("click", () => {
+            console.log('click');
+            navBar.classList.toggle("open");
+          });
+        });
+      }
+
+      /* ✨ 실행 */
+      document.addEventListener('DOMContentLoaded',()=>{
+        includeHTML(findMenuBtns);
+      }); 
+
+</script>
+
+</html>

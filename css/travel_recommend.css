@@ -29,6 +29,193 @@ button{
     cursor: pointer;
 }
 
+
+/* ------ 문구 드롭다운 ------ */
+/* ======================= center_drop ================== */
+.center_drop{
+    padding-top: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+}
+
+em,.sBtn-text{
+    font-size: 27px;
+}
+
+.text_area{
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.text_area>span, .select-menu{
+    display: inline-block;
+}
+
+.text_area>span{
+    display: flex;
+    width:300px;
+}
+
+.text_area>em{
+    padding-top: 15px;
+}
+
+.text_area>span>em{
+    padding-top: 15px;
+}
+
+.select-menu{
+    width: 220px;
+    height: 50px;
+}
+
+.select-menu .select-btn{
+    display: flex;
+    width: 240px;
+    height: 50px;
+    font-size: 18px;
+    /* border-radius: 8px; */
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    border-bottom: 2px solid black;
+    /* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
+}
+
+.select-btn svg{
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.active .select-btn svg{
+    transform: rotate(-180deg);
+}
+
+.options{
+    z-index: 1;
+}
+
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.select-menu.active .options{
+    display: block;
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.options .option:hover{
+    background: #f2f2f2;            
+}
+
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.options .option:hover{
+    font-weight: 600;
+    background: #f2f2f2;
+}
+
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+
+.text_area2{
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.drop_down_btn{
+    /* padding-top: 30px; */
+    width: 100%;
+    height: 75px;
+}
+.btn-type-round{
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 1.2;
+    text-decoration: none;
+    min-height: 50px;
+    background: black;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.front_span{
+    display: flex;
+    width: 300px;
+}
+
+.front_span em{
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.back_span{
+    display: flex;
+    width: 250px;
+}
+
+.text_area2>em{
+    padding-top: 15px;
+}
+/* ======================== center_drop end ======================== */
+
+
+
 /* 낮은 가격순 / 높은 가격순 */
 .filtering{
     text-align: right;
@@ -64,8 +251,8 @@ button{
 
 /* 여행지 목록(왼쪽) 사진부분 */
 .travel_section_img{
-    /* background-image: url(../image/yun/img_box_1.jpg); */
     background-size: cover;
+    background-position: center center;
     /* background-size: contain; */
     /* background-repeat: no-repeat; */
     width: 70%;
@@ -249,10 +436,18 @@ td {
     box-shadow: 4px 4px 8px #888;
 }
 
-
 /* =========== media query (max-width: 450px), ~450 =========== */
 @media(max-width: 450px){
-    
+    .text_area2 .select-btn {
+        padding-top: 15px;
+    }
+    .text_area2 em{
+        padding-top: 30px;
+    }
+
+    .btn-type-round{
+        margin-top: 70px;
+    }
 }
 
 
@@ -273,6 +468,15 @@ td {
     .travel_section_info{
         width: 90%;
         text-align: center;
+    }
+
+    .drop_down_btn{
+        margin-top: 40px;
+        
+    }
+
+    .btn-type-round{
+        width: 80%;
     }
     
 }

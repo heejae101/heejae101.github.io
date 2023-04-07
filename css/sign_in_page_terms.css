@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "KakaoBold"; /* make font-family */
+  src: url("../font/KakaoOTFBold.otf") format("opentype"); /* import font file */
+}
+
+
+/*----------------- page1,page2,page3 공통 --------------------*/
+div.progress h2.progress_text_first{
+  background-color:rgb(253, 166, 4);
+  padding:10px;
+  border-radius:5px;
+}
+
+div.help_text{
+  margin:50px 0; 
+  text-align:center;
+}
+
+div.help_text span{
+  font-size:28px; 
+  font-weight:700; 
+}   
+
+/*-----------------------sign in 1page adjust--------------------------*/
+div.check_list_container{
+  width:100%;
+  padding-left:80px;
+  font-weight:700;
+  /* background-color:yellowgreen; */
+}
+
+div.check_list_container input.check_list_entitle{
+  width:20px;
+  height:20px;
+}
+
+div.check_list_container span.check_list_entitle_txt{
+  margin-left:2px;
+  font-size:24px;
+  font-weight:700;
+}
+
+div.check_list_container li{
+  display:block;
+  margin-bottom:5px;
+}
+
+div.check_list_container_1 label{
+  font-size:25px;
+}
+
+div.check_list_container_1 label:hover{
+  cursor:pointer;
+}
+
+div.check_list_container div.check_list_container_2{
+  display:flex;
+  justify-content:space-between;
+  width:640px;
+  border-top:2px solid gray;
+  border-bottom:2px solid gray;
+  margin:15px 0;
+  padding:15px 10px 10px 15px;
+}
+
+div.check_list_container div.check_list_container_terms{
+  width:280px;
+  font-size:18px;
+  /* background-color:yellow; */
+}
+
+div.check_list_container div.check_list_container_terms label:hover{
+  cursor:pointer;
+}
+
+div.check_list_container_agree{
+  width:70px;
+  margin-top:1.7px;
+  font-size:18px;
+  /* background-color:pink; */
+}
+
+div.check_list_container_agree a:hover{
+  color:red;
+}
+
+div.check_list_container_agree li{
+  margin-bottom:8px;
+}
+
+div.check_list_container_agree a{
+  color:rgba(21, 1, 1, 0.571);
+  font-weight:700;
+}
+
+div.check_list_container li>span.essential_red{
+  font-weight:700;
+  color:red;
+}
+
+div.check_list_container span.check_list_text{
+  display:inline-block;
+  margin-left:5px;
+  font-size:20px;
+  font-weight:700;
+}
+
+/*-------------------------------- part : move to next page ----------------------------------*/
+div.sign_in_btn_container{
+  width:100%;
+  margin:30px 0 60px 0;
+  /* background-color:yellow; */
+}
+
+div.sign_in_btn_container ul{
+  display:flex;
+  justify-content:center;
+}
+
+div.sign_in_btn_container li{
+  display:inline-block;
+  margin-right:30px;
+}
+
+div.sign_in_btn_container button.sign_in_btn{
+  width:200px;
+  height:50px;
+}
+
+/* normal login */
+button.sign_in_btn_normal{
+  width:200px;
+  height:50px;
+  background-color:#000;
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:1rem;
+  font-weight:700;
+  font-family:"nanum";
+}  
+
+/* naver login */
+button.sign_in_btn_naver{
+  height:50px;
+  background-color:#2DB400;
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:"Nanum Gothic", sans-serif;
+  font-weight:800;
+  font-size:0.8rem; 
+}
+
+button.sign_in_btn_naver img{
+  width:20px;
+  margin-right:10px;
+}
+
+/* kakao login */
+button.sign_in_btn_kakao{
+  height:50px;
+  background-color:#FFCD00;
+  color:#000;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:"KakaoBold";
+  font-weight:800;
+  font-size:0.8rem;
+}
+
+button.sign_in_btn_kakao img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+

@@ -1,0 +1,68 @@
+@font-face {
+  font-family:'nanum';
+  src: url('../font/NanumSquareNeo-cBd.ttf');
+  font-weight: 400;
+}
+
+@font-face{
+  font-family:'nanum';
+  src: url('../font/NanumSquareNeo-eHv.ttf');
+  font-weight: 700;
+}
+/*---- default function ----*/
+input{
+  font-size:20px;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+}
+
+button:hover{
+  box-shadow:2px 2px 5px #ABA9A9;
+}
+
+div#wrap{
+  display:flex;
+  flex-flow:row wrap;
+  width:100%;
+  margin:0 auto;
+  font-family:"nanum";
+  align-items: center;
+  justify-content:center;
+  /* background-color:yellow; */
+}
+
+div.sign_in_logo{
+  display:flex;
+  justify-content:center;
+  margin:80px 0px;
+}
+
+div.sign_in_logo h1{
+  font-size:40px;
+  font-weight:800;
+}
+
+div.progress{
+  margin:10px 0 10px 0;
+  text-align:center;
+}
+
+div.progress ul{
+  display:inline-block;
+  margin:10px 0px 10px 0px;
+}
+
+div.progress li{
+  display:inline-block;
+  font-size:32px;
+  font-weight:800;
+  margin:0px 20px;
+}
+
+div.progress h2.progress_text{
+  padding:10px;
+  border-radius:5px;
+} 

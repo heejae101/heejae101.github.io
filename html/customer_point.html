@@ -4,30 +4,40 @@
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>points</title>
-
+    <!-- 파비콘 -->
     <link rel="shortcut icon" type="image/x-icon" href="../image/favicon.ico">
 
     <!-- css default -->
-    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
     <!-- header & footer css -->
     <link href="../css/nav_footer.css" rel="stylesheet" />
+
+    <!-- ajax -->
+    <!-- 아이콘 -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+
+    <!-- 리셋 시트 -->
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+
+    <!-- 스타일 시트 -->
+    <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
+
 
     <!-- 스타일시트 영역 -->
     <style>
         /* 폰트 */
         @font-face{ /* 일반크기 */
             font-family: 'nanum';
-            src: url(../font/NanumSquareNeo-cBd.ttf);
+            src: url(../trip_website_for_senior/font/NanumSquareNeo-cBd.ttf);
             font-weight: 400;
         }
         @font-face{ 
-            font-family: 'nanum';
+            font-family: 'nanum-1';
             src: url(../font/NanumSquareNeo-eHv.ttf);
             font-weight: 700;
         }     
-
-        /* 리스트와 하이퍼링크 설정 */
-        ul,li{
+        ul,ol,li{
             list-style: none;            
         }
         a{
@@ -35,402 +45,508 @@
             color: black;
         }
 
-        /* 나의 포인트 전체 화면 페이지 */
-        div.customer_point{
-            width: 90%;
-            height: 900px;
-            margin-left: 5%;
-            /*border: 1px dotted black; /* 지울부분 */
+        /* 완전한 최후의 전체 페이지 끝판왕 우주의 저 끝 영역 */
+        div.total{ 
+            display: flex;
+            justify-content: center; /* customer_point 전체 페이지를 완벽하게 정중앙에 위치시키기 위함 */
         }
 
-        div.customer_point .title{
+        /* 포인트 안내 전체 페이지 설정 */
+        div.customer_point{
+            width: 1000px; /* 전체 페이지의 가로 너비(필요시 %로도 변경해 보길) */
+            height: 900px; /* 전체 페이지의 세로 길이 */  
+            /* align-items: center;                    */
+            display: flex;
+            display: inline-block;
+            position: relative;
+            /* background-color: rgb(126, 105, 76); */
+        }
+        /* "나의 포인트" 제목 */
+        h1.title{
+            font-family: 'nanum-1';
+            font-size: 40px; /* 타이틀은 40px로 고정하기로 결정된 사항 */
             text-align: center;
-            font-family: 'nanum';
-            font-size: 40px;
             margin-top: 20px;
-        } 
-        
+        }
 
-        .customer_point_info{
+        /* 포인트 안내 설명란 영역 */
+         div.customer_point_info{
+            width: 90%;
+            height: 150px;  
+            position: absolute;
+            left: 10%;      
+            top: 90px;    
+            /* background-color: rgb(75, 164, 164); */
+        }       
+        .customer_point_info li{
             font-family: 'nanum';
-            font-size: 23px;
-            margin-top: 70px;
         }
         span.redmark{
             color: red;
         }
-        span.point_clause a{ /* 포인트 약관 외관 설정 */
+        span.point_clause a{
             font-weight: bold;
-
         }
-        div.customer_point_info li{
-            margin-bottom: 15px;
-        }
+    
 
-
-        /* 회원 포인트의 잔량을 안내하는 중앙 큰 페이지, 부모영역 */
-        .customer_inform_point{
-            margin-top: 50px;
-            /* width: 900px; */ width: 100%;
+        /* 사용 가능 포인트 전체 안내박스 */
+        div.customer_inform_point{
+            width: 75%;
             height: 150px;
-            background-color:rgb(235, 246, 248);
-            /* 자식영역 위치 설정 */
-            position: relative;
-        }
-        .customer_point_informbox_1{
-            position: absolute;
-            left: 60px;
-            top: 7px;
-            width: 370px;
-            height: 100px;
-            font-family: 'nanum';
-            font-size: 1.2rem;
-            /*border: 2px dotted black; /* 지움 */
-        }
-        .customer_point_informbox_1 li{
-            text-align: left;
-            line-height: 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .customer_point_informbox_1 #point{
-            position: absolute;
-            left: 73px; /* 포인트(코인) 이미지와의 간격 */
-        }
-        .customer_point_informbox_1 img{ /* 포인트(코인) 이미지 삽입 위치 설정 */
-            position: absolute;
-            top: 78px;
-            width: 30px;
-            height: 30px;
-        }
-        .customer_point_informbox_2{
-            position: absolute;
-            right: 100px;
-            top: 7px;
-            width: 300px;
-            height: 100px;     
-            font-family: 'nanum';      
-            font-size: 1.2rem;
-            /*border: 2px dotted black; /* 지움 */
-        }
-        .customer_point_informbox_2 li{
-            text-align: left;
-            line-height: 50px;
-            font-size: 1.2rem;            
-        }
-
-        .customer_point_informbox_3{
-            position: absolute;
-            width: 50px;
-            height: 100px;
-            right: 70px;
-            top: 7px;
-            font-family: 'nanum';
-            /*border: 2px dotted black; /* 지움 */
-        }
-        .customer_point_informbox_3 li{
-            text-align: center;
-            line-height: 50px;
-            font-family: 'TourEasyT'; /* 없어서 이용 불가 ㅠ */
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-
-
-        /* 전체, 적립, 사용, 소멸예정포인트 안내 텍스트 */       
-        div.customer_point_inform_nav{
             display: flex;
+            justify-content: space-between; /* flex와 center는 내용물들을 가로로 배치시킴 */
+            position: absolute;            
+            top: 300px; /* 해당 박스를 포지션을 통해 위치를 고정함(flex로 가로 조정이 되면 된거임) */
+            left: 10%; /* 수평 이동방향(여기서 조절하세요) */
+            border-radius: 10px;
             font-family: 'nanum';
-            margin-top: 50px;           
+            background-color: rgb(225, 223, 223);
         }
-        div.customer_point_inform_nav>ul{    
-            font-size: 1.8rem;            
+        /* 'OOO님께서 보유한 포인트' 안내박스 */
+        div.customer_point_informbox_1{
+            width:440px;
+            height: 50px;
+            line-height: 30px;
+            position: relative;     
+            /* background-color: blue;      */
+            margin-top: 15px;            
+            
+        }
+        div.customer_point_informbox_1>ul{
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            width: 350px;
+            height: 70px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        div.customer_point_informbox_2{
+            width:550px;
+            height: 80px; /* 이건 박스 크기가 아니고.. 뭔지 모르겠..---안되면 체크할 부분-- */
+            line-height: 30px;
+            /* margin-left: 10px; */
+            margin-right: 20px;
+            position: relative;                     
+        }
+        /* 이 영역은 모바일버전에서 사라질 부분-----------------모바일 참고!--------------- */
+        div.customer_point_informbox_2>ul{
+            position: absolute;
+            width: 250px;
+            height: 70px; /* 실제 박스의 크기 */
+            top: 50%;
+            left: 40%;
+            font-size: 20px;
+            font-weight: bold;
+            /* background-color: aquamarine; */
+        }
+        div.customer_point_informbox_2-1{ /* 이건 모바일에서 실행될 사이즈 */
+            width:250px;
+            height: 80px;
+            line-height: 30px;
+            margin-left: 10px;
+            position: relative;            
+        }
+        div.customer_point_informbox_2-1>ul{
+            position: absolute;
+            top: 50%;
+            right: -20%;
+        }
+        div.customer_point_informbox_3{
+            width:250px;
+            height: 80px;
+            line-height: 30px;
+            margin-left: 30px;
+            position: relative;            
+        }
+        div.customer_point_informbox_3>ul{
+            position: absolute;
+            top: 50%;
+            right: 70%;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        
+
+
+
+
+
+        /* 적립, 사용, 소멸예정포인트 안내영역(=적립, 사용, 소멸예정포인트 nav) */
+        div.customer_point_inform_nav{
+            width: 60%;
+            height: 50px;            
+            /* display: inline-block; */
+            position: absolute;            
+            top: 480px;
+            left: 7%; /* 중앙으로 20%만큼 이동시킴 */
+            /* background-color: blueviolet; */
+        }
+        div.customer_point_inform_nav>ul{
+            display: flex;
+            justify-content: space-around;            
         }
         div.customer_point_inform_nav li{
-            display: inline-block;
-            margin-right: 15px;        
+            font-family: 'nanum';
+            font-size: 27px;
+            /* color: gray; */
         }
         div.customer_point_inform_nav a{
-            color: rgb(94, 94, 94);
+            color: gray;
         }
-        
+        /* hover */
+        div.customer_point_inform_nav a:hover{
+            font-weight: bold;
+            color: black;
+        }
 
-        /* 전체, 적립, 사용, 소멸예정포인트 안내 텍스트 호버 효과(갖다대면 진해짐) */
-        div.customer_point_inform_nav a:first-child:hover{
-            font-weight: bold;
-            color: black;
-        }
-        div.customer_point_inform_nav a:nth-child(2):hover{
-            font-weight: bold;
-            color: black;
-        }
-        div.customer_point_inform_nav a:nth-child(3):hover{
-            font-weight: bold;
-            color: black;
-        }    
-        div.customer_point_inform_nav a:last-child:hover{
-            font-weight: bold;
-            color: black;
-        }
-             
-          
-      
-        /* 전체, 적립, 사용, 소멸예정포인트 안내영역(최하단부) */
+
+        /* 포인트 적립현황 안내영역 */
         div.customer_point_page{
-            width: 100%;
-            height: 180px;
-            margin-top: 20px;
-            position: relative;
-            /*background-color: aqua; /* 지울부분 */
-        }
-        /* 총 1건 텍스트 */
-        div.customer_point_page>.total_point{
             font-family: 'nanum';
-            font-size: 1.0rem;
-            font-weight: 700;
-            width: 100%;
+        }
+        /* "총1건" 안내영역 */
+        div.customer_point_page>div.total_point{
+            width: 78%;
             height: 30px;
-            margin-top: 25px;
-            /* position: absolute;
-            left: 10px; */
-            top: 0px;
-            /* border-bottom: 2px solid black; */
-            /*border: 1px dotted black; /* 지울부분 */
+            position: absolute;     
+            top: 550px;
+            left: 10%;
+            padding-left: 20px;
+            border-bottom: 2px solid black;            
+            /* background-color: chocolate; */
         }
-
-
-        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-        |    텍스트 길이에 따라서 함께 조건이 적용되지 않음     |
-        |    (길이가 길어서 아래로 내려가거나 하는)으로 인해    |
-        |    클래스를 따로 지정하여 조건을 조금 변경함          |
-        ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-
-
-        div.point_content_part1{
-        display: flex;
-        /* width: 1010px; */
-        width: 1000px;
-        height: 60px;
-        line-height: 30px;
-        font-family: 'nanum';
-        border-top: 2px solid black;
-        border-bottom: 1px solid rgb(188, 186, 186) ;            
-
-        }    
-        div.point_content_part1 li{
-            display: inline-block;
-            margin-right: 50px;   
-            /* border-top: 2px solid black;   */
-        }    
-        div.point_content_part1 li.a{
-            margin-left: 40px;
-            margin-right: 197px;
+        /* 날짜, 구분, 내역, 예약번호 등등 안내영역(요소 제목들) */
+        div.customer_point_page>div.point_content_part1{
+            width: 80%;
+            height: 500px; 
+            position: absolute;
+            top: 580px;
+            left: 10%; /* 추후 콘텐츠가 완성되면 조정할 것 --------------------확인!------------- */
+            /* background-color: cornflowerblue; */
         }
-        div.point_content_part1 li.b{
-            margin-left: 135px;
-            margin-right: 20px;
-        }
-        div.point_content_part1 li.c{        
-            margin-right: 35px;
-        }
-        div.point_content_part1 li.d{        
-            margin-left: 40px;
-        }
-        /* 이건 뭐하는 짓일까? */
-        /* part2 영역...(잘 모를땐 이렇게 뻘짓도 좀 하는거지 썅) */
-        div.point_content_part2{
+        /* 차트(??)영역 */
+        div.point_content_part1>ul{
             display: flex;
-            width: 1000px;  
-            
-            height: 60px; 
-            line-height: 30px;   
-            font-family: 'nanum';            
-            border-bottom: 1px solid rgb(188, 186, 186) ;
+            justify-content: space-around;
+            height: 60px;            
+            border-bottom: 1px solid gray;
+        }
+        div.point_content_part1 li{
+            line-height: 60px;
+        }
+
+        div.customer_point_page>div.point_content_part2{
+            width: 80%;
+            height: 500px; 
+            position: absolute;
+            top: 630px;
+            left: 10%;
+        }
+        div.point_content_part2>ul{
+            display: flex;
+            justify-content: space-around;
+            height: 70px;
+            position: relative;
+            /* gap:25px; */
+            border-bottom: 1px solid gray;
         }
         div.point_content_part2 li{
-            display: inline-block;
-            margin-right: 50px;
+            line-height: 77px;
         }
-        div.point_content_part2 li.box2{
-            margin: 0 160px 0 110px;
+        li.a{ /* 날짜 */
+            position: absolute;
+            left: 5%;
         }
-        div.point_content_part2 li.box3{
-            margin-right: 33px;
+        li.b{ /* 구분 */
+            position: absolute;
+            left: 15%;
         }
-        div.point_content_part2 li.box4{
-            margin-right: 33px;
+        li.c{ /* 내역 */
+            position: absolute;
+            left: 30%;
+        }
+        li.d{ /* 예약번호 */
+            position: absolute;
+            left: 50%;
+        }
+        li.e{ /* 적립/소멸예정일 */
+            position: absolute;
+            left: 68%;
+        }
+        li.f{ /* 포인트 */
+            position: absolute;
+            left: 90%;
+        }
+        /* 수치 영역 */
+        li.g{ /* 날짜 */
+            position: absolute;
+            left: 1%;
+        }
+        li.h{ /* 구분 */
+            position: absolute;
+            left: 14.5%;
+        }
+        li.i{ /* 내역 */
+            position: absolute;
+            left: 25.5%;
+        }
+        li.j{ /* 예약번호 */
+            position: absolute;
+            left: 51.5%;
+        }
+        li.k{ /* 적립/소멸예정일 */
+            position: absolute;
+            left: 70.5%;
+        }
+        li.l{ /* 포인트 */
+            position: absolute;
+            left: 90%;
         }
 
-        /* 최하단 페이지 넘버링 */        
+        /* 하단 페이지 넘버링 */
         div.pagination>ul{
+            position: absolute;
+            top:710px;
+            left: 47%;
+            font-family: 'nanum'; /* 안먹히는거같은? */
             display: flex;
             justify-content: center;
-            align-items: center;
-            width: 900px;
-            height: 100%;
-            font-size: 1.3rem;
-            font-weight: bold;  
-            margin-right: 15%;                
         }
 
-        
-        /* 모바일용 CSS - 768px이하에서부터 가변그리드 적용 */
+        /* 여기 이하부터 모바일 화면 설정 영역 */
+        /* 모바일 사이즈는 890px로 max-width 지정함. 기존의 전체 width=1000px*/
 
-        /* 큰 화면에서는 아래의 목록이 보이지 않게 설정 */
-        @media all and (min-width: 870px){
-            div.another_points_size{
-                display: none;
-            }
-            div.customer_point_informbox_2-1{
-                display: none;
-            }
-            div.mobile_down_nav{
-                display: none;
-            }
-        }
-
-        /* 모바일 화면에서부터 아래의 설정이 발효됨 */
-        @media all and (max-width: 870px){
-            div.point_content_part1, div.point_content_part2, div.customer_point_informbox_2, div.pagination{
-                display: none;
-            }
-            div.another_points_size{
-                width: 95%; 
-                position: absolute;
-                top: 955px;
-                
-                border-top: 2px solid black;
-                border-bottom: 1px solid black;
-            }
-            div.points{
-                position: absolute;
-                right: 25px;
-                bottom: 38px;                
-                font-weight: bold;
-            }
-            div.customer_point_info{
-                font-size: 18px;
-            }
-
-            div.customer_point_inform_nav li{
-                font-size: 1.8rem;
-            }
-            li.d, li.b, span.c{
-                color:gray;
-            }
-            li.a{
-                font-weight: bold;
-            }
-            div.customer_point_informbox_1{
-                position: absolute;
-                left: 0px;
-            }
-            div.customer_point_informbox_1 li{
-                font-size: 1.0rem;    
-            }
-            div.customer_point_informbox_2-1{
-                position: absolute;
-                text-align: center;
-                line-height: 50px;
-                left: 240px;
-                top: 10px;
-            }
-            div.customer_point_informbox_2-1 li{
-                font-size: 1.1rem;   
-                /* font-weight: bold;  */
-            }
-            div.customer_point_informbox_3{
-                position: absolute;
-                left: 340px;
-                top: 10px;
-            }
-            div.customer_point_informbox_3 li{
-                font-size: 1.1rem;    
-            }
-            div.mobile_down_nav{
-                display: flex;
-                justify-content: space-around;
-                position: relative;        
-            }    
-            div.mobile_down_nav>ul{
-                width: 100%;
-                position: absolute;
-                top: 100px;
-                border-top: 2px solid black;
-                border-bottom: 1px solid black;
-            }
-            div.mobile_down_nav li{        
-                display: inline-block;
-                margin: 25px;
-                font-family: 'nanum';
-                font-size: 1.3rem;
-            }
-            div.mobile_down_nav a{
-                color: black;
-            }
-       
-    }
-    /* 450px 영역 추가 */
-    @media all and (max-width:450px){
-        div.another_points_size{
-            width: 450px;
+        @media all and (max-width:890px){
+        /* 890px까지만 보여야 할 부분-바꿔말하면 모바일에서 보일 조건을 여기에 설정 */
+        div.customer_point_informbox_2>ul{
             display: none;
         }
-    }
+        div.customer_point_informbox_3>ul{
+            font-weight: bold;
+        }
+        div.customer_point_informbox_2-1>ul{
+            width: 80px;
+            height: 50px;
+            font-weight: bold;
+            left: -45%;
+            /* background-color: blue; */
+        }
+        div.customer_point_informbox_1>ul{
+            font-size: 15px;
+            font-weight: 600;
+            left: 30%;
+        }
+        ul.informbox_pc{
+            display: none;
+        }
+        div.customer_inform_point{
+            width: 80%;
+            height: 150px;
+            display: flex;
+            justify-content: space-between; /* flex와 center는 내용물들을 가로로 배치시킴 */
+            position: absolute;
             
+            top: 360px; /* 해당 박스를 포지션을 통해 위치를 고정함(flex로 가로 조정이 되면 된거임) */
+            left: 10%; /* 수평 이동방향(여기서 조절하세요) */
+            border-radius: 10px;
+            background-color: rgb(225, 223, 223);
+        }
+        
+        /* 적립, 사용, 소멸예정포인트 nav */
+        /* 모바일 화면 시 목표: 이 부분의 메뉴를 두줄로 나뉘어야 한다! */
+        div.customer_point_inform_nav_for-mobile{
+            width: 270px;
+            height: 80px;
+            position: relative;            
+            /* background-color: aqua; */
+        }
+        div.customer_point_inform_nav_for-mobile>ul{
+            display: flex;
+            justify-content: space-between;
+        }        
+        
+        div.div_1{
+            margin: 0 5px 0 5px;
+        }
+        div.div_2{
+            margin: 0 5px 0 5px;
+        }
+        div.customer_point_inform_nav_for-mobile{
+            width: 60%;
+            height: 50px;            
+            /* display: inline-block; */                    
+            top: 480px;
+            left: 7%; /* 중앙으로 20%만큼 이동시킴 */
+            position: relative;
+            /* background-color: blueviolet; */
+        }
+        div.customer_point_inform_nav_for-mobile>ul{
+            display: flex;
+            justify-content: space-around;   
+              
+            font-size: 25px;
+            width: 400px;
+            height: 40px; /* 내비 메뉴가 포함된 박스 size */
+            /* background-color: aqua; */            
+        }        
+        /* ------전체,적립포인트,사용포인트,소멸예정포인트 높낮이 조절은 여기서!!------ */
+        div.customer_point_inform_nav_for-mobile>ul.for_mobile-1{
+            position: absolute;
+            line-height: 40px;  
+            bottom: 30px;       
+            /*left:-15%;  /* 스마트폰 화면 중앙에 최대한 맞춤 */
+            left:15%;  /* 스마트폰 화면 중앙에 최대한 맞춤 */
+        }
+        div.customer_point_inform_nav_for-mobile>ul.for_mobile-2{
+            position: absolute;
+            line-height: 40px;  
+            top:20px;  
+            /*left:-19%;   /* 스마트폰 화면 중앙에 최대한 맞춤 */   
+            left:19%;   /* 스마트폰 화면 중앙에 최대한 맞춤 */   
+        }
+        /* ------전체,적립포인트,사용포인트,소멸예정포인트 높낮이 조절은 여기서!!------ */
 
+        
+        div.customer_point_inform_nav_for-mobile a{
+            color: gray;
+        }
+        /* hover */
+        div.customer_point_inform_nav_for-mobile a:hover{
+            font-weight: bold;
+            color: black;
+        }
+        div.customer_point_inform_nav{
+            display: none;
+        }    
+
+        /* 포인트 적립현황(하단부) */
+        div.customer_point_page{
+            display: none;
+        }
+        }
+
+        div.another_points_size{
+            position: relative;
+        }
+        .another_points_size>ul{
+            width: 90%;
+            height: 100px;
+            position: absolute;
+            top: 500px;
+            left: 5%;
+            border-top: 2px solid black;
+            border-bottom: 1px solid gray;
+            /* background-color: aqua; */
+        }
+        .another_points_size li.d{ /* 적립일자; 최상단, 최좌측 */
+            position: absolute;
+            line-height: 20px;
+            color: gray;
+            top: 5px;
+            left:2%;
+        }
+        .another_points_size li.a{ /* 적립상태, 적립이유; 최좌측 중앙 */
+            position: absolute;
+            line-height: 83px;
+            font-size: 16px;      
+            font-weight: bold;      
+            top: 7px;
+            left:2%;
+        }
+        .another_points_size li.b{ /* 예약번호 | 소멸 예정일; 최좌측 하단 */
+            position: absolute;
+            font-size: 14px;
+            line-height: 165px;
+            color: gray;
+            top: 1px;
+            left:2%;
+        }
+        li.points{ /* 적립된 포인트; 최우측 중앙 */
+            position: absolute;
+            line-height: 83px;
+            font-size: 16px;
+            top: 7px;
+            right:2%;
+        }
+
+        /* 최하단 로그아웃, 공지사항, 고객센터 */
+        div.mobile_down_nav{            
+            position: relative;        
+        }    
+        div.mobile_down_nav>ul{
+            width: 100%;
+            position: absolute;
+            top: 650px;
+            /* left: 100px; */
+            border-top: 2px solid black;
+            border-bottom: 1px solid black;
+        }
+        div.mobile_down_nav li{        
+            display: inline-block;
+            margin: 20px;
+            margin-left: 90px;
+            font-family: 'nanum';
+            font-size: 1.3rem;
+        }
+        div.mobile_down_nav a{
+            color: black;
+        }
+
+
+
+
+
+
+
+
+        /* !!!!! ----- pc 화면에서만 보이도록 설정하는 영역 ----- !!!!! */
+
+        @media all and (min-width:890px){
+        /* 890px이상부터 안보여야 할 조건 설정 */    
+        /* 바꿔말하면 모바일로 안보여야 하는 영역(pc로 보여야 하는) 설정 */
+        div.customer_point_informbox_2-1>ul{
+            display: none;
+        }
+        .informbox_pc{
+            display: none;
+        }
+        
+        div.customer_point_inform_nav_for-mobile{
+            display: none;
+        }
+        div.another_points_size{
+            display: none;
+        }
+        div.mobile_down_nav{
+            display: none;
+        }
+      
+    }
     
     </style>
 
 
 </head>
-<body>
-    <!-- header 시작 -->
-    <div class="top_text_area">
-        <div class="top_nav">
-            <div class="top_nav_icon_area">
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                </svg> -->
-                <a href="../index.html"><span class="icon">여행하다</span></a>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
-                    <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>
-                </svg> -->
-                <img src="../image/travel.png">
-            </div>
-            <div class="top_nav_menu_area">
-                <ul>
-                    <li><a href=""><span class="font_black">국내 여행</span></a></li>
-                    <li><a href=""><span class="font_black">해외 여행</span></a></li>
-                    <li><a href=""><span class="font_black">여행 가이드</span></a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- login_nav 부분 -->
-        <div class="login_nav">
-            <ul>
-                <li><a href=""><span class="font_black">예약 확인</span></a></li>
-                <li><a href=""><span class="font_black">고객센터</span></a></li>
-                <li><a href=""><span class="font_black">나의 정보 확인</span></a></li>
-                <li><a href=""><span class="font_black">로그인</span></a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- header 끝 -->
+<body>    
+    <!-- header -->
+    <header data-include="./top_nav.html"></header>
+    <!-- header -->
 
+    <div class="total">
     <!-- 나의 포인트 전체 화면 페이지 -->
     <div class="customer_point">
         <h1 class="title">나의 포인트</h1> <!-- 최상단 타이틀 -->
-        <!-- 나의 포인트 안내 -->
+        <!-- 나의 포인트 안내 설명란 -->
         <div class="customer_point_info">
             <ul>
-                <li>· 고객님의 포인트를 확인하시고 적립된 포인트로 신나는 여행하세요.</li>
+                <li class="box1">· 고객님의 포인트를 확인하시고 적립된 포인트로 신나는 여행하세요.</li><br/>
                 <li>· 포인트는 <span class="redmark">최소 10P 이상</span>이 되어야 사용하실 수 있습니다.<br/> 
                     포인트는 <span class="redmark">상품가의 1%(유류할증료 및 제세공과금 제외, 유아 제외)</span>이며,여행 도착일 기준 <span class="redmark">약 7일 후에 자동적립</span>됩니다.<br/>
-                    &nbsp;단, 포인트는 <span class="redmark">항공권 및 호텔 이용시 적립이 불가</span>하며 사용하실 수 업습니다.(유효기간: 적립 후 3년까지 이용가능)</p>
-                </li>
-                <li>· 포인트 관련 자세한 내용은 <span class="redmark">고객센터 > 포인트 안내</span>를 참고해 주세요.<br/> <span class="point_clause"><a href="#">포인트 약관 바로가기 →</a></span></li>
+                    &nbsp;단, 포인트는 <span class="redmark">항공권 및 호텔 이용시 적립이 불가</span>하며 사용하실 수 없습니다.(유효기간: 적립 후 3년까지 이용가능)</p>
+                </li><br/>
+                <li>· 포인트 관련 자세한 내용은 <span class="redmark">고객센터 > 포인트 안내</span>를 참고해 주세요.<br/><br/>
+                    <span class="point_clause"><a href="#">포인트 약관 바로가기 →</a></span></li>
             </ul>
                        
             <!-- <h3><a href="#">포인트 약관 바로가기 →</a></h3> -->
@@ -439,11 +555,15 @@
         <div class="customer_inform_point">
             <!-- 사용가능 포인트 안내박스(좌) -->
             <div class="customer_point_informbox_1">
-                <ul>
+                <ul class="informbox_pc">
                     <li>OOO님의 사용 가능한 포인트는</li>
-                    <li id="point">5,000P가 있습니다.</li>
-                    <img src="../image/cwh/coin.png">
-                </ul>                
+                    <li id="point">5,000P가 있습니다.</li>                    
+                </ul>        
+                <!-- 모바일 작동 시 다음 코드 -->
+                <ul class="informbox_mobile">
+                    <li>사용가능 포인트는</li>
+                    <li id="point">5,000P입니다.</li>                    
+                </ul>
             </div>
             <!-- 적립예정 & 소멸예정 포인트(우) -->
             <div class="customer_point_informbox_2">
@@ -478,28 +598,40 @@
                 <li><a href="#">소멸예정포인트</a></li>                
             </ul>
         </div>
+        <!-- 모바일에서 적용될 코드 -->
+        <div class="customer_point_inform_nav_for-mobile">
+            <ul class="for_mobile-1">
+                <div class="div_1"><a href="#">전체</a></div>
+                <div class="div_1"><a href="#">적립포인트</a></div>
+            </ul>
+            <ul class="for_mobile-2">
+                <div class="div_2"><a href="#">사용포인트</a></div>
+                <div class="div_2"><a href="#">소멸예정포인트</a></div>                
+            </ul>
+        </div>
+
         <!-- 포인트 적립현황 안내 -->
         <div class="customer_point_page">
             <div class="total_point">총 1건</div>
             <!-- <div class="point_content">날짜 구분 내역 예약번호 적립/소멸예정일 포인트</div> -->
             <div class="point_content_part1">
                 <ul>
-                    <li class="d">날짜</li>
-                    <li class="a">구분</li>
-                    <li>내역</li>
-                    <li class="b">예약번호</li>
-                    <li class="c">적립/소멸예정일</li>
-                    <li>포인트</li>                    
+                    <li class="a">날짜</li>
+                    <li class="b">구분</li>
+                    <li class="c">내역</li>
+                    <li class="d">예약번호</li>
+                    <li class="e">적립/소멸예정일</li>
+                    <li class="f">포인트</li>                    
                 </ul>
             </div>  
             <div class="point_content_part2">
                 <ul>
-                    <li>2023-03-24</li>
-                    <li>[적립]</li>
-                    <li class="box2">회원가입 적립</li>
-                    <li class="box3">[없음]</li>
-                    <li class="box4">2023-09-24</li>
-                    <li>5,000P</li>
+                    <li class="g">2023-03-24</li>
+                    <li class="h">[적립]</li>
+                    <li class="i">회원가입 적립</li>
+                    <li class="j">[없음]</li>
+                    <li class="k">2023-09-24</li>
+                    <li class="l">5,000P</li>
                 </ul>         
             </div>
             <!-- 하단 페이지 넘버링 -->
@@ -511,13 +643,18 @@
                   </ul>
             </div>
         </div>
+
+
+
         <!-- 870px 이하일 때 표시될 영역 -->
+        <!-- 모바일영역!! -->
+        
         <div class="another_points_size">
             <ul>
                 <li class="d">2023-03-24</li>
                 <li class="a"><span class="c">[적립]</span> 회원가입 적립</li>                
                 <li class="b">예약번호 | 소멸 예정일 2023-09-24</li>     
-                <div class="points">5,000p</div>
+                <li class="points">5,000p</li>
             </ul>
         </div>   
             
@@ -529,10 +666,56 @@
                 <li><a href="#">고객센터</a></li>
             </ul>
         </div>
-
-        <!-- footer 시작 -->
+    </div> <!-- total 전체 -->
         
-        <!-- footer 끝 -->
     </div>
+    <!-- footer 시작 -->
+    <footer data-include="./footer.html"></footer>
+    <!-- footer 끝 -->
+
+    <!-- ajax -->
+    <script>
+        function includeHTML(callback){
+          let z, elmnt, file, xhttp;
+          z = document.getElementsByTagName("*");
+          for (let i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("data-include");
+            if (file) {
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("data-include");
+                  includeHTML(callback);
+                }//if
+              }//onreadystatechange
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              return;
+              if (this.readyState != 4) return;
+            }//if - file
+          }//for
+          if (callback) callback();
+        }//includeHTML
+  
+        function findMenuBtns() {
+          const navBar = document.querySelector("nav");
+          const menuBtns = document.querySelectorAll(".menu-icon");
+          menuBtns.forEach((menuBtn) => {
+            menuBtn.addEventListener("click", () => {
+              console.log('click');
+              navBar.classList.toggle("open");
+            });
+          });
+        }
+  
+        /* ✨ 실행 */
+        document.addEventListener('DOMContentLoaded',()=>{
+          includeHTML(findMenuBtns);
+        });
+      </script>
 </body>
 </html>

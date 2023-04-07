@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=euc-kr">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행하다</title>
+
+  <!-- favicon image-->
+  <link href="../image/favicon.ico" rel="icon" />
+
+  <!-- 리셋 시트 -->
+  <link href="../css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- adjust css -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" type="text/css"/>    <!-- 아이콘 -->
+  <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>  <!-- header-->
+  <link href="../css/sign_in_page_default.css" rel="stylesheet" type="text/css"/>  <!-- sign in page default   -->
+  <link href="../css/sign_in_page_complete.css" rel="stylesheet" type="text/css"/> <!-- sign in page4 -->
+  <link href="../css/sign_in_page_complete_mediaquery.css" rel="stylesheet" type="text/css"/> <!-- sign in page4 mediaquery -->
+  <link href="../css/footer.css" rel="stylesheet" type="text/css"/>   <!-- footer -->
+
+</head>
+
+
+<body onload="Timer();">
+
+<!----  header----->
+<header data-include="./top_nav.html"></header>
+
+<!------------------ main section -------------------->
+    <div id="wrap">
+
+      <form>
+      
+        <div class="sign_in_logo">
+          <h1>회원가입</h1>
+        </div>
+
+        <div class="progress">
+          <ul>
+            <li><h2 class="progress_text">1.약관동의</h2></li>
+            <li><h2 class="progress_text">2.본인인증</h2></li>
+          </ul>
+          <ul>
+            <li><h2 class="progress_text">3.정보입력</h2></li>
+            <li><h2 class="progress_text progress_text_forth">4.가입완료</h2></li>    
+          </ul>
+        </div>
+
+        <div class="success_sign_in_logo">
+          <img src="../image/login/logo_plane.svg" alt="logo plane">
+        </div>
+
+        <div class="success_sign_in_message1">
+          <span class="success_sign_in_message1_text">축하합니다! 회원가입이 완료되었습니다.</span>
+          <span class="success_sign_in_message1_text">즐거운 여행되시기 바랍니다</span>
+        </div>
+        <div class="success_sign_in_message2">
+          <span id="success_sign_in_count">5</span>
+          <span class="success_sign_in_message2_text">초 뒤에 메인페이지로 이동합니다.</span>
+        </div>
+
+      </form>
+
+    </div>
+
+    <!----  footer----->
+    <footer data-include="./footer.html"></footer>
+
+</body>
+
+<script>
+/*------------auto website chaning after 5seconds-----------*/
+  function Timer(){
+    setTimeout("locateKap()",5000);
+  }
+  function locateKap(){
+    location.replace("../index.html");
+  }
+/*------------------5seconds countdown text( adjust function above:function(timer) )-------------------------*/
+
+   /*---------판도라의 상자------------
+   |                                  |                       
+   |    setTimeout(function(){        |
+   |      location.reload();          |
+   |    },5000);                      |
+   |                                  |
+   |---------------------------------*/
+
+
+  let time=5;
+  let interval=setInterval(function(){
+    time--;
+     if (time===4) document.getElementById("success_sign_in_count").innerHTML="4";
+     if (time===3) document.getElementById("success_sign_in_count").innerHTML="3";
+     if (time===2) document.getElementById("success_sign_in_count").innerHTML="2";
+     if (time===1) document.getElementById("success_sign_in_count").innerHTML="1";
+     if (time===0) clearInterval(interval);
+  },1000);
+
+ /*----------------------------------- ajax : nav, footer -------------------------------*/
+ function includeHTML(callback){
+        let z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("data-include");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("data-include");
+                includeHTML(callback);
+              }//if
+            }//onreadystatechange
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            if (this.readyState != 4) return;
+          }//if - file
+        }//for
+        if (callback) callback();
+      }//includeHTML
+
+      function findMenuBtns() {
+        const navBar = document.querySelector("nav");
+        const menuBtns = document.querySelectorAll(".menu-icon");
+        menuBtns.forEach((menuBtn) => {
+          menuBtn.addEventListener("click", () => {
+            console.log('click');
+            navBar.classList.toggle("open");
+          });
+        });
+      }
+
+      /* ✨ 실행 */
+      document.addEventListener('DOMContentLoaded',()=>{
+        includeHTML(findMenuBtns);
+      }); 
+
+  </script>
+
+ </html>

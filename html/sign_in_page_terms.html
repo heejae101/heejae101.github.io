@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행하다</title>
+
+  <!-- favicon image-->
+  <link href="../image/favicon.ico" rel="icon" />
+
+  <!-- 리셋 시트 -->
+  <link href="../css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- adjust css -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" type="text/css"/>    <!-- 아이콘 -->
+  <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>  <!-- header-->
+  <link href="../css/sign_in_page_default.css" rel="stylesheet" type="text/css"/>  <!-- sign in page default   -->
+  <link href="../css/sign_in_page_terms.css" rel="stylesheet" type="text/css"/> <!-- sign in page2 -->
+  <link href="../css/sign_in_page_terms_mediaquery.css" rel="stylesheet" type="text/css"/>  <!-- sign in page2 mediaquery -->
+  <link href="../css/footer.css" rel="stylesheet" type="text/css"/>   <!-- footer -->
+
+</head>
+
+
+<body>
+
+<!------------------header(have to remove/change)-------------------------->
+  <header data-include="./top_nav.html"></header>
+
+  <div id="wrap">
+<!------------------------------------------------------------------------->
+  <form>
+    <div class="sign_in_logo">
+      <h1>회원가입</h1>
+    </div>
+
+    <div class="progress">
+      <ul>
+        <li><h2 class="progress_text progress_text_first">1.약관동의</h2></li>
+        <li><h2 class="progress_text">2.본인인증</h2></li>
+      </ul>
+
+      <ul>
+        <li><h2 class="progress_text">3.정보입력</h2></li>
+        <li><h2 class="progress_text">4.가입완료</h2></li>    
+      </ul>
+    </div>
+
+    <div class="help_text">
+      <span>* 해외여행 약관 및 소비자 피해보상</span> 
+      <span>규정을 미리 확인해주세요.</span>
+    </div>
+
+    <div class="check_list_container">
+      
+      <div class="check_list_container_1">
+        <input onclick="selectAll(this)" class="check_list_entitle" id="check_list_entitle_txt" type="checkbox" name="terms" />
+        <label for="check_list_entitle_txt">전체동의</label>
+      </div>
+
+      <div class="check_list_container_2">
+
+        <div class="check_list_container_terms">
+          <ul>
+            <li>
+              <input class="check_list_terms" id="check_list_terms_1" type="checkbox" name="terms" required>
+              <label for="check_list_terms_1">이용약관</label>
+              <span class="essential_red">(필수)</span>
+            </li>
+
+            <li>
+              <input class="check_list_terms" id="check_list_terms_2" type="checkbox" name="terms" required>
+              <label for="check_list_terms_2">개인정보 수집 및 이용동의</label>
+              <span class="essential_red">(필수)</span>
+            </li>
+
+            <li>
+              <input class="check_list_terms" id="check_list_terms_3" type="checkbox" name="terms">
+              <label for="check_list_terms_3">개인정보 3자제공</label>
+            </li>
+
+            <li>
+              <input class="check_list_terms" id="check_list_terms_4" type="checkbox" name="terms" required>
+              <label for="check_list_terms_4">개인정보 취급 위탁</label>
+              <span class="essential_red">(필수)</span>
+            </li>
+
+            <li>
+              <input class="check_list_terms" id="check_list_terms_5" type="checkbox" name="terms" required>
+              <label for="check_list_terms_5">포인트 약관</label>
+              <span class="essential_red">(필수)</span>
+            </li>
+            <li>
+              <input class="check_list_terms" id="check_list_terms_6" type="checkbox" name="terms">
+              <label for="check_list_terms_6">마케팅 목적 수집 및 활용 동의</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="check_list_container_agree">
+          <ul>
+            <li><a href="#">약관보기</a></li>
+            <li><a href="#">약관보기</a></li>
+            <li><a href="#">약관보기</a></li>
+            <li><a href="#">약관보기</a></li>
+            <li><a href="#">약관보기</a></li>
+            <li><a href="#">약관보기</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- <span class="check_list_text_1">* 개인정보의 수집, 제공 및 활용에</span> 
+      <span class="check_list_text_1">동의하지 않을 권리가 있습니다.</span><br/> -->
+
+      <div class="check_list_container_explain">
+        <span class="check_list_text">* 개인정보 3자제공 및 마케팅 동의 시, </span> 
+        <span class="check_list_text">부가서비스를 제공받으실 수 있습니다.</span>
+      </div>
+      
+
+    </div>
+
+    <div class="sign_in_btn_container">
+      <ul>
+        
+        <li>
+          <button class="sign_in_btn sign_in_btn_normal" onclick="location.href='sign_in_page_phone.html'">일반 회원가입</button>
+        </li>
+        <li>
+          <button class="sign_in_btn sign_in_btn_naver" onclick="location.href='https://www.naver.com/'">
+             <img src="../image/login/logo_img_naver.png" alt="Naver logo" />네이버로 회원가입
+          </button>
+        </li>
+        <li>
+          <button class="sign_in_btn sign_in_btn_kakao" onclick="location.href='https://www.kakaocorp.com/page/'">
+             <img src="../image/login/logo_img_kakao11.png" alt="Kakao logo" />카카오로 회원가입
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    </form>
+
+  </div>    <!-- for id wrap -->
+
+<!----------------------------footer(have to remove/change)----------------------------->
+<footer data-include="./footer.html"></footer>
+
+</body>
+
+
+<script>
+
+/*---------------------- select all checkbox --------------------------*/
+  function selectAll(selectAll){              // 전체클릭 함수
+    let checkboxes=                           // 변수명 지정
+    document.getElementsByName("terms");      // 이름값이 "terms"로 지정된 요소들을 불러옴
+
+    checkboxes.forEach(function(checkbox){    // 지정된 변수들에 기능을 부여(forEach : 루프돌기)
+      checkbox.checked = selectAll.checked    // HTML의 체크박스 요소들의 체크속성 = 체크박스의 요소의 체크속성(선택/해제) 
+    });
+  };
+
+/*---------------------- footer --------------------------*/  
+function includeHTML(callback){
+        let z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("data-include");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("data-include");
+                includeHTML(callback);
+              }//if
+            }//onreadystatechange
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            if (this.readyState != 4) return;
+          }//if - file
+        }//for
+        if (callback) callback();
+      }//includeHTML
+
+      function findMenuBtns() {
+        const navBar = document.querySelector("nav");
+        const menuBtns = document.querySelectorAll(".menu-icon");
+        menuBtns.forEach((menuBtn) => {
+          menuBtn.addEventListener("click", () => {
+            console.log('click');
+            navBar.classList.toggle("open");
+          });
+        });
+      }
+
+      /* ✨ 실행 */
+      document.addEventListener('DOMContentLoaded',()=>{
+        includeHTML(findMenuBtns);
+      }); 
+
+</script>
+
+</html>
