@@ -120,29 +120,29 @@
             return value;
         }
 
-        function dropdownList() {
-            const optionMenu = document.querySelector(".select-menu"),
-                selectBtn = optionMenu.querySelector(".select-btn"),
-                options = optionMenu.querySelectorAll(".option"),
-                sBtn_text = optionMenu.querySelector(".sBtn-text");
+            function dropdownList() {
+                const optionMenus = document.querySelectorAll(".select-menu");
 
-            const selectBtns = document.querySelectorAll('.select-btn');
+                optionMenus.forEach(optionMenu => {
+                    const selectBtn = optionMenu.querySelector(".select-btn");
+                    const options = optionMenu.querySelectorAll(".option");
+                    const sBtn_text = optionMenu.querySelector(".sBtn-text");
 
-            selectBtns.forEach(selectBtn => {
-                selectBtn.addEventListener('click', () => {
-                    selectBtn.parentElement.classList.toggle('active');
+                    selectBtn.addEventListener('click', () => {
+                        // 다른 메뉴의 옵션 메뉴를 닫기 위해 모든 옵션 메뉴에 대해 active 클래스를 제거합니다.
+                        optionMenus.forEach(m => m.classList.remove('active'));
+                        optionMenu.classList.toggle("active");
+                    });
+
+                    options.forEach(option => {
+                        option.addEventListener("click", () => {
+                            let selectedOption = option.querySelector(".option-text").innerHTML;
+                            sBtn_text.innerHTML = selectedOption;
+                            optionMenu.classList.remove("active");
+                        })
+                    });
                 });
-            });
-
-            options.forEach(option => {
-                option.addEventListener("click", () => {
-                    let selectedOption = option.querySelector(".option-text").innerText;
-                    sBtn_text.innerText = selectedOption;
-                    optionMenu.classList.remove("active");
-                })
-            })
-        }
-
+            }
 
         // select your option 누르면 클래스 명이 바뀜 
 
@@ -164,86 +164,89 @@
             <div class="center_drop">
                 <div class="text_area">
                     <span>
-                        <em class="font_black">나는</em>
+                        <em class="">나는</em>
                         <div class="select-menu">
                             <div class="select-btn">
-                                <span class="sBtn-text border_text font_black">&#128587;&nbsp;나 홀로</span>
+                                <span class="sBtn-text border_text"><img src="../image/icon/cool.png" width="30" height="30">&nbsp;나 홀로</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black"
                                     class="bi bi-chevron-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                 </svg>
                             </div>
-
+                
                             <ul class="options">
                                 <li class="option">
-                                    <span class="option-text">&#128587;&nbsp;나 홀로</span>
+                                    <span class="option-text"><img src="../image/icon/cool.png" width="25" height="25">&nbsp;나 홀로</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;연인과 함께</span>
+                                    <span class="option-text">💕&nbsp;배우자와 함께</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128048;&nbsp;가족들과 함께</span>
+                                    <span class="option-text">👨‍👩‍👦&nbsp;가족들과 함께</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128054;&nbsp;친구들과 함께</span>
+                                    <span class="option-text">🦖&nbsp;친구들과 함께</span>
                                 </li>
                             </ul>
                         </div>
                     </span>
-                    <em class="font_black">여행을 떠나고 싶어요</em>
+                    <em class=>여행을 떠나고 싶어요</em>
                 </div>
                 <div class="text_area2">
                     <span class="front_span">
                         <div class="select-menu">
                             <div class="select-btn">
-                                <span class="sBtn-text border_text font_black">&#128051;&nbsp;국내</span>
+                                <span class="sBtn-text border_text "><img src="../image/icon/bus.png" width="30" height="30">&nbsp;국내</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black"
                                     class="bi bi-chevron-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                 </svg>
                             </div>
-
+                
                             <ul class="options">
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;국내</span>
+                                    <span class="option-text"><img src="../image/icon/bus.png" width="30" height="30">&nbsp;국내</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#127965;&nbsp;해외</span>
+                                    <span class="option-text"><img src="../image/icon/ticket.png" width="30" height="30">&nbsp;해외</span>
                                 </li>
                             </ul>
                         </div>
-                        <em class="font_black">에서</em>
+                        <em class=>에서</em>
                     </span>
                     <span class="back_span">
                         <div class="select-menu">
                             <div class="select-btn">
-                                <span class="sBtn-text border_text font_black">&#128051;&nbsp;즉흥적인 여행</span>
+                                <span class="sBtn-text border_text "><img src="../image/icon/camera.png" width="25" height="25">&nbsp;추억 여행</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black"
                                     class="bi bi-chevron-down" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                 </svg>
                             </div>
-
+                
                             <ul class="options">
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;즉흥적인 여행</span>
+                                    <span class="option-text"><img src="../image/icon/camera.png" width="25" height="25">&nbsp;추억 여행</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128051;&nbsp;계획적인 여행</span>
+                                    <span class="option-text">🚢&nbsp;팔도유람 여행</span>
                                 </li>
                                 <li class="option">
-                                    <span class="option-text">&#128048;&nbsp;에어텔</span>
+                                    <span class="option-text"><img src="../image/icon/bibimbap.png" width="25" height="25">&nbsp;맛있는 여행</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text"><img src="../image/icon/gwanghwamun.png" width="25" height="25">&nbsp;문화유산 탐방</span>
                                 </li>
                             </ul>
                         </div>
                     </span>
-                    <em class="font_black">여행을 떠나고 싶어요</em>
+                    <em class=>을 떠나고 싶어요</em>
                 </div>
                 <div class="drop_down_btn">
-                    <button class="btn-type-round" onclick="window.location.href='../html/travel_recommend.html';">
+                    <button class="btn-type-round" onclick="window.location.href='./html/travel_recommend.html';">
                         <span>내 취향 여행 보기</span>
                     </button>
                 </div>
