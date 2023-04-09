@@ -74,6 +74,23 @@ body, html {
     -webkit-transform: translateZ(0);
 }
 
+.mobile_nav .footer-app-logo{
+    position: absolute;
+    left: 49%;
+    top: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 0;
+    color: black;
+    background-color: white;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    box-shadow: 0px 7px 7px 2px rgb(0 0 0 / 16%);
+}
+
 .mobile_nav ul{
     height: 60px;
     padding-top: 10px;
@@ -390,7 +407,7 @@ div.down_btn hr{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 48vh;
+    height: 47vh;
 }
 
 em,.sBtn-text{
@@ -873,66 +890,20 @@ div.slide span{
 
 /* ========================== footer end ========================== */
 
-
-@media (max-width: 450px){
-
-    .top_text_area{
-        width: 90%;
-        height: 15%;
-        /* background-color: #f2f2f2;
-        padding: 20px;
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        transition: top 0.3s ease-in-out; */
-    }
-
-    .top_nav_icon_area span{
-        font-size: 1.5rem;
-    }
-
-    .center_drop{
-        margin-top: 9%;
-        height: 55%;
-        padding-top: 0px;
-        align-items: center;
-    }
-
-    .text_area{
-        height: 100px;
-    }
-
-    .text_area2{
-        height: 150px;
-    }
-
-    .btn-type-round{
-        margin-top: 70px;
-    }
-    
-}
-
-
 @media (max-width: 890px){
 
     .mobile_nav{
         display: block;
     }
 
+    .mobile_nav li:nth-child(3) {
+        margin-right: 55px;
+    }
+
     .top_text_area{
         width: 90%;
-
-        /* background-color: #f2f2f2;
-        padding: 20px;
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        transition: top 0.3s ease-in-out; */
     }
+
     /* 탑 아이콘 부분  */
     .top_nav_icon_area span{
         font-size: 1.5rem;
@@ -985,7 +956,7 @@ div.slide span{
     .btn-type-round{
         width: 100%;
         height: 40px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     
     .back_span{
@@ -993,7 +964,6 @@ div.slide span{
     }
 
     /* ================= center_drop end=================  */
-
     /* customer-service */
     .customer-service{
         display: none;
@@ -1042,8 +1012,13 @@ div.slide span{
     }
 
     .item_info>.tit{
-        font-size: 1rem;
+        font-size: 1.2rem;
         z-index: 999;
+    }
+
+    .slider_popular .rank{
+        width: 60px;
+        height: 60px;
     }
 
     .cont>.aside{
@@ -1093,4 +1068,37 @@ div.slide span{
         font-size: 0.8rem;
     }
 
+}
+
+@media (max-width: 450px){
+
+    .top_text_area{
+        width: 90%;
+        height: 15%;
+    }
+
+    .top_nav_icon_area span{
+        font-size: 1.5rem;
+    }
+
+    .center_drop{
+        height: 50%;
+        padding-top: 0px;
+        align-items: center;
+    }
+
+    .text_area{
+        height: 100px;
+    }
+
+    .text_area2{
+        height: 100px;
+    }
+}
+
+
+@media (max-width: 410px){
+    .btn-type-round{
+        margin-top: 50px;
+    }
 }

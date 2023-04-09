@@ -33,6 +33,10 @@ div.login_input label{
   font-family:"nanum";
 }
 
+div.login_input label:hover{
+  cursor:pointer
+}
+
 div.login_input input.login{
   width:425px;
   height:40px;
@@ -48,15 +52,26 @@ div.login_input li.login_input_line1{
   margin-bottom:30px;
 }
 
+div.login_input div.check_error_text{
+  color:red;
+  font-size:23px;
+  font-weight:800;
+  font-family:"nanum";
+}
+
 div.login_input input.login_id_check_box{
   width:22px;
   height:22px;
   margin-top:15px;
 }
 
-div.login_input span.login_id_check_box_text{
+div.login_input label.login_id_check_box_text{
   font-size:23px; 
   font-weight:800;
+}
+
+div.login_input label.login_id_check_box_text:hover{
+  cursor:pointer;
 }
 
 div.login_btn{

@@ -15,6 +15,7 @@
 
     <!-- 스타일 시트 -->
     <link href="../css/domestic_travel.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css"/>
 
     <!-- 아이콘 -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
@@ -55,17 +56,7 @@
                     closeModal();
                 }
             }
-            
-            const navBar = document.querySelector("nav"),
-                menuBtns = document.querySelectorAll(".menu-icon");
-            // overlay = document.querySelector(".overlay");
 
-            menuBtns.forEach((menuBtn) => {
-                menuBtn.addEventListener("click", () => {
-                    console.log('click')
-                    navBar.classList.toggle("open");
-                });
-            });
             /* ======================== slider ====================== */
         });
     </script>
@@ -123,13 +114,13 @@
                     <li class="list">
                         <a href="#" class="nav-link">
                             <i class="bx bx-cog icon"></i>
-                            <span class="link">Settings</span>
+                            <span class="link">설정</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link">
+                        <a href="./login.html" class="nav-link">
                             <i class="bx bx-log-out icon"></i>
-                            <span class="link">Logout</span>
+                            <span class="link">로그인</span>
                         </a>
                     </li>
                 </div>
@@ -137,6 +128,7 @@
         </div>
     </nav>
     <div class="wrap">
+        <div data-include="./mobile_nav.html"></div>
         <div class="top_text_area">
             <div class="top_nav">
                 <div class="top_nav_icon_area">
@@ -186,7 +178,7 @@
 
         <h1 class="title_korea">내 나라여행 <br class="pc_blind"> 한눈에보기</h1>
         <div class="korea_map_alarm_text">
-            <span> 지도에서 가시고 싶으신 지역을 <br class="pc_blind"> <img src="../image/left-click.png" style="width: 40px; height: 40px;"> <span style="color: red;">클릭</span>해 주세요</span>
+            <span> 여행 가시고 싶은 지역을 <br class="pc_blind"> <img src="../image/left-click.png" style="width: 40px; height: 40px;"> <span style="color: red;">클릭</span>해 주세요</span>
         </div>
 
         <section class="main_section">
@@ -386,5 +378,48 @@
             </div>
         </footer>
     </div>
+    <script>
+        function includeHTML(callback) {
+            let z, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (let i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("data-include");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("data-include");
+                            includeHTML(callback);
+                        }//if
+                    }//onreadystatechange
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                    if (this.readyState != 4) return;
+                }//if - file
+            }//for
+            if (callback) callback();
+        }//includeHTML
+
+        function findMenuBtns() {
+            const navBar = document.querySelector("nav");
+            const menuBtns = document.querySelectorAll(".menu-icon");
+            menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                    console.log('click');
+                    navBar.classList.toggle("open");
+                });
+            });
+        }
+
+        /* ✨ 실행 */
+        document.addEventListener('DOMContentLoaded', () => {
+            includeHTML(findMenuBtns);
+        });
+    </script>
 </body>
 </html>

@@ -286,7 +286,7 @@
 
                     <!-- 목록 설명 영역_가격 -->
                     <div class="travel_section_info_price">
-                        가격 : 266,000 ~
+                        가격 : 266,000
                     </div>
 
                     <!-- 일정보기 버튼 -->
@@ -387,7 +387,7 @@
 
                     <!-- 목록 설명 영역_가격 -->
                     <div class="travel_section_info_price">
-                        가격 : 314,000 ~
+                        가격 : 314,000
                     </div>
 
                     <!-- 일정보기 버튼 -->
@@ -472,7 +472,7 @@
 
                     <!-- 목록 설명 영역_가격 -->
                     <div class="travel_section_info_price">
-                        가격 : 1,580,000 ~
+                        가격 : 1,580,000
                     </div>
 
                     <!-- 일정보기 버튼 -->
@@ -536,13 +536,19 @@
         var btn = document.querySelector('.calendar_btn');
         var target = document.querySelector('.calendar_area');
 
+        // btn.addEventListener('click', event => {
+        //     if (target.style.display === "none") {
+        //         target.style.display = "block";
+        //     } else {
+        //         target.style.display = "none";
+        //     }
+        // });
+
         btn.addEventListener('click', event => {
-            if (target.style.display === "none") {
-                target.style.display = "block";
-            } else {
-                target.style.display = "none";
-            }
+            target.classList.toggle('display_block');
         });
+
+
     </script>
 
     <!-- nav, footer ajax -->

@@ -627,15 +627,8 @@ svg{
     }
 
     .top_text_area{
-        width: 95;
-        /* background-color: #f2f2f2;
-        padding: 20px;
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        transition: top 0.3s ease-in-out; */
+        width: 90%;
+        height: 25px;
     }
 
     .bi-list{
@@ -680,7 +673,7 @@ svg{
     }
 
     .korea_map{
-        width: 468px;
+        width: 100%;
         height: 100vh;
         cursor: pointer;
     }
@@ -697,6 +690,14 @@ svg{
     .footer_top img{
         width: 30px;
         height: 30px;
+    }
+
+    .modal-content{
+        height: 40%;
+    }
+
+    iframe{
+        height: 65%;
     }
 }
 

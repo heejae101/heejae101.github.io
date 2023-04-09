@@ -179,7 +179,7 @@
                 </div>
             </div>
 
-            <form class="form_wrap" name="frm" onsubmit="return checkForm()">
+            <form class="form_wrap" name="frm" onsubmit="return checkForm(this)" action="reservation_completed.html">
                 <!-- 약관동의 -->
                 <div class="terms_reservation2">
                     <h2>약관동의</h2>
@@ -200,7 +200,7 @@
                                     확인
                                     <span class="essential_red">(필수)</span>
                                 </li>
-                                <a href="#">약관보기</a>
+                                <span class="terms_agree">약관보기</span>
                             </label>
 
                             <label for="check2">
@@ -208,7 +208,7 @@
                                     <input class="check_list_terms" type="checkbox" name="terms" id="check2">약관동의
                                     <span class="essential_red">(필수)</span>
                                 </li>
-                                <a href="#">약관보기</a>
+                                <span class="terms_agree">약관보기</span>
                             </label>
 
                             <label for="check3">
@@ -216,7 +216,7 @@
                                     <input class="check_list_terms" type="checkbox" name="terms" id="check3">고유식별정보 수집안내
                                     <span class="essential_red">(필수)</span>
                                 </li>
-                                <a href="#">약관보기</a>
+                                <span class="terms_agree">약관보기</span>
                             </label>
 
                             <label for="check4">
@@ -224,7 +224,7 @@
                                     <input class="check_list_terms" type="checkbox" name="terms" id="check4">개인정보 3자제공
                                     <span class="essential_red">(필수)</span>
                                 </li>
-                                <a href="#">약관보기</a>
+                                <span class="terms_agree">약관보기</span>
                             </label>
 
                             <label for="check5">
@@ -232,13 +232,44 @@
                                     <input class="check_list_terms" type="checkbox" name="terms" id="check5">개인정보 수집 및
                                     이용동의
                                 </li>
-                                <a href="#">약관보기</a>
+                                <span class="terms_agree">약관보기</span>
                             </label>
+
+                            <div id="check_error_text"></div>
 
                         </ul>
 
+                        <!-- 약관동의 모달 창 -->
+                        <div id="myModal" class="modal">
+                            <div class="modal_content">
+                                <span class="close">&times;</span>
+                                <p>약관동의</p>
+                                <div class="terms_content">
+                                
+                                    본 여행상품은 항공사에 항공료 중 일부가 선납(DEPOSIT)되어 있는 상품으로 예약금 입금 시점(또는 결제)부터 선납금에 대한 환불이 불가합니다.<br/>
+                                    이에 DEPOSIT금액+표준약관이 적용됨을 안내합니다. (제외적용 되는 경우 없음/1인 20만원)<br/>
+                                    본 상품은 출발일에 따라 별도의 선발권 안내가 진행될 수 있으며 또한 결제 시한이 당겨질 수 있습니다.<br/> 
+                                    항공선발권 진행된 경우는 취소 또는 변경시 취소시점에 따라 상이한 환불 패널티가 별도 부과될 수 있으며 이는 약관과는 별도로 적용됩니다.<br/><br/>
+
+                                    여행업자는 또는 여행자는 여행출발전 이 여행계약을 해제할 수 있습니다. 이 경우 발생하는 손해액은 ‘소비자피해보상규정’(공정거래위원회 고시)에 따라
+                                    배상합니다.<br/>
+                                    1. 여행자의 여행계약 해제 요청이 있는 경우(여행자의 취소 요청시)<br/>
+                                    - 예약 후 ~30일 전까지 취소 요청 시 - 200,000원<br/>
+                                    - 여행출발일 29~20일 전까지 취소 요청 시 - 200,000원 + 여행요금의 10% 배상<br/>
+                                    - 여행출발일 19~10일 전까지 취소 요청 시 - 200,000원 + 여행요금의 15% 배상<br/>
+                                    - 여행출발일 9~8일 전까지 취소 요청 시 - 200,000원 + 여행요금의 20% 배상<br/>
+                                    - 여행출발일 7~1일 전까지 취소 요청 시 - 200,000원 + 여행요금의 30% 배상<br/>
+                                    - 여행출발 당일 취소 요청 시 - 200,000원 + 여행요금의 50% 배상<br/><br/>
+
+                                    -위 규정보다 실손해액이 더 높을 경우, 실손해액에 따라 더 배상하셔야 합니다.
+                                
+                                </div>
+                                <button class="close" type="button">닫기</button>
+                            </div>
+                        </div>
 
                     </div>
+
 
                 </div>
 
@@ -303,6 +334,7 @@
                                 <td>
                                     <!-- 이름입력 -->
                                     <input type="text" name="name" id="name" height="50">
+                                    <div id="name_error_text"></div>
 
                                     <div class="radio_area">
                                         <label for="oneself_y">
@@ -321,8 +353,9 @@
                                 <!-- 번호 입력 -->
                                 <th>휴대폰 번호</th>
                                 <td>
-                                    <input type="text" id="phonenum" oninput="autoHyphen2(this)" maxlength="13"
+                                    <input type="text" id="phonenum" oninput="autoHyphen2(this)" maxlength="11"
                                         placeholder="숫자만 입력해주세요">
+                                    <div id="phonenum_error_text"></div>
                                 </td>
                             </tr>
                             <tr>
@@ -332,6 +365,7 @@
                                     <input type="text" id="email_first">
                                     @
                                     <input type="text" id="email_second">
+                                    <div id="email_error_text"></div>
                                 </td>
                             </tr>
                         </table>
@@ -357,7 +391,7 @@
                                         <span class="plus" onclick="changeValue(this, 'adult', +1, +899000)">+</span>
                                     </div>
 
-                                    <div class="age_price">899000 원</div>
+                                    <div class="age_price">899,000 원</div>
                                 </div>
 
                             </li>
@@ -375,7 +409,7 @@
                                         <span class="plus" onclick="changeValue(this, 'child', +1, +899000)">+</span>
                                     </div>
 
-                                    <div class="age_price">899000 원</div>
+                                    <div class="age_price">899,000 원</div>
                                 </div>
                             </li>
 
@@ -400,6 +434,7 @@
                                 <div class="total_price">
                                     <div class="total_price_text">최종합계금액</div>
                                     <div class="total_price_number">0</div>
+                                    <div id="traveler_error_text"></div>
                                 </div>
                             </li>
                         </ul>
@@ -413,26 +448,15 @@
 
                     <!-- 요청사항 입력창 (1000자 이내)-->
 
-                    <p><textarea placeholder="1000자 이내로 입력해주세요."></textarea></p>
+                    <p><textarea placeholder="1000자 이내로 입력해주세요." maxlength="1000"></textarea></p>
 
-                    <!-- <input type="text" class="etc_reservation2_input"> -->
 
                 </div>
 
 
                 <!-- 예약하기/취소하기 버튼 -->
                 <div class="btn_area">
-                    <!-- 
-                        예약하기 버튼 
-                        onclick="location.href='reservation_completed.html'"
-                        type="submit"
-                    -->
-                    <button class="btn_reservation2">예약하기</button>
-
-                    <!-- 
-                        취소하기 버튼 
-                        onclick="location.href='travel_destination_details.html'"
-                    -->
+                    <button class="btn_reservation2" type="submit">예약하기</button>
                     <button class="btn_cancle" onclick="location.href='travel_destination_details.html'">취소하기</button>
                 </div>
 
@@ -489,15 +513,13 @@
 
 
     <script>
-        // 전화번호 스크립트 참고 : https://gurtn.tistory.com/86
 
-        // **** 전화번호 스크립트 ****
+        // 전화번호 스크립트
         // autoHypen2 함수는 target 매개변수로 전달된 input 요소의 값 처리
         const autoHyphen2 = (target) => {
             // input 요소에 입력된 값 가져옴
-            target.value = target.value
-                // replace(/[^0-9]/g, '')는 입력된 값에서 숫자를 제외한 모든 문자열을 제거
-                .replace(/[^0-9]/g, '')
+            // replace(/[^0-9]/g, '')는 입력된 값에서 숫자를 제외한 모든 문자열을 제거
+            target.value = target.value.replace(/[^0-9]/g, '');
         }
 
 
@@ -510,51 +532,109 @@
             });
         }
 
+        // 약관동의 모달 창
+        /*  modal */
+        document.addEventListener('DOMContentLoaded', () => {
+            function showModal() {
+                let modal = document.getElementById("myModal");
+                modal.style.display = "block";
+            }
 
-        function checkForm() {
+            // 모달 창을 닫는 함수
+            function closeModal() {
+                let modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+
+            // 모달 창을 열기 위한 버튼 클릭 시 호출
+            let modalBtns = document.querySelectorAll(".terms_agree");
+
+            modalBtns.forEach(function (btn) {
+                btn.onclick = function () {
+                    showModal();
+                }
+            });
+
+            // 모달 창 우측 상단의 닫기, 가운데 하단 닫기 버튼 클릭 시 closeModal 함수 호출
+            let closeBtns = document.querySelectorAll(".close");
+            closeBtns.forEach(function (btn) {
+                btn.onclick = function () {
+                    closeModal();
+                }
+            });
+
+            // 모달 창의 배경을 클릭 시 모달 창 닫기
+            let modal = document.getElementById("myModal");
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+        });
+
+
+        function checkForm(f) {
             const name = document.getElementById('name');
             const phonenum = document.getElementById('phonenum');
             const email_first = document.getElementById('email_first');
             const email_second = document.getElementById('email_second');
-
-            // 이메일 뒷자리 정규식
-            const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            
+            const check_error_text = document.getElementById('check_error_text');
+            const phonenum_error_text = document.getElementById('phonenum_error_text');
+            const name_error_text = document.getElementById('name_error_text');
+            const email_error_text = document.getElementById('email_error_text');
+            const traveler_error_text = document.getElementById('traveler_error_text');
 
             // 약관동의 필수체크 부분(checkbox)
             for (let i = 1; i < 5; i++) {
                 let checkboxName = 'check' + i;
                 if (!document.frm[checkboxName].checked) {
-                    alert('약관동의 (필수) 부분에 동의해주세요.');
+                    check_error_text.textContent = '※ 약관동의 (필수) 부분에 동의해주세요.';
                     document.frm[checkboxName].focus();
                     return false;
                 }
             }
 
 
-            // 예약자정보 필수입력 부분(input text) 
+            // **** 예약자정보 필수입력 부분(input text) ****
 
             // 이름
             if (name.value === '') {
                 console.log(name.value);
-                alert('이름을 입력해주세요.');
+                name_error_text.textContent = '※ 이름을 입력해주세요.';
                 name.focus();
                 return false;
             }
 
             // 전화번호
-            if (phonenum.value === '') {
-                alert('전화번호를 입력해주세요.');
+            if (phonenum.value === '' || phonenum.value.length < 11) {
+                phonenum_error_text.textContent = '※ 전화번호 11자리는 필수입력사항입니다.';
                 phonenum.focus();
                 return false;
             }
 
             // 이메일
-            if (email_first.value === '' || email_second.value === '' || regex.test(email_second.value)) {
-                alert('올바른 이메일 형식이 아닙니다. 다시 입력해주세요.');
-                email_second.focus();
+
+            if (email_first.value === '' || email_second.value === '') {
+                email_error_text.textContent = '※ 이메일을 입력해주세요.';
+                email_first.focus();
                 return false;
             }
 
+            const regex_first = /^[a-z0-9]+$/;
+            const regex_second = /^[a-z]+\.[a-z]{2,3}$/;
+
+            if (!regex_first.test(email_first.value)) {
+                email_error_text.textContent = '※ 올바른 이메일 형식이 아닙니다.';
+                email_first.focus();
+                return false;
+            }
+
+            if (!regex_second.test(email_second.value)) {
+                email_error_text.textContent = '※ 올바른 이메일 형식이 아닙니다.';
+                email_second.focus();
+                return false;
+            }
 
             return true;
 
@@ -562,14 +642,12 @@
 
 
 
-        // 필수 입력부분
-
         // 선택한 인원수에 맞게 총 가격을 변동시켜 주는 changeValue 함수
         function changeValue(btn, target, value, won) {
             // 총 가격을 표시하는 엘리먼트를 가져온다
             const total_price = document.querySelector('.total_price_number');
 
-            // 현재 총 가격을 정수로 파싱한다
+            // 현재 총 가격을 정수로 파싱한다, 숫자의 콤마 표시는 replace로 지운다.
             let current_total_price = parseInt(total_price.innerText.replace(/,/g, ""));
 
             // 수량을 표시하는 엘리먼트를 가져온다

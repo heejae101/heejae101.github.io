@@ -224,14 +224,6 @@ div.login_nav li{
   .top_text_area{
       width: 90%;
       height: 25px;
-      /* background-color: #f2f2f2;
-      padding: 20px;
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-      transition: top 0.3s ease-in-out; */
   }
 
   .bi-list{

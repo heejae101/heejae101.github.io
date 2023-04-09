@@ -59,34 +59,38 @@
             
             <ul>
               <li>
-                <label for="id">
-                  * 전화번호<span class="essential_red">(필수)</span>
+                <label for="tel">* 전화번호
+                  <span class="essential_red">(필수)</span>
                 </label><br/>
-                <input type="text" name="tel" placeholder="휴대폰번호를 -없이 입력하세요." onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" /><br/>
+                <input type="text" id ="tel" placeholder="휴대폰번호를 -없이 입력하세요." 
+                 onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="11" /><br/>
+                 <div class="error_txt" id="error_txt_1"></div>
               </li>
 
               <li>
-                <label for="pwd">
-                  * 비밀번호<span class="essential_red">(필수)</span>
+                <label for="pwd">* 비밀번호
+                  <span class="essential_red">(필수)</span>
                 </label><br/>
-                <input type="password" name="pwd" /><br/>
-                <span class="input_explanation">1.비밀번호는 8자 이상, 최대 20자까지 입력해주세요.</span>
-                <span class="input_explanation">2.연속된 숫자는 사용 불가능합니다.</span>
-                <span class="input_explanation">3.대문자 1글자 이상 필수로 입력하세요.</span>
+                <input type="password" id="pwd" name="pwd" /><br/>
+                <span class="input_explanation" id="input_explanation_1">1.비밀번호는 8자 이상, 최대 20자까지 입력해주세요.</span>
+                <span class="input_explanation" id="input_explanation_2">2.연속된 숫자는 사용 불가능합니다.</span>
+                <span class="input_explanation" id="input_explanation_3">3.대문자 1글자 이상 필수로 입력하세요.</span>
               </li>
 
               <li>
                 <label for="pwd_check">
                   * 비밀번호 확인<span class="essential_red">(필수)</span>
                 </label><br/>
-                <input type="password" name="pwd_check" /><br/>
+                <input type="password" id="pwd_check" name="pwd_check" /><br/>
               </li>
 
               <li>
                 <label for="birth">
                   * 생년월일<span class="essential_red">(필수)</span>
                 </label><br/>
-                <input type="text" name="birth" placeholder="숫자 8자리만 입력하세요." onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/><br/>
+                <input type="text" id="birth" name="birth" placeholder="숫자 8자리만 입력하세요." 
+                 onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="8"><br/>
+                <div class="error_txt" id="error_txt_4"></div>
                 <span class="input_explanation">※ 생년월일은 숫자 8자리로 입력하세요.</span>
                 <span class="input_explanation">(예시 : 1960년05월08일 ☞ 19600508)</span>
               </li>
@@ -95,7 +99,8 @@
                 <label for="email">
                   * 이메일<span class="essential_red">(필수)</span>
                 </label><br/>
-                <input type="text" name="email_1" /> @ <input type="text" name="email_2" reqired/><br/>
+                <input type="text" id="email_1" name="email_1" /> @ <input type="text" id="email_2" name="email_2"><br/>
+                <div class="error_txt" id="error_txt_5"></div>
 
                 <input type="checkbox" id="check_email" name="check_email"/>
                 <label id="check_email_text" for="check_email" name="check_email">이메일 정보 수신동의</label><br/>
@@ -109,7 +114,7 @@
         </div>
 
         <div class="input_user_information_btn">
-          <button type="button" class="btn_btn btn_sign_in" onclick="joinCheck(); return false;">회원가입</button>
+          <button type="button" class="btn_btn btn_sign_in" onclick=window.location.href(); >회원가입</button>
           <button type="button" class="btn_btn btn_back" onclick="location.href='sign_in_page_phone.html'">뒤로가기</button>
         </div>
 
@@ -123,54 +128,35 @@
 </body>
 
 <script>
-  /*-----sign in condition-----*/
-  function joinCheck(){
-    let tel=document.member.tel.value;
-    let pwd=document.member.pwd.value;
-    let pwd_check=document.member.pwd_check.value;
-    let birth=document.member.birth.value;
-    let email_1=document.member.email_1.value;
-    let email_2=document.member.email_2.value; 
-  
 
-    if(tel==null||tel==""){
-	  	alert('전화번호 입력은 필수사항입니다.');
-	  	document.member.tel.focus();
-	  	return;
-	  }
 
-    if(pwd==null||pwd==""){
-	  	alert('비밀번호 입력은 필수사항입니다.');
-	  	document.member.pwd.focus();
-	  	return;
-	  }
 
-    if(pwd_check==null||pwd_check==""){
-	  	alert('비밀번호가 일치하지 않습니다.');
-	  	document.member.pwd_check.focus();
-	  	return;
-	  }
+  function login(){
+    let tel=document.querySelector("#tel");
+    let email1=document.querySelector("#email_1");
+    let email2=document.querySelector("#email_2")
+    let errorTxt1=document.querySelector("#error_txt_1")
+    let errorTxt4=document.querySelector("#error_txt_4")
+    let errorTxt5=document.querySelector("#error_txt_5")
 
-    if(birth==null||birth==""){
-	  	alert('생년월일 입력은 필수사항입니다.');
-	  	document.member.birth.focus();
-	  	return;
-	  }
+    if(tel.value=="" || tel.value.length<11){
+      tel.focus();
+      errorTxt1.textContent="※ 전화번호 11자리는 필수입력사항입니다."
+    }else if(birth.value=="" || birth.value.lenth<8){
+      birth.focus();
+      errorTxt4.textContent="※ 생년월일 8자리는 필수입력사항입니다."
+    }else if(email1.value==""){
+      email1.focus();
+      errorTxt5.textContent="※ 이메일 주소를 모두 입력해주세요."
+    }else if(email2.value==""){
+      email2.focus();
+      errorTxt5.textContent="※ 이메일 주소를 모두 입력해주세요."
+    }else{
+      location.href="./sign_in_page_complete.html";
+    }
+  }
 
-    if(email_1==null||email_1==""){
-	  	alert('이메일 주소를 입력해주세요.');
-	  	document.member.email_1.focus();
-	  	return;
-	  }
 
-    if(email_2==null||email_2==""){
-	  	alert("이메일 주소를 전부 입력하셔야 합니다. \n 예>naver.com");
-	  	document.member.email_2.focus();
-	  	return;
-	  }
-
-  document.member.submit();
-}
 
 /*--- ---*/
 function includeHTML(callback){

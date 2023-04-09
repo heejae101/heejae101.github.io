@@ -24,53 +24,68 @@
 
     <!-- 스크립트 부분 -->
     <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-        const optionMenu = document.querySelector(".select-menu"),
-            selectBtn = optionMenu.querySelector(".select-btn"),
-            options = optionMenu.querySelectorAll(".option"),
-            sBtn_text = optionMenu.querySelector(".sBtn-text");
-
-        // select your option 누르면 클래스 명이 바뀜 
-
-        // selectBtn.addEventListener('click', () => optionMenu.classList.toggle("active"));
-
-        const selectBtns = document.querySelectorAll('.select-btn');
-        
-        selectBtns.forEach(selectBtn => {
-            selectBtn.addEventListener('click', () => {
-            selectBtn.parentElement.classList.toggle('active');
-            });
-        });
-
-        options.forEach(option => {
-            option.addEventListener("click", () => {
-                let selectedOption = option.querySelector(".option-text").innerText;
-                sBtn_text.innerText = selectedOption;
-                optionMenu.classList.remove("active");
-            })
-        })
-
-        const navBar = document.querySelector("nav"),
-            menuBtns = document.querySelectorAll(".menu-icon");
-            // overlay = document.querySelector(".overlay");
-
-        menuBtns.forEach((menuBtn) => {
-            menuBtn.addEventListener("click", () => {
-                navBar.classList.toggle("open");
-            });
-        });
-
-        function scrollToTarget() {
-        // 스크롤 타겟 위치의 Y 좌표를 계산
-            const targetElement = document.querySelector('.target-section');
-            const targetOffsetTop = targetElement.offsetTop;
-
-            // 스크롤 애니메이션 적용
-            window.scrollTo({
-                top: targetOffsetTop,
-                behavior: 'smooth'
-            });
+        function closeAllDropdowns() {
+            // 모든 드롭다운을 닫음
+            var dropdowns = document.getElementsByClassName("options");
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].style.display = "none";
+            }
         }
+
+        function toggleDropdown(dropdownNum) {
+            // 모든 드롭다운을 닫음
+            closeAllDropdowns();
+            // 선택한 드롭다운만 열음
+            document.getElementById("dropdown" + dropdownNum).style.display = "block";
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const optionMenu = document.querySelector(".select-menu"),
+                selectBtn = optionMenu.querySelector(".select-btn"),
+                options = optionMenu.querySelectorAll(".option"),
+                sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+            // select your option 누르면 클래스 명이 바뀜 
+
+            // selectBtn.addEventListener('click', () => optionMenu.classList.toggle("active"));
+
+            const selectBtns = document.querySelectorAll('.select-btn');
+
+            selectBtns.forEach(selectBtn => {
+                selectBtn.addEventListener('click', () => {
+                    selectBtn.parentElement.classList.toggle('active');
+                });
+            });
+
+            options.forEach(option => {
+                option.addEventListener("click", () => {
+                    let selectedOption = option.querySelector(".option-text").innerText;
+                    sBtn_text.innerText = selectedOption;
+                    optionMenu.classList.remove("active");
+                })
+            })
+
+            // 모바일 네비 화면 
+            const navBar = document.querySelector("nav"),
+                menuBtns = document.querySelectorAll(".menu-icon");
+
+            menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                    navBar.classList.toggle("open");
+                });
+            });
+
+            function scrollToTarget() {
+                // 스크롤 타겟 위치의 Y 좌표를 계산
+                const targetElement = document.querySelector('.target-section');
+                const targetOffsetTop = targetElement.offsetTop;
+
+                // 스크롤 애니메이션 적용
+                window.scrollTo({
+                    top: targetOffsetTop,
+                    behavior: 'smooth'
+                });
+            }
         })
     </script>
 
@@ -143,14 +158,6 @@
     </nav>
     <!-- <section class="overlay"></section> -->
     <div id="wrap">
-        <!-------- top 부분--------------
-        |   기능 제목 | 구현 현황       |
-        |    카테고리 토글 :   x        |
-        |    문구 드롭다운 :   X        |
-        |    고객센터 번호 :   X        |
-        |    스크롤 다운   :   X        |
-        -------------------------------->
-
         <div class="customer-service" style="box-shadow: 3px black; z-index: 999;">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"/>
@@ -159,6 +166,11 @@
         </div>
         <div class="mobile_nav">
             <ul>
+                <a href="" class="footer-app-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                    </svg>
+                </a>
                 <li>
                     <a href="./html/customer_service.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
@@ -550,6 +562,7 @@
     </div>
 
 <script>
+    // 슬라이더 관련 jquery 
     $(function () {
         var windowWidth = $(window).width();
         var slider = $('.slider5').bxSlider({
@@ -618,15 +631,15 @@
             if ((450 <= windowWidth && windowWidth <= 890)) {
                 // 화면 너비가 890px 이하일 때
                 slideWidth = 600;
-                minSlides = 3;
-                maxSlides = 3;
+                minSlides = 2;
+                maxSlides = 2;
                 moveSlides = 1;
                 slideMargin = 30;
                 speed = 1000;
 
             } else if (windowWidth < 450){
                 slideWidth = 600;
-                minSlides = 2;
+                minSlides = 1;
                 maxSlides = 2;
                 moveSlides = 1;
                 slideMargin = 30;

@@ -64,13 +64,18 @@ div.check_list_container div.check_list_container_2{
 }
 
 div.check_list_container div.check_list_container_terms{
-  width:280px;
+  width:320px;
   font-size:18px;
   /* background-color:yellow; */
 }
 
 div.check_list_container div.check_list_container_terms label:hover{
   cursor:pointer;
+}
+
+div.check_list_container div#check_error_text{
+  font-size: 18px;
+  color:red;
 }
 
 div.check_list_container_agree{
@@ -80,7 +85,13 @@ div.check_list_container_agree{
   /* background-color:pink; */
 }
 
-div.check_list_container_agree a:hover{
+div.check_list_container_agree span{
+  color:black;
+  font-weight:600;
+}
+
+div.check_list_container_agree span:hover{
+  cursor:pointer;
   color:red;
 }
 
@@ -104,6 +115,21 @@ div.check_list_container span.check_list_text{
   font-size:20px;
   font-weight:700;
 }
+
+div.modal_content button.close{
+  width:200px;
+  height:50px;
+  background-color:#000;
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:1rem;
+  font-weight:700;
+  font-family:"nanum";
+}  
+
 
 /*-------------------------------- part : move to next page ----------------------------------*/
 div.sign_in_btn_container{

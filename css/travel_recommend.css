@@ -16,6 +16,10 @@
     font-weight: 500;
 }
 
+.travel_recommend{
+    margin-bottom: 50px;
+}
+
 /* 전체적으로 가운데 90% 설정 */
 .wrap{
     width: 90%;
@@ -33,7 +37,7 @@ button{
 /* ------ 문구 드롭다운 ------ */
 /* ======================= center_drop ================== */
 .center_drop{
-    padding-top: 200px;
+    padding-top: 150px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -219,23 +223,28 @@ em,.sBtn-text{
 /* 낮은 가격순 / 높은 가격순 */
 .filtering{
     text-align: right;
-    width: 87%;
+    width: 95%;
     margin-bottom: 20px;
 }
+
 .filtering>li{
     font-size: 20px;
     display: inline-block;
     padding-right: 15px;
 }
 
-.filtering>li:hover{
+.filtering a{
+    color: black;
+}
+
+.filtering a:hover{
     font-weight: 700;
 }
 
 /* == 목록(세로로)으로 추천 여행지 표시 == */
 .travel_section{
     width: 90%;
-    margin: 10px auto;
+    margin: 30px auto;
     /* height: 500px; */
     display: flex;
     padding: 15px 2%;
@@ -261,12 +270,6 @@ em,.sBtn-text{
     /* flex-wrap: wrap; */
 }
 
-/* .travel_section_img>img{
-    width: 100%;
-    height: 95%;
-    margin: 10px;
-    
-} */
 
 /* -- 여행지 목록(오른쪽) 상세설명 부분 -- */
 .travel_section_info{
@@ -330,14 +333,23 @@ em,.sBtn-text{
     font-size: 22px;
     font-weight: 500;
     display: none;
+    /* display: flex; */
+}
+
+.color_s{
+    background-color: silver;
+}
+
+.display_block{
+    display: block;
+    display: flex;
 }
 
 /* -------- 캘린더 부분 시작 -------- */
 
 .calendar{
-    width: 100%;
-    /* height: 300px; */
-    /* background-color: rgb(208, 208, 255); */
+    width: 50%;
+    height: 400px;
     margin: 20px auto;
     padding-top: 40px;
 }
@@ -390,6 +402,11 @@ td {
 .calendar_bottom{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
+    margin-right: 35px;
+    width: 400px;
+    line-height: 30px;
 }
 /* 캘린더 설명 */
 
@@ -470,10 +487,20 @@ td {
         text-align: center;
     }
 
+    .calendar_area{
+        flex-direction: column;
+        text-align: center;
+        /* margin-left: 0; */
+    }
+
+    .calendar_bottom{
+        margin: 0 auto;
+    }
     .drop_down_btn{
         margin-top: 40px;
-        
     }
+    
+    
 
     .btn-type-round{
         width: 80%;
