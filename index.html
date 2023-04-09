@@ -40,10 +40,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+
             const optionMenu = document.querySelector(".select-menu"),
                 selectBtn = optionMenu.querySelector(".select-btn"),
                 options = optionMenu.querySelectorAll(".option"),
-                sBtn_text = optionMenu.querySelector(".sBtn-text");
+                sBtn_text = optionMenu.querySelector(".sBtn-text"),
+                video = document.getElementById("myVideo");
+                
+            
+            video.play();
 
             // select your option 누르면 클래스 명이 바뀜 
 
@@ -207,7 +212,7 @@
             </ul>
         </div>
         <section class="top_section">
-            <video src="./video/mixkit-clouds-and-blue-sky-background-2408.mp4" muted autoplay loop style="width: 100vw; height: 100%; object-fit: cover; backdrop-filter: blur(10px);"></video>
+            <video src="./video/mixkit-clouds-and-blue-sky-background-2408.mp4" muted autoplay loop style="width: 100vw; height: 100%; object-fit: cover; backdrop-filter: blur(10px);" preload="auto" class="myVideo"></video>
             <!-- 카테고리 토글 -->
                 <div class="top_text_area">
                     <div class="top_nav">
