@@ -24,51 +24,30 @@
 
     <!-- 스크립트 부분 -->
     <script>
-        function closeAllDropdowns() {
-            // 모든 드롭다운을 닫음
-            var dropdowns = document.getElementsByClassName("options");
-            for (var i = 0; i < dropdowns.length; i++) {
-                dropdowns[i].style.display = "none";
-            }
-        }
-
-        function toggleDropdown(dropdownNum) {
-            // 모든 드롭다운을 닫음
-            closeAllDropdowns();
-            // 선택한 드롭다운만 열음
-            document.getElementById("dropdown" + dropdownNum).style.display = "block";
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
 
-            const optionMenu = document.querySelector(".select-menu"),
-                selectBtn = optionMenu.querySelector(".select-btn"),
-                options = optionMenu.querySelectorAll(".option"),
-                sBtn_text = optionMenu.querySelector(".sBtn-text"),
-                video = document.getElementById("myVideo");
-                
-            
-            video.play();
+            const optionMenus = document.querySelectorAll(".select-menu");
 
-            // select your option 누르면 클래스 명이 바뀜 
+            optionMenus.forEach(optionMenu => {
+                const selectBtn = optionMenu.querySelector(".select-btn");
+                const options = optionMenu.querySelectorAll(".option");
+                const sBtn_text = optionMenu.querySelector(".sBtn-text");
 
-            // selectBtn.addEventListener('click', () => optionMenu.classList.toggle("active"));
-
-            const selectBtns = document.querySelectorAll('.select-btn');
-
-            selectBtns.forEach(selectBtn => {
                 selectBtn.addEventListener('click', () => {
-                    selectBtn.parentElement.classList.toggle('active');
+                    // 다른 메뉴의 옵션 메뉴를 닫기 위해 모든 옵션 메뉴에 대해 active 클래스를 제거합니다.
+                    optionMenus.forEach(m => m.classList.remove('active'));
+                    optionMenu.classList.toggle("active");
+                });
+
+                options.forEach(option => {
+                    option.addEventListener("click", () => {
+                        let selectedOption = option.querySelector(".option-text").innerHTML;
+                        sBtn_text.innerHTML = selectedOption;
+                        optionMenu.classList.remove("active");
+                    })
                 });
             });
 
-            options.forEach(option => {
-                option.addEventListener("click", () => {
-                    let selectedOption = option.querySelector(".option-text").innerText;
-                    sBtn_text.innerText = selectedOption;
-                    optionMenu.classList.remove("active");
-                })
-            })
 
             // 모바일 네비 화면 
             const navBar = document.querySelector("nav"),
@@ -212,7 +191,7 @@
             </ul>
         </div>
         <section class="top_section">
-            <video src="./video/mixkit-clouds-and-blue-sky-background-2408.mp4" muted autoplay loop style="width: 100vw; height: 100%; object-fit: cover; backdrop-filter: blur(10px);" preload="auto" class="myVideo"></video>
+            <video src="./video/mixkit-clouds-and-blue-sky-background-2408.mp4" muted autoplay loop style="width: 100vw; height: 100%; object-fit: cover; backdrop-filter: blur(10px);" class="myVideo"></video>
             <!-- 카테고리 토글 -->
                 <div class="top_text_area">
                     <div class="top_nav">
