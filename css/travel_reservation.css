@@ -356,14 +356,6 @@ div.login_nav li {
     font-weight: 700;
 }
 
-/* .terms_reservation2_check>ul a{
-    font-weight: 700;
-    color: black;
-}
-
-.terms_reservation2_check>ul a:hover{
-    color: red;
-} */
 
 .terms_reservation2_check>ul .terms_agree{
     font-weight: 700;
@@ -849,11 +841,6 @@ button:hover {
     .traveler_information_info>ul {
         display: flex;
         flex-direction: column;
-        /* justify-content: flex-start; */
-
-        /* margin-left: 50px; */
-
-
     }
 
     .traveler_information_info>ul>li {
