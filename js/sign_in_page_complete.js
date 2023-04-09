@@ -51,12 +51,12 @@ document.addEventListener('DOMContentLoaded',()=>{
 /*------------------5seconds countdown text( adjust function above:function(timer) )-------------------------*/
 
    /*---------판도라의 상자------------
-   |                                           |                       
-   |    setTimeout(function(){          |
-   |      location.reload();                |
-   |    },5000);                              |
-   |                                           |
-   |-------------------------------------*/
+   |                                   |                       
+   |    setTimeout(function(){         |
+   |      location.reload();           |
+   |    },5000);                       |
+   |                                   |
+   |-----------------------------------*/
 
 
   let time=5;
