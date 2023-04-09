@@ -11,6 +11,9 @@
     <link href="../css/travel_reservation.css" rel="stylesheet">
     <title>여행하다</title>
 
+    <!-- mobile_nav -->
+    <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css" />
+
     <!-- 아이콘 -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
 
@@ -19,7 +22,10 @@
 
 <body>
 
-    <script>
+    <!-- mobile_nav -->
+    <div data-include="./mobile_nav.html"></div>
+
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navBar = document.querySelector("nav"),
                 menuBtns = document.querySelectorAll(".menu-icon");
@@ -31,12 +37,9 @@
                     navBar.classList.toggle("open");
                 });
             });
-            /* ======================== slider ====================== */
+            
         });
-    </script>
-
-
-
+    </script> -->
 
     <!-- nav -->
     <nav>
@@ -245,24 +248,26 @@
                                 <span class="close">&times;</span>
                                 <p>약관동의</p>
                                 <div class="terms_content">
-                                
-                                    본 여행상품은 항공사에 항공료 중 일부가 선납(DEPOSIT)되어 있는 상품으로 예약금 입금 시점(또는 결제)부터 선납금에 대한 환불이 불가합니다.<br/>
-                                    이에 DEPOSIT금액+표준약관이 적용됨을 안내합니다. (제외적용 되는 경우 없음/1인 20만원)<br/>
-                                    본 상품은 출발일에 따라 별도의 선발권 안내가 진행될 수 있으며 또한 결제 시한이 당겨질 수 있습니다.<br/> 
-                                    항공선발권 진행된 경우는 취소 또는 변경시 취소시점에 따라 상이한 환불 패널티가 별도 부과될 수 있으며 이는 약관과는 별도로 적용됩니다.<br/><br/>
+
+                                    본 여행상품은 항공사에 항공료 중 일부가 선납(DEPOSIT)되어 있는 상품으로 예약금 입금 시점(또는 결제)부터 선납금에 대한 환불이
+                                    불가합니다.<br />
+                                    이에 DEPOSIT금액+표준약관이 적용됨을 안내합니다. (제외적용 되는 경우 없음/1인 20만원)<br />
+                                    본 상품은 출발일에 따라 별도의 선발권 안내가 진행될 수 있으며 또한 결제 시한이 당겨질 수 있습니다.<br />
+                                    항공선발권 진행된 경우는 취소 또는 변경시 취소시점에 따라 상이한 환불 패널티가 별도 부과될 수 있으며 이는 약관과는 별도로
+                                    적용됩니다.<br /><br />
 
                                     여행업자는 또는 여행자는 여행출발전 이 여행계약을 해제할 수 있습니다. 이 경우 발생하는 손해액은 ‘소비자피해보상규정’(공정거래위원회 고시)에 따라
-                                    배상합니다.<br/>
-                                    1. 여행자의 여행계약 해제 요청이 있는 경우(여행자의 취소 요청시)<br/>
-                                    - 예약 후 ~30일 전까지 취소 요청 시 - 200,000원<br/>
-                                    - 여행출발일 29~20일 전까지 취소 요청 시 - 200,000원 + 여행요금의 10% 배상<br/>
-                                    - 여행출발일 19~10일 전까지 취소 요청 시 - 200,000원 + 여행요금의 15% 배상<br/>
-                                    - 여행출발일 9~8일 전까지 취소 요청 시 - 200,000원 + 여행요금의 20% 배상<br/>
-                                    - 여행출발일 7~1일 전까지 취소 요청 시 - 200,000원 + 여행요금의 30% 배상<br/>
-                                    - 여행출발 당일 취소 요청 시 - 200,000원 + 여행요금의 50% 배상<br/><br/>
+                                    배상합니다.<br />
+                                    1. 여행자의 여행계약 해제 요청이 있는 경우(여행자의 취소 요청시)<br />
+                                    - 예약 후 ~30일 전까지 취소 요청 시 - 200,000원<br />
+                                    - 여행출발일 29~20일 전까지 취소 요청 시 - 200,000원 + 여행요금의 10% 배상<br />
+                                    - 여행출발일 19~10일 전까지 취소 요청 시 - 200,000원 + 여행요금의 15% 배상<br />
+                                    - 여행출발일 9~8일 전까지 취소 요청 시 - 200,000원 + 여행요금의 20% 배상<br />
+                                    - 여행출발일 7~1일 전까지 취소 요청 시 - 200,000원 + 여행요금의 30% 배상<br />
+                                    - 여행출발 당일 취소 요청 시 - 200,000원 + 여행요금의 50% 배상<br /><br />
 
                                     -위 규정보다 실손해액이 더 높을 경우, 실손해액에 따라 더 배상하셔야 합니다.
-                                
+
                                 </div>
                                 <button class="close" type="button">닫기</button>
                             </div>
@@ -578,7 +583,7 @@
             const phonenum = document.getElementById('phonenum');
             const email_first = document.getElementById('email_first');
             const email_second = document.getElementById('email_second');
-            
+
             const check_error_text = document.getElementById('check_error_text');
             const phonenum_error_text = document.getElementById('phonenum_error_text');
             const name_error_text = document.getElementById('name_error_text');
@@ -679,7 +684,53 @@
             current_total_price = comma_total_price + ' 원';
             total_price.innerText = current_total_price;
         }
+
+
+        function includeHTML(callback) {
+            let z, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (let i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("data-include");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("data-include");
+                            includeHTML(callback);
+                        }//if
+                    }//onreadystatechange
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                    if (this.readyState != 4) return;
+                }//if - file
+            }//for
+            if (callback) callback();
+        }//includeHTML
+
+        function findMenuBtns() {
+            const navBar = document.querySelector("nav");
+            const menuBtns = document.querySelectorAll(".menu-icon");
+            menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                    console.log('click');
+                    navBar.classList.toggle("open");
+                });
+            });
+        }
+
+        /* ✨ 실행 */
+        document.addEventListener('DOMContentLoaded', () => {
+            includeHTML(findMenuBtns);
+        });
     </script>
+
+
+
 
 </body>
 
