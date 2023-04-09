@@ -562,6 +562,9 @@
             const email_first = document.getElementById('email_first');
             const email_second = document.getElementById('email_second');
 
+            const adult = document.querySelector('.adult');
+            const adult_cost = adult.innerHTML;
+
             const check_error_text = document.getElementById('check_error_text');
             const phonenum_error_text = document.getElementById('phonenum_error_text');
             const name_error_text = document.getElementById('name_error_text');
@@ -616,6 +619,12 @@
             if (!regex_second.test(email_second.value)) {
                 email_error_text.textContent = '※ 올바른 이메일 형식이 아닙니다.';
                 email_second.focus();
+                return false;
+            }
+
+            if (adult_cost <= 0){
+                alert('성인 한명 이상이 있어야 합니다!');
+                adult.focus();
                 return false;
             }
 
