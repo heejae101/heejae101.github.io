@@ -15,6 +15,7 @@
   <!-- adjust css -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" type="text/css"/>    <!-- 아이콘 -->
   <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>  <!-- header-->
+  <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css"/>
   <link href="../css/sign_in_page_default.css" rel="stylesheet" type="text/css"/>  <!-- sign in page default   -->
   <link href="../css/sign_in_page_input.css" rel="stylesheet" type="text/css"/> <!-- sign in page3  -->
   <link href="../css/sign_in_page_input_mediaquery.css" rel="stylesheet" type="text/css"/>  <!-- sign in page 3 mediaquery -->
@@ -25,12 +26,12 @@
 <body>
 <!----  header----->
   <header data-include="./top_nav.html"></header>
-
+  <div data-include="./mobile_nav.html"></div>
 <!------------------ main section -------------------->
 
   <div id="wrap">
 
-      <form>
+      <form class="form_wrap" name="frm" onsubmit="return checkForm(this)" action="./sign_in_page_complete.html">
       
         <div class="sign_in_logo">
           <h1>회원가입</h1>
@@ -73,7 +74,7 @@
                 </label><br/>
                 <input type="password" id="pwd" name="pwd" /><br/>
                 <span class="input_explanation" id="input_explanation_1">1.비밀번호는 8자 이상, 최대 20자까지 입력해주세요.</span>
-                <span class="input_explanation" id="input_explanation_2">2.연속된 숫자는 사용 불가능합니다.</span>
+                <span class="input_explanation" id="input_explanation_2">2.연속된 3자리 문자, 숫자는 사용 불가능합니다.</span>
                 <span class="input_explanation" id="input_explanation_3">3.대문자 1글자 이상 필수로 입력하세요.</span>
               </li>
 
@@ -82,6 +83,7 @@
                   * 비밀번호 확인<span class="essential_red">(필수)</span>
                 </label><br/>
                 <input type="password" id="pwd_check" name="pwd_check" /><br/>
+                <div class="error_txt" id="error_txt_2"></div>
               </li>
 
               <li>
@@ -91,7 +93,7 @@
                 <input type="text" id="birth" name="birth" placeholder="숫자 8자리만 입력하세요." 
                  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="8"><br/>
                 <div class="error_txt" id="error_txt_4"></div>
-                <span class="input_explanation">※ 생년월일은 숫자 8자리로 입력하세요.</span>
+                <span class="input_explanation" id="input_explanation_4">※ 생년월일은 숫자 8자리로 입력하세요.</span>
                 <span class="input_explanation">(예시 : 1960년05월08일 ☞ 19600508)</span>
               </li>
 
@@ -100,7 +102,7 @@
                   * 이메일<span class="essential_red">(필수)</span>
                 </label><br/>
                 <input type="text" id="email_1" name="email_1" /> @ <input type="text" id="email_2" name="email_2"><br/>
-                <div class="error_txt" id="error_txt_5"></div>
+                <div class="error_txt" id="error_txt_3"></div>
 
                 <input type="checkbox" id="check_email" name="check_email"/>
                 <label id="check_email_text" for="check_email" name="check_email">이메일 정보 수신동의</label><br/>
@@ -114,8 +116,8 @@
         </div>
 
         <div class="input_user_information_btn">
-          <button type="button" class="btn_btn btn_sign_in" onclick=window.location.href(); >회원가입</button>
-          <button type="button" class="btn_btn btn_back" onclick="location.href='sign_in_page_phone.html'">뒤로가기</button>
+          <button class="btn_btn btn_sign_in" type="submit">회원가입</button>
+          <button class="btn_btn btn_back" type="button" onclick="location.href='sign_in_page_phone.html'">뒤로가기</button>
         </div>
 
       </form>
@@ -127,80 +129,6 @@
 
 </body>
 
-<script>
-
-
-
-  function login(){
-    let tel=document.querySelector("#tel");
-    let email1=document.querySelector("#email_1");
-    let email2=document.querySelector("#email_2")
-    let errorTxt1=document.querySelector("#error_txt_1")
-    let errorTxt4=document.querySelector("#error_txt_4")
-    let errorTxt5=document.querySelector("#error_txt_5")
-
-    if(tel.value=="" || tel.value.length<11){
-      tel.focus();
-      errorTxt1.textContent="※ 전화번호 11자리는 필수입력사항입니다."
-    }else if(birth.value=="" || birth.value.lenth<8){
-      birth.focus();
-      errorTxt4.textContent="※ 생년월일 8자리는 필수입력사항입니다."
-    }else if(email1.value==""){
-      email1.focus();
-      errorTxt5.textContent="※ 이메일 주소를 모두 입력해주세요."
-    }else if(email2.value==""){
-      email2.focus();
-      errorTxt5.textContent="※ 이메일 주소를 모두 입력해주세요."
-    }else{
-      location.href="./sign_in_page_complete.html";
-    }
-  }
-
-
-
-/*--- ---*/
-function includeHTML(callback){
-        let z, elmnt, file, xhttp;
-        z = document.getElementsByTagName("*");
-        for (let i = 0; i < z.length; i++) {
-          elmnt = z[i];
-          file = elmnt.getAttribute("data-include");
-          if (file) {
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4) {
-                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                /* Remove the attribute, and call this function once more: */
-                elmnt.removeAttribute("data-include");
-                includeHTML(callback);
-              }//if
-            }//onreadystatechange
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            return;
-            if (this.readyState != 4) return;
-          }//if - file
-        }//for
-        if (callback) callback();
-      }//includeHTML
-
-      function findMenuBtns() {
-        const navBar = document.querySelector("nav");
-        const menuBtns = document.querySelectorAll(".menu-icon");
-        menuBtns.forEach((menuBtn) => {
-          menuBtn.addEventListener("click", () => {
-            console.log('click');
-            navBar.classList.toggle("open");
-          });
-        });
-      }
-
-      /* ✨ 실행 */
-      document.addEventListener('DOMContentLoaded',()=>{
-        includeHTML(findMenuBtns);
-      }); 
-
-</script>
+<script src="../js/sign_in_page_input.js"></script>
 
 </html>

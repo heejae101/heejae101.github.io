@@ -116,20 +116,71 @@ div.check_list_container span.check_list_text{
   font-weight:700;
 }
 
-div.modal_content button.close{
+/*-------------modal------------*/
+  /* 모달 창을 위한 스타일 */
+  div.modal {
+    display: none;
+    /* 기본적으로 모달 창을 숨김 */
+    position: fixed;
+    /* 모달 창이 스크롤되지 않도록 고정 */
+    z-index: 1;
+    /* 모달 창이 다른 요소 위에 나타남 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* 스크롤 가능하도록 함 */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 배경에 반투명한 색상 적용 */
+}
+
+/* 모달 창 내용을 위한 스타일 */
+div.modal_content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* 닫기 버튼을 위한 스타일 */
+span.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* 닫기 버튼에 마우스를 올렸을 때의 스타일 */
+span.close:hover,
+span.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div.modal_content>p{
+    padding-bottom: 20px;
+    font-size: 27px;
+    font-family: 'nanum';
+    font-weight: 700;
+}
+
+div.modal_content>button{
   width:200px;
   height:50px;
-  background-color:#000;
-  color:#fff;
+  background-color:black;
+  color:white;
   border:none;
+  display: block;
+  margin: 20px auto;
   padding:10px 20px;
   border-radius:4px;
-  cursor:pointer;
   font-size:1rem;
   font-weight:700;
   font-family:"nanum";
-}  
-
+}
 
 /*-------------------------------- part : move to next page ----------------------------------*/
 div.sign_in_btn_container{
