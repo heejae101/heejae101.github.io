@@ -20,7 +20,7 @@
     <!-- 스타일 시트 -->
     <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
-
+    <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css"/>
     <style>
          /* 폰트 */
          @font-face{ /* 일반크기 */
@@ -42,23 +42,42 @@
         /* 예약완료 페이지 전체영역 */
         div.reservation_completed{
             width: 100%;
+            height: 900px;
             position: relative;
         }
 
         /* 최상단의 예약 완료! text */
         div.reservation_completed .title{
             text-align: center;
-            font-family: 'nanum';
+            font-family: 'nanum_1';
             font-size: 40px;
             margin-top: 20px;
         } 
+        div.success_sign_in_message1{
+          width: 550px;
+          height: 100px;
+          margin-left: 50%;
+          transform: translateX(-50%);          
+          /* background-color: aqua; */
+        }
+        /* 감사인사 폰트사이즈 */
+        div.success_sign_in_message1>span{
+          text-align: left;          
+        }
+        div.success_sign_in_message1>span.success_sign_in_message1_text{
+          font-size: 23px;
+        }
 
         /* 예약 내역 박스부분 */
         div.res_inform{
-            width: 100%;
-            height: 400px;
+            width: 550px;
+            height: 330px;
             font-family: 'nanum';
             font-size: 20px;     
+            margin-left: 50%;
+            margin-top: -1%;
+            transform: translateX(-50%);
+            border: 1px solid black;
             /* display: inline-block; */
             /* display: flex; */
             /* justify-content: center;      */
@@ -68,9 +87,12 @@
         div.res_inform{
             display: inline-block;
             justify-content: center;
+            
         }
         div.res_inform>ul{
-            text-align: center;
+            text-align: left;
+            line-height: 23px;
+            margin-left: 10px;
         }
 
 
@@ -86,7 +108,7 @@
             position: absolute;           
             left: 50%;
             transform: translateX(-50%);
-            top:10px;
+            top:780px;
             
         }
         #btn_togo_home{
@@ -108,10 +130,9 @@
         #btn_togo_home:hover{            
             box-shadow: 4px 4px 8px #888;
         }
+        
 
-        div.button{
-                display: none;
-            }
+       
 
 
         /* 모바일 화면에서 보일 설정 */
@@ -119,13 +140,38 @@
             div.reservation_completed{
                 position: relative;
             }
-            div.button{
-                display: none;
-            }
-            div.button-1{
-                position: absolute;
-                left: 50%;
+            div.success_sign_in_message1{
+            width: 450px;
+            height: 100px;
+            margin-left: 50%;
             transform: translateX(-50%);
+            }            
+            div.success_sign_in_message1>span.success_sign_in_message1_text{
+              font-size:18px;
+            }
+            div.res_inform{
+            width: 450px;
+            height: 330px;
+            font-family: 'nanum';
+            font-size: 20px;     
+            margin-left: 50%;
+            margin-top: -1%;
+            transform: translateX(-50%);
+            border: 1px solid black;
+            }
+            div.res_inform li{
+              font-size: 15px;
+            }
+
+
+            #btn_togo_home{
+            /* display: inline-block; */            
+            width: 400px;
+            height: 70px;
+            margin-top: 10px;
+            font-family: 'nanum';
+            font-size: 30px;
+            font-weight: bold;
             }
         }
 
@@ -146,41 +192,39 @@
           <img src="../image/cwh/carrier.JPG" alt="logo plane">
         </div>
         <div class="success_sign_in_message1">
-          <span class="success_sign_in_message1_text">여행하다 상품을 예약해주셔서 감사합니다.</span>
-          <span class="success_sign_in_message1_text">담당자 확인 후 예약 및 결제 확정여부를 알려드립니다.</span>
-          <span class="success_sign_in_message1_text">확정불가시, 결제는 진행되지 않습니다.</span>
+          <span class="success_sign_in_message1_text">ㆍ여행하다 상품을 예약해주셔서 감사합니다.</span>
+          <span class="success_sign_in_message1_text">ㆍ담당자 확인 후 결제 확정여부를 알려드립니다.</span>
+          <span class="success_sign_in_message1_text">ㆍ확정불가시, 결제는 진행되지 않습니다.</span>
         </div>
         <!-- 예약 상세내역 -->
         <div class="res_inform">          
           <ul>
               <li>예약내역</li><br/>
-              <li>-예약일: 04월 07일 (금)</li>
-              <li>-예약번호(코드) : GFGS235D</li>
-              <li>-여행기간 : 2023년 05월 24일 (수) ~ 05월 27일 (토)</li>
-              <li>-출발인원 : 2인(성인)</li>
-              <li>-상품금액 : 1798000원</li>
-              <li>-결제상태 : 추후 담당자가 연락드릴 예정입니다.</li><br/>
+              <li>ㆍ예약일: 04월 07일 (금)</li>
+              <li>ㆍ예약번호(코드) : GFGS235D</li>
+              <li>ㆍ여행기간 : 2023년 05월 24일 (수) ~ 05월 27일 (토)</li>
+              <li>ㆍ출발인원 : 2인(성인)</li>
+              <li>ㆍ상품금액 : 1798000원</li>
+              <li>ㆍ결제상태 : 추후 담당자가 연락드릴 예정입니다.</li><br/>
           </ul>
           <ul>
               <li>여행자 정보</li><br/>
-              <li>-이름 : OOO</li>
-              <li>-인원수 : 2인(성인)</li>
-              <li>-상품가격 : 1798000</li>
+              <li>ㆍ이름 : OOO</li>
+              <li>ㆍ인원수 : 2인(성인)</li>
+              <li>ㆍ상품가격 : 1798000</li>
           </ul>
         </div>
                   
         <!-- 처음으로 가기 버튼 -->
-        <div class="button">
-          <button type="button" id="btn_togo_home" name="btn_togo_home">처음으로 가기</button>
+        <div class="button"><a href="../index.html">
+          <button type="button" id="btn_togo_home" name="btn_togo_home">처음으로 가기</button></a>
         </div>
-        <!-- 모바일에서 보일 버튼과 위치 설정 -->
-        <!-- <div class="button-1">
-            <button type="button" id="btn_togo_home" name="btn_togo_home">처음으로 가기</button>
-          </div> -->
+       
     </div>
 
     <!-- footer -->
     <footer data-include="./footer.html"></footer>
+    <div data-include="./mobile_nav.html"></div>
     <!-- footer -->
 
     <script>

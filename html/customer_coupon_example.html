@@ -9,6 +9,20 @@
     <!-- 외부 스타일시트 -->
     <link href="../css/reset.css" rel="stylesheet" />
     
+    <!-- ajax -->
+    <!-- 아이콘 -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+
+    <!-- 리셋 시트 -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+
+    <!-- 스타일 시트 -->
+    <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css"/>
+    <!-- ajax -->
+
+
     <style>
         /* 폰트 */
     @font-face{ /* 일반크기 */
@@ -28,7 +42,7 @@
     /* 전체 영역 */
     div.customer_coupon{
         width: 95%;
-        height: 800px;
+        height: 1000px;
         text-align: center;
         font-family: 'nanum';
         /* border: 1px dotted black;  */
@@ -82,6 +96,7 @@
         justify-content: center;
         /* align-items: center; */
         margin-top: 100px;
+        margin-bottom: 200px;
     }
     div.customer_coupon_inform li{
         display: inline-block;
@@ -108,6 +123,7 @@
             /* flex-wrap: nowrap; */
             width: 100%;
             margin: 0 auto;  
+            
             position: relative;
             /* background-color: aquamarine; /* 지움 */
         }
@@ -145,30 +161,9 @@
             justify-content: space-around;
             right: 10px;
             margin-right:5px;
+           
         }
 
-
-        /* 하단 세 메뉴(로그아웃, 공지사항, 고객센터) */
-    div.mobile_down_nav{
-        display: flex;
-        justify-content: space-around;
-        position: relative;
-        top:50px;        
-    }    
-    div.mobile_down_nav>ul{
-        width: 100%;
-        position: absolute;
-        top: 500px;
-        border-top: 2px solid black;
-        border-bottom: 1px solid black;
-    }
-    div.mobile_down_nav li{        
-        display: inline-block;
-        margin: 30px;
-        font-family: 'nanum';
-        font-size: 1.3rem;
-        
-    }
         
     }
     /* 450px이하에서는 내용물이 보이지 않도록 추가함 */
@@ -183,7 +178,9 @@
     </style>
 </head>
 <body>
-   
+    <header data-include="./top_nav.html"></header>
+    
+
     <!-- 할인 쿠폰 전체 화면 페이지 -->
     <div class="customer_coupon">
         <!-- 할인 쿠폰 제목 박스 -->
@@ -213,16 +210,52 @@
             </ul>
         </div>
 
-         <!-- 모바일 설정 시 하단 메뉴들 -->
-         <div class="mobile_down_nav">
-            <ul>
-                <li><a href="#">로그아웃</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">고객센터</a></li>
-            </ul>
-        </div>        
-    </div>    
+        <footer data-include="./footer.html"></footer>
+        <div data-include="./mobile_nav.html"></div>     
 
+        <script>
+            function includeHTML(callback){
+              let z, elmnt, file, xhttp;
+              z = document.getElementsByTagName("*");
+              for (let i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("data-include");
+                if (file) {
+                  xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                      /* Remove the attribute, and call this function once more: */
+                      elmnt.removeAttribute("data-include");
+                      includeHTML(callback);
+                    }//if
+                  }//onreadystatechange
+                  xhttp.open("GET", file, true);
+                  xhttp.send();
+                  return;
+                  if (this.readyState != 4) return;
+                }//if - file
+              }//for
+              if (callback) callback();
+            }//includeHTML
+      
+            function findMenuBtns() {
+              const navBar = document.querySelector("nav");
+              const menuBtns = document.querySelectorAll(".menu-icon");
+              menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                  console.log('click');
+                  navBar.classList.toggle("open");
+                });
+              });
+            }
+      
+            /* ✨ 실행 */
+            document.addEventListener('DOMContentLoaded',()=>{
+              includeHTML(findMenuBtns);
+            });
+          </script>
    
 </body>
 </html>

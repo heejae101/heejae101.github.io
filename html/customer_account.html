@@ -19,7 +19,7 @@
     <!-- 스타일 시트 -->
     <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
-
+    <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css"/>
     
 
     <!-- 스타일 시트 영역 -->
@@ -95,7 +95,8 @@
 
         /* 취소 & 확인 버튼 박스 */
         div.customer_run{
-            margin-top: 20px;            
+            margin-top: 20px;
+            margin-bottom: 400px;            
            /*background-color: aqua; /* 지움 */
         }
 
@@ -231,19 +232,10 @@
             <a href="#"><button type="button" class="btn_cancel">취소</button></a>
             <a href="#"><button type="button" class="btn_check">확인</button></a>           
         </div>
-
-        <!-- 모바일 설정 시 하단 메뉴들 -->
-        <div class="mobile_down_nav">
-            <ul>
-                <li><a href="#">로그아웃</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">고객센터</a></li>
-            </ul>
-        </div>
-    </div>
-
+        
  <!-- 푸터 -->
  <footer data-include="./footer.html"></footer>
+ <div data-include="./mobile_nav.html"></div> 
  <!-- 푸터 -->
  
  <script>

@@ -22,7 +22,7 @@
     <!-- 스타일 시트 -->
     <link href="../css/top_nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
-
+    <link href="../css/mobile_nav.css" rel="stylesheet" type="text/css"/>
 
     <!-- 스타일시트 영역 -->
     <style>
@@ -47,7 +47,7 @@
 
         /* 완전한 최후의 전체 페이지 끝판왕 우주의 저 끝 영역 */
         div.total{ 
-            display: flex;
+            /* display: flex; */
             justify-content: center; /* customer_point 전체 페이지를 완벽하게 정중앙에 위치시키기 위함 */
         }
 
@@ -59,6 +59,8 @@
             display: flex;
             display: inline-block;
             position: relative;
+            margin-left: 50%;
+            transform: translateX(-50%);
             /* background-color: rgb(126, 105, 76); */
         }
         /* "나의 포인트" 제목 */
@@ -153,10 +155,11 @@
             right: -20%;
         }
         div.customer_point_informbox_3{
-            width:250px;
+            width:25px;
             height: 80px;
             line-height: 30px;
-            margin-left: 30px;
+            margin-left: 2%;
+            margin-right: 10%;
             position: relative;            
         }
         div.customer_point_informbox_3>ul{
@@ -314,11 +317,22 @@
             justify-content: center;
         }
 
+
+
+
         /* 여기 이하부터 모바일 화면 설정 영역 */
         /* 모바일 사이즈는 890px로 max-width 지정함. 기존의 전체 width=1000px*/
 
         @media all and (max-width:890px){
         /* 890px까지만 보여야 할 부분-바꿔말하면 모바일에서 보일 조건을 여기에 설정 */
+        /* 나의 포인트 전체화면 */
+        div.customer_point{
+            width: 500px;
+        }
+
+
+
+
         div.customer_point_informbox_2>ul{
             display: none;
         }
@@ -358,12 +372,13 @@
         div.customer_point_inform_nav_for-mobile{
             width: 270px;
             height: 80px;
-            position: relative;            
+            position: relative;     
             /* background-color: aqua; */
         }
         div.customer_point_inform_nav_for-mobile>ul{
             display: flex;
             justify-content: space-between;
+            /* margin-right: 100px; */
         }        
         
         div.div_1{
@@ -396,14 +411,14 @@
             line-height: 40px;  
             bottom: 30px;       
             /*left:-15%;  /* 스마트폰 화면 중앙에 최대한 맞춤 */
-            left:15%;  /* 스마트폰 화면 중앙에 최대한 맞춤 */
+            left:5%;  /* 스마트폰 화면 중앙에 최대한 맞춤 */
         }
         div.customer_point_inform_nav_for-mobile>ul.for_mobile-2{
             position: absolute;
             line-height: 40px;  
             top:20px;  
             /*left:-19%;   /* 스마트폰 화면 중앙에 최대한 맞춤 */   
-            left:19%;   /* 스마트폰 화면 중앙에 최대한 맞춤 */   
+            left:3%;   /* 스마트폰 화면 중앙에 최대한 맞춤 */   
         }
         /* ------전체,적립포인트,사용포인트,소멸예정포인트 높낮이 조절은 여기서!!------ */
 
@@ -658,19 +673,12 @@
             </ul>
         </div>   
             
-        <!-- 모바일 설정 시 하단 메뉴들 -->
-        <div class="mobile_down_nav">
-            <ul>
-                <li><a href="#">로그아웃</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">고객센터</a></li>
-            </ul>
-        </div>
-    </div> <!-- total 전체 -->
+        
         
     </div>
     <!-- footer 시작 -->
     <footer data-include="./footer.html"></footer>
+    <div data-include="./mobile_nav.html"></div>
     <!-- footer 끝 -->
 
     <!-- ajax -->
