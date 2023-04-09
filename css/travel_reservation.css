@@ -88,7 +88,7 @@ nav .sidebar {
     background-color: #fff;
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
-    z-index: 9999;
+    z-index: 99;
 }
 
 nav.open .sidebar {
@@ -630,9 +630,6 @@ input {
 }
 
 
-
-
-
 .traveler_information_info li>span {
     font-size: 20px;
     font-weight: 500;
@@ -645,15 +642,8 @@ input {
     font-weight: 500;
 }
 
-/* 최종합계 금액 */
-/* .total_price_text{
-    display: block;
-} */
 
-ul>li {
-    padding-top: 20px;
-    /* border-right: 1px solid black; */
-}
+
 
 /* 인원수 +/- 버튼 */
 .plus_min_btn {
@@ -711,11 +701,6 @@ textarea {
     font-size: 20px;
 }
 
-/* .etc_reservation2_input{
-    width: 90%;
-    height: 300px;
-    margin-left: 50px;
-} */
 
 
 /* 예약하기/취소하기 버튼 */
@@ -826,9 +811,6 @@ button:hover {
 }
 
 /* ======================== footer end ========================= */
-
-
-
 
 
 
@@ -946,16 +928,8 @@ button:hover {
     }
 
     .top_text_area {
-        width: 95%;
+        width: 90%;
         height: 25px;
-        /* background-color: #f2f2f2;
-        padding: 20px;
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        transition: top 0.3s ease-in-out; */
     }
 
     .bi-list {
