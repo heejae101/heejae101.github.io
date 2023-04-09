@@ -465,6 +465,15 @@ td {
     .btn-type-round{
         margin-top: 70px;
     }
+
+    .calendar{
+        width: 100%;
+    }
+
+    .calendar_bottom{
+        width: 100%;
+        text-align: left;
+    }
 }
 
 
