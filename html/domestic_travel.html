@@ -47,6 +47,7 @@
             var closeBtn = document.getElementsByClassName("close")[0];
             closeBtn.onclick = function () {
                 closeModal();
+                stopVideo();
             }
 
             // 모달 창의 배경을 클릭 시 모달 창 닫기
@@ -54,8 +55,24 @@
             window.onclick = function (event) {
                 if (event.target == modal) {
                     closeModal();
+                    stopVideo();
                 }
             }
+
+            function stopVideo() {
+                var iframe = document.querySelector('iframe');
+                var video = document.querySelector('video');
+                if (iframe) {
+                    var iframeSrc = iframe.src;
+                    iframe.src = iframeSrc;
+                }
+                if (video) {
+                    video.pause();
+                }
+            }
+
+            var modal = document.getElementById("myModal");
+            modal.addEventListener("hidden.bs.modal", stopVideo);
 
             /* ======================== slider ====================== */
         });
