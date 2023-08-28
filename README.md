@@ -1,5 +1,6 @@
 # Trip_website_for_senior
 시니어를 위한 여행 사이트(2차 프로젝트 조장 채희재, 서기 홍찬우, 팀원 황인규, 팀원 이윤정)
+여행이지 사이트를 레퍼런스로 제작하였습니다. [레퍼런스 사이트](https://www.kyowontour.com/)
 
 ### 사이트
 [사이트 바로가기](https://heejae101.github.io/)
