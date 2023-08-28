@@ -10,6 +10,12 @@
 ### 제작기간
  - 2023.03.20 ~ 2023.04.09
 
+### 요구사항 명세서 
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/4a883388-662e-4f6b-8bf5-9008c7026730)
+
+### WBS CHART
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/23f00555-c146-42bd-80b3-19f73df95ee0)
+
 ### 메인화면
  - PC 화면
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/29168339-fa6c-4e15-8d4d-e4bee76fe63e)
