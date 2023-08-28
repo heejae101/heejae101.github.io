@@ -13,6 +13,10 @@
 ### 메인화면
  - PC 화면
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/29168339-fa6c-4e15-8d4d-e4bee76fe63e)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/1ddde56c-d963-4a85-8b98-74a706c9eae5)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/a93cfd03-a09f-4dac-8b47-00526fff8f99)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/3cf0d709-6db7-4011-ad23-613361b703fe)
+
  - 모바일 화면
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/640f0332-369a-4fa4-a9cb-f3d501fdff8b)
 
