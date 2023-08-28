@@ -14,7 +14,7 @@
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/4a883388-662e-4f6b-8bf5-9008c7026730)
 
 ### WBS CHART
-![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/23f00555-c146-42bd-80b3-19f73df95ee0)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/707f8830-1bab-4a13-b156-d1ba75682f0d)
 
 ### 메인화면
  - PC 화면
