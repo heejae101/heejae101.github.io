@@ -16,15 +16,12 @@
    - 메인페이지 제작
    - 국내여행 페이지 제작
    - 메인 media query 화면 제작
-<br>
  - 서기 : 홍찬우
    - 회의록 작성
    - 마이페이지, 고객센터 페이지 제작
-<br> 
  - 팀원 : 황인규
    - 로그인 프로세스 페이지 제작
    - 로그인 유효성 검사
-<br>
  - 팀원 : 이윤정
    - 여행지 상세페이지 제작
    - 국내 여행 & 해외 여행 페이지 제작
@@ -47,12 +44,14 @@
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/8da5c3e1-1191-4aec-8ae8-86ee35895053)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/98fe449e-3fd4-4e8b-9d9d-14e418b0be24)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/d2117701-77fa-43a1-8513-c0a273a45c86)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/2a054feb-0dc8-4dd0-a011-36e861658ca1)
 
  - 로그인 페이지
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/f438b119-1ee4-4d8d-8bd5-ccc31d508055)
-
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/0bfe7c3b-abc1-487c-b76a-81df379732bf)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/76c60a5a-45f7-4fd9-9058-5ec9a9382e07)
 
  - 모바일 화면
-![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/640f0332-369a-4fa4-a9cb-f3d501fdff8b)
-![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/2a054feb-0dc8-4dd0-a011-36e861658ca1)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/baa83ce3-c94d-49c1-9653-4b547e5992bf)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/de4ee46a-8582-42e9-a56a-f80c58ebca30)
 
