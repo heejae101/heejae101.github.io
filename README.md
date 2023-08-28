@@ -40,16 +40,27 @@
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/a93cfd03-a09f-4dac-8b47-00526fff8f99)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/3cf0d709-6db7-4011-ad23-613361b703fe)
 
- - 여행 상세 페이지
+ - 여행 목록 페이지
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/8da5c3e1-1191-4aec-8ae8-86ee35895053)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/98fe449e-3fd4-4e8b-9d9d-14e418b0be24)
+
+ - 여행 상세 페이지
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/d2117701-77fa-43a1-8513-c0a273a45c86)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/2a054feb-0dc8-4dd0-a011-36e861658ca1)
 
  - 로그인 페이지
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/f438b119-1ee4-4d8d-8bd5-ccc31d508055)
+ - 회원 가입 페이지
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/20f183df-cd09-471c-a0dd-4bb1889c7047)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/0bfe7c3b-abc1-487c-b76a-81df379732bf)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/76c60a5a-45f7-4fd9-9058-5ec9a9382e07)
+
+ - 고객센터 & 마이페이지
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/f583c158-6dcf-48e7-b6a4-a510205a8bff)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/9dc88fc1-066d-4e17-8cbc-a7a5a258ca95)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/3bf60650-42a4-4dc8-bc71-4637ee5ade65)
+![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/8db0fd28-359e-43f3-9eb8-20c30c03a99d)
+
 
  - 모바일 화면
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/baa83ce3-c94d-49c1-9653-4b547e5992bf)
