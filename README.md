@@ -5,7 +5,7 @@
 [사이트 바로가기](https://heejae101.github.io/)
 
 ### 개요
- - 고령화 사회로 
+ - 점차 고령화는 진행되는데 고령자분들을 위한 여행 사이트를 만들고자 제작하였습니다.
 
 ### 제작기간
  - 2023.03.20 ~ 2023.04.09
@@ -13,7 +13,7 @@
 ### 요구사항 명세서 
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/4a883388-662e-4f6b-8bf5-9008c7026730)
 
-### WBS CHART
+### WBS CHART (노션)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/707f8830-1bab-4a13-b156-d1ba75682f0d)
 
 ### 메인화면
