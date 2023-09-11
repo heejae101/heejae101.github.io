@@ -31,6 +31,7 @@
  <br>
 
 ### 요구사항 명세서 
+[Spread Sheet](https://docs.google.com/spreadsheets/d/1uPyxw9-m733zn0d0jiuru82yuZ8lpZ58a6hYdDdYFK8/edit?usp=sharing)
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/4a883388-662e-4f6b-8bf5-9008c7026730)
 
 ### WBS CHART (노션)
