@@ -35,6 +35,7 @@
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/4a883388-662e-4f6b-8bf5-9008c7026730)
 
 ### WBS CHART (노션)
+무료 버전 끝 접근불가
 ![image](https://github.com/heejae101/heejae101.github.io/assets/81417568/707f8830-1bab-4a13-b156-d1ba75682f0d)
 
 ### PC 화면 
